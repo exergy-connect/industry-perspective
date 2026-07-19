@@ -128,7 +128,7 @@ Uaru and Whiptail lead at US$12.7bn each. Petrobras supplies five entries. Only 
 @region caption
 Marker area is proportional to stated CAPEX; color identifies operator. Coordinates are representative offshore project positions for portfolio visualization, not navigation.
 
-@narrative
+@narrative voice=male
   - en-US: >-
       Geography sharpens the ranking's central signal. Nine projects cluster along the South Atlantic margin, from Guyana and Suriname to Brazil, while Bonga is the sole West African entry. Marker area follows stated CAPEX and color identifies the operator, revealing both geographic and operator concentration at a glance.
 
@@ -149,7 +149,7 @@ Marker area is proportional to stated CAPEX; color identifies operator. Coordina
 <p>A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX.</p>
 ```
 
-@narrative
+@narrative voice=male
   - en-US: >-
       A comment under the post asked the decisive question: which investments, besides the FPSOs themselves, are included in these values? That question sets the research agenda. Without a shared cost boundary, the ranking can look exact while comparing unlike scopes.
 

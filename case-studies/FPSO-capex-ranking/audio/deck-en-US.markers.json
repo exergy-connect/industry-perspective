@@ -1,6 +1,7 @@
 {
   "language": "en-US",
   "audio": "audio/deck-en-US.wav",
+  "content_hash": "dd462f50dc3c1d1aa3a9820914452f3d614edea58e6d827818506e4b01b1137c",
   "pause_seconds": 3,
   "voice": "Erinome",
   "model": "gemini-3.1-flash-tts-preview",
@@ -11,6 +12,8 @@
         "trigger"
       ],
       "audio": "audio/deck-en-US-group-1.wav",
+      "content_hash": "95f88c7a302ae81b4acff4dbd8e0a476d15a72eedcf7f0aea1a6f01f5dc9fa29",
+      "gender": "female",
       "voice": "Erinome",
       "model": "gemini-3.1-flash-tts-preview"
     },
@@ -20,7 +23,9 @@
         "question"
       ],
       "audio": "audio/deck-en-US-group-2.wav",
-      "voice": "Erinome",
+      "content_hash": "ca7c07b57874ae08b08c7d6f41d4c4c548ea1248b34d504f0c2c478042b3fa7c",
+      "gender": "male",
+      "voice": "Charon",
       "model": "gemini-3.1-flash-tts-preview"
     },
     {
@@ -29,6 +34,8 @@
         "findings"
       ],
       "audio": "audio/deck-en-US-group-3.wav",
+      "content_hash": "8e4f5b016d90f7e15d372a245d9f148b54599e175001760985b203f024d4c233",
+      "gender": "female",
       "voice": "Erinome",
       "model": "gemini-3.1-flash-tts-preview"
     },
@@ -38,6 +45,8 @@
         "close"
       ],
       "audio": "audio/deck-en-US-group-4.wav",
+      "content_hash": "675161de4a789c185845074e123d0c9394799bd9e1f88b23c98e5ad7c8871119",
+      "gender": "female",
       "voice": "Erinome",
       "model": "gemini-3.1-flash-tts-preview"
     }
@@ -45,43 +54,51 @@
   "markers": [
     {
       "id": "title",
+      "content_hash": "740993cc6c22c10468d15ed019eef17a73342e399e07e8d221eb88542fe03951",
       "startSeconds": 0,
-      "endSeconds": 25.2
+      "endSeconds": 25.1
     },
     {
       "id": "trigger",
-      "startSeconds": 28.2,
-      "endSeconds": 48.42
+      "content_hash": "6e9880fba20e9c32629ac4252d19a3d420c587acc0d8e0cd634e88243b529640",
+      "startSeconds": 28.1,
+      "endSeconds": 47.1
     },
     {
       "id": "geography",
-      "startSeconds": 51.42,
-      "endSeconds": 73.47
+      "content_hash": "04d8e945069ce534adab92bdca9eab2a4831f3a39898f99fc0d29086140d2398",
+      "startSeconds": 50.1,
+      "endSeconds": 70.75
     },
     {
       "id": "question",
-      "startSeconds": 76.47,
-      "endSeconds": 94.14
+      "content_hash": "22345e3968b50e14a16b3c9c79a16fc223f3be30273d6638a0877470ec9a4064",
+      "startSeconds": 73.75,
+      "endSeconds": 90.53
     },
     {
       "id": "method",
-      "startSeconds": 97.14,
-      "endSeconds": 121.79
+      "content_hash": "67787ba49a6fa056be72d9bd1d8ec3094aa31f44d951da2120d0b3befe73e54b",
+      "startSeconds": 93.53,
+      "endSeconds": 117.58
     },
     {
       "id": "findings",
-      "startSeconds": 124.79,
-      "endSeconds": 149.81
+      "content_hash": "e1056618a4fb0e2ee7647d5aa44deceb7a4f6ba8aa20e5167e5ee78511c689fa",
+      "startSeconds": 120.58,
+      "endSeconds": 141.33
     },
     {
       "id": "updated",
-      "startSeconds": 152.81,
-      "endSeconds": 171.96
+      "content_hash": "b7d7c8a148d6272ed332b858a88c0cd644fec2fe7643afc29271b22630478d9c",
+      "startSeconds": 144.33,
+      "endSeconds": 165.23
     },
     {
       "id": "close",
-      "startSeconds": 174.96,
-      "endSeconds": 199.41004166666667
+      "content_hash": "1c94d0d7d0e264ac32ce51e226c5e1fc84ad5103803999829648acfbbd9b5043",
+      "startSeconds": 168.23,
+      "endSeconds": 193.2
     }
   ]
 }
