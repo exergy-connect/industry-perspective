@@ -1,0 +1,3766 @@
+{
+  "document": {
+    "meta": {
+      "layout": "framed-deck",
+      "constraints": {
+        "width": "1280",
+        "height": "792"
+      },
+      "themes": [
+        "deepwater"
+      ],
+      "presentation": "slidedeck",
+      "title": "From Industry Signal to Strategic Analysis",
+      "subtitle": "A LinkedIn post became a professional industry analysis in under an hour.",
+      "author": "Industry Perspective",
+      "classification": "Case study · 19 July 2026",
+      "styles": [
+        "deepwater"
+      ],
+      "narrative": {
+        "voice": "male"
+      }
+    },
+    "scope": {
+      "evaluation": "static"
+    },
+    "segments": [
+      {
+        "index": 0,
+        "id": "title",
+        "layout": "slide-frame",
+        "title": "From Industry Signal to Strategic Analysis",
+        "template": "slide-frame.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "Industry Perspective · Case Study",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Industry Perspective · Case Study"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 22
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0
+              },
+              {
+                "kind": "container",
+                "mode": "stack",
+                "direction": "horizontal",
+                "weight": 1,
+                "gap": "2.4rem",
+                "align": "stretch",
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "main",
+                    "default": true,
+                    "weight": 1,
+                    "align": "start",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 1,
+                          "text": "From Industry Signal to Strategic Analysis",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "From Industry Signal to Strategic Analysis"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 25
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "A LinkedIn post became a professional industry analysis in under an hour.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "A LinkedIn post became a professional industry analysis in under an hour."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 25
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "A simple ranking of the largest FPSO projects became a structured examination of:",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "A simple ranking of the largest FPSO projects became a structured examination of:"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 25
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      },
+                      {
+                        "index": 3,
+                        "kind": "list",
+                        "list": {
+                          "ordered": false,
+                          "items": [
+                            "project scope",
+                            "CAPEX comparability",
+                            "development status",
+                            "omitted projects",
+                            "ownership models",
+                            "phased versus integrated development",
+                            "and the strategic assumptions hidden inside the ranking"
+                          ],
+                          "itemInlines": [
+                            [
+                              {
+                                "kind": "text",
+                                "text": "project scope"
+                              }
+                            ],
+                            [
+                              {
+                                "kind": "text",
+                                "text": "CAPEX comparability"
+                              }
+                            ],
+                            [
+                              {
+                                "kind": "text",
+                                "text": "development status"
+                              }
+                            ],
+                            [
+                              {
+                                "kind": "text",
+                                "text": "omitted projects"
+                              }
+                            ],
+                            [
+                              {
+                                "kind": "text",
+                                "text": "ownership models"
+                              }
+                            ],
+                            [
+                              {
+                                "kind": "text",
+                                "text": "phased versus integrated development"
+                              }
+                            ],
+                            [
+                              {
+                                "kind": "text",
+                                "text": "and the strategic assumptions hidden inside the ranking"
+                              }
+                            ]
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 25
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "aside",
+                    "weight": "0.618",
+                    "align": "stretch",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "widget",
+                        "widget": {
+                          "type": "html",
+                          "body": "<div class=\"metric\"><strong>$94.3bn</strong><span>CAPEX represented in the original visual</span></div>\n<div class=\"metric\"><strong>17</strong><span>Independent sources consulted</span></div>\n<div class=\"metric\"><strong>4</strong><span>Amounts independently verified as development CAPEX</span></div>"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 43
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "narrative",
+                        "narrative": {
+                          "entries": [
+                            {
+                              "index": 0,
+                              "language": "en-US",
+                              "text": "The input was a LinkedIn post. The output was an industry perspective. In under an hour, a simple ranking of the largest FPSO projects became a structured examination of project scope, CAPEX comparability, development status, omitted projects, ownership models, phased versus integrated development, and the strategic assumptions hidden inside the ranking.",
+                              "selected": true,
+                              "audio": "audio/title-en-US.mp3"
+                            }
+                          ]
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 49
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "caption",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "The input was a LinkedIn post. The output was an industry perspective.",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "The input was a LinkedIn post. The output was an industry perspective."
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 40
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "caption"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "caption"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "id": "trigger",
+        "layout": "slide-frame",
+        "title": "Start with the LinkedIn visual",
+        "template": "slide-frame.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "01 · The trigger",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "01 · The trigger"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 59
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "Start with the LinkedIn visual",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Start with the LinkedIn visual"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 62
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "stack",
+                "direction": "horizontal",
+                "weight": 1,
+                "gap": "2.4rem",
+                "align": "stretch",
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "main",
+                    "default": true,
+                    "weight": 1,
+                    "align": "start",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "media",
+                        "media": {
+                          "src": "Top10_FPSO_CAPEX_projects.jpeg",
+                          "alt": "Top 10 upcoming FPSO projects to 2030 ranked by CAPEX",
+                          "caption": "Original ranking visual from Giacomo Prandelli’s LinkedIn post"
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main",
+                          "alt": "Top 10 upcoming FPSO projects to 2030 ranked by CAPEX",
+                          "caption": "Original ranking visual from Giacomo Prandelli’s LinkedIn post"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 65
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          },
+                          "local": {
+                            "alt": "Top 10 upcoming FPSO projects to 2030 ranked by CAPEX",
+                            "caption": "Original ranking visual from Giacomo Prandelli’s LinkedIn post",
+                            "click_to_zoom": "true"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "aside",
+                    "weight": "0.75",
+                    "align": "stretch",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 2,
+                          "text": "Giacomo Prandelli’s post makes a sharp geographic argument: nine of ten highest-CAPEX FPSO projects shown sit in the South Atlantic.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Giacomo Prandelli’s post makes a sharp geographic argument: nine of ten highest-CAPEX FPSO projects shown sit in the South Atlantic."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 72
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Source: linkedin.com/posts/prandelligiacomo…",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Source: "
+                            },
+                            {
+                              "kind": "link",
+                              "href": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "linkedin.com/posts/prandelligiacomo…"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 72
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "qr_code",
+                        "qrCode": {
+                          "url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV"
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 76
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 3,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Scan to open the original LinkedIn post and visual.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Scan to open the original LinkedIn post and visual."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 79
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 4,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Uaru and Whiptail lead at US$12.7bn each. Petrobras supplies five entries. Only Bonga Southwest/Aparo sits outside the South Atlantic cluster.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Uaru and Whiptail lead at US$12.7bn each. Petrobras supplies five entries. Only Bonga Southwest/Aparo sits outside the South Atlantic cluster."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 79
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 5,
+                        "kind": "narrative",
+                        "narrative": {
+                          "entries": [
+                            {
+                              "index": 0,
+                              "language": "en-US",
+                              "text": "We begin with the original LinkedIn visual. Giacomo Prandelli’s post claims the top ten FPSO projects through 2030 are worth about ninety-four billion dollars. Scan the QR code to open the source post. The chart concentrates capital in Guyana, Suriname, Brazil, and one Nigerian project.",
+                              "selected": true,
+                              "audio": "audio/trigger-en-US.mp3"
+                            }
+                          ]
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 83
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "caption",
+                "weight": 0
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "question",
+        "layout": "slide-frame",
+        "title": "What do the numbers actually include?",
+        "template": "slide-frame.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "02 · The research question",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "02 · The research question"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 92
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "What do the numbers actually include?",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "What do the numbers actually include?"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 95
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "stack",
+                "direction": "horizontal",
+                "weight": 1,
+                "gap": "2.4rem",
+                "align": "stretch",
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "main",
+                    "default": true,
+                    "weight": 1,
+                    "align": "start",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Those values are including which investments, besides the FPSOs per se?",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Those values are including which investments, besides the FPSOs per se?"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 98
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Luciano Jorge de Carvalho Junior · LinkedIn comment",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Luciano Jorge de Carvalho Junior · LinkedIn comment"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 98
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 98
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      },
+                      {
+                        "index": 3,
+                        "kind": "narrative",
+                        "narrative": {
+                          "entries": [
+                            {
+                              "index": 0,
+                              "language": "en-US",
+                              "text": "A comment under the post asked the decisive question: which investments, besides the FPSOs themselves, are included in these values? That question sets the research agenda. Without a shared cost boundary, the ranking can look exact while comparing unlike scopes.",
+                              "selected": true,
+                              "audio": "audio/question-en-US.mp3"
+                            }
+                          ]
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 104
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "aside",
+                    "weight": "0",
+                    "align": "stretch"
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "caption",
+                "weight": 0
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "method",
+        "layout": "grid",
+        "title": "Separate claims before reconciling them",
+        "template": "grid.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "03 · Research steps",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "03 · Research steps"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 114
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "Separate claims before reconciling them",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Separate claims before reconciling them"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 117
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "grid",
+                "columns": "3",
+                "gap": "1rem",
+                "weight": 1,
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "card1",
+                    "default": true,
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Step 01",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Step 01"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 120
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card1"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card1"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Preserve the trigger",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Preserve the trigger"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 120
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card1"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card1"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Transcribe the LinkedIn ranking and ten project rows into their own provenance file. Do not rewrite the published visual.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Transcribe the LinkedIn ranking and ten project rows into their own provenance file. Do not rewrite the published visual."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 120
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card1"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card1"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card2",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Step 02",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Step 02"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 127
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card2"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card2"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Capture discussion",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Capture discussion"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 127
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card2"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card2"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Store comment-proposed projects — Wisting, Tangkulo, Bay du Nord, Venus, PAJ — as discussion mentions, not silent inserts into the top ten.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Store comment-proposed projects — Wisting, Tangkulo, Bay du Nord, Venus, PAJ — as discussion mentions, not silent inserts into the top ten."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 127
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card2"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card2"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card3",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Step 03",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Step 03"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 134
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card3"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card3"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Seek primary sources",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Seek primary sources"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 134
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card3"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card3"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Match each amount against operator, regulator, and contract disclosures from ExxonMobil, TotalEnergies, Equinor, Petrobras, ANPG, and others.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Match each amount against operator, regulator, and contract disclosures from ExxonMobil, TotalEnergies, Equinor, Petrobras, ANPG, and others."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 134
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card3"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card3"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card4",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Step 04",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Step 04"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 141
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Classify evidence",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Classify evidence"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 141
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Label each row verified development CAPEX, identity-only, conflicting scope, or not ranked — keeping currencies and horizons intact.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Label each row verified development CAPEX, identity-only, conflicting scope, or not ranked — keeping currencies and horizons intact."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 141
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card5",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Step 05",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Step 05"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 148
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card5"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card5"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Refuse false precision",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Refuse false precision"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 148
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card5"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card5"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Do not convert CAD or NOK, or promote lower-bound estimates, into a new ordinal league table without a common basis.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Do not convert CAD or NOK, or promote lower-bound estimates, into a new ordinal league table without a common basis."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 148
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card5"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card5"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card6",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Step 06",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Step 06"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 155
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card6"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card6"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Publish the reconciliation",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Publish the reconciliation"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 155
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card6"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card6"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Keep original, comment, and independent values in separate fields so downstream analysis cannot silently substitute one layer for another.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Keep original, comment, and independent values in separate fields so downstream analysis cannot silently substitute one layer for another."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 155
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card6"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card6"
+                          }
+                        }
+                      },
+                      {
+                        "index": 3,
+                        "kind": "narrative",
+                        "narrative": {
+                          "entries": [
+                            {
+                              "index": 0,
+                              "language": "en-US",
+                              "text": "The method is deliberate. First preserve the trigger visual. Then capture LinkedIn discussion separately. Next consult primary sources. Classify what each source actually proves. Refuse false precision when currencies or horizons do not match. Finally publish a reconciliation that keeps every evidence layer distinct.",
+                              "selected": true,
+                              "audio": "audio/method-en-US.mp3"
+                            }
+                          ]
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card6"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 161
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card6"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "findings",
+        "layout": "grid",
+        "title": "What the sources establish",
+        "template": "grid.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "04 · Independent verification",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "04 · Independent verification"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 171
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "What the sources establish",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "What the sources establish"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 174
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "grid",
+                "columns": "2",
+                "gap": "1rem",
+                "weight": 1,
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "card1",
+                    "default": true,
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Verified · full development",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Verified · full development"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 177
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card1"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card1"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Uaru, Whiptail, GranMorgu, Raia",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Uaru, Whiptail, GranMorgu, Raia"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 177
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card1"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card1"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Published amounts match operator disclosures — as whole-development investment, including FPSO, not vessel-only prices. Luciano’s scope question is answered for these four.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Published amounts match operator disclosures — as whole-development investment, including FPSO, not vessel-only prices. Luciano’s scope question is answered for these four."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 177
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card1"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card1"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card2",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Identity only · amount open",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Identity only · amount open"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 184
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card2"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card2"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Atapu 2, Sépia 2, Búzios 9–11",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Atapu 2, Sépia 2, Búzios 9–11"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 184
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card2"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card2"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Petrobras materials confirm project identity and naming (P-80 to P-85), but the visual’s CAPEX figures remain unverified. Ranks are retained provisionally.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Petrobras materials confirm project identity and naming (P-80 to P-85), but the visual’s CAPEX figures remain unverified. Ranks are retained provisionally."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 184
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card2"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card2"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card3",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Conflicting scope · flagged",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Conflicting scope · flagged"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 191
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card3"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card3"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Bonga Southwest/Aparo",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Bonga Southwest/Aparo"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 191
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card3"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card3"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Visual shows US$8bn. Newer reporting points to roughly US$10bn CAPEX and up to US$20bn total investment including life-cycle opex. Flagged, not re-ranked.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Visual shows US$8bn. Newer reporting points to roughly US$10bn CAPEX and up to US$20bn total investment including life-cycle opex. Flagged, not re-ranked."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 191
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card3"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card3"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card4",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Not ranked · discussion layer",
+                          "inlines": [
+                            {
+                              "kind": "strong",
+                              "children": [
+                                {
+                                  "kind": "text",
+                                  "text": "Not ranked · discussion layer"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 198
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Bay du Nord, Wisting, Greater PAJ, Tangkulo, Venus",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Bay du Nord, Wisting, Greater PAJ, Tangkulo, Venus"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 198
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Comment additions expand geography, but stay NR until currency, horizon, and cost boundary are comparable to the visual’s USD top ten.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Comment additions expand geography, but stay NR until currency, horizon, and cost boundary are comparable to the visual’s USD top ten."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 198
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      },
+                      {
+                        "index": 3,
+                        "kind": "narrative",
+                        "narrative": {
+                          "entries": [
+                            {
+                              "index": 0,
+                              "language": "en-US",
+                              "text": "Independent sources verify four of the original amounts — Uaru, Whiptail, GranMorgu, and Raia — as full development investments. Petrobras rows are identity-confirmed but amount-open. Bonga conflicts in scope and is flagged. Comment projects remain unranked rather than forced into the table.",
+                              "selected": true,
+                              "audio": "audio/findings-en-US.mp3"
+                            }
+                          ]
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "card4"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 204
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "card4"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card5"
+                  },
+                  {
+                    "kind": "region",
+                    "name": "card6"
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "updated",
+        "layout": "slide-frame",
+        "title": "Same order. Clearer evidence.",
+        "template": "slide-frame.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "05 · Updated ranking",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "05 · Updated ranking"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 213
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "Same order. Clearer evidence.",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Same order. Clearer evidence."
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 216
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "stack",
+                "direction": "horizontal",
+                "weight": 1,
+                "gap": "2.4rem",
+                "align": "stretch",
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "main",
+                    "default": true,
+                    "weight": 1,
+                    "align": "start",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "media",
+                        "media": {
+                          "src": "updated_FPSO_CAPEX_ranking.svg",
+                          "alt": "Updated FPSO CAPEX ranking reconciled with independent findings",
+                          "caption": "Original US$94.287bn visual reconciled with independent findings · 19 July 2026"
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main",
+                          "alt": "Updated FPSO CAPEX ranking reconciled with independent findings",
+                          "caption": "Original US$94.287bn visual reconciled with independent findings · 19 July 2026"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 219
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          },
+                          "local": {
+                            "alt": "Updated FPSO CAPEX ranking reconciled with independent findings",
+                            "caption": "Original US$94.287bn visual reconciled with independent findings · 19 July 2026",
+                            "click_to_zoom": "true"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "aside",
+                    "weight": "0",
+                    "align": "stretch"
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "caption",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "Independently matched development CAPEX · Original visual value, scope not established · Newer finding conflicts in scope or value",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Independently matched development CAPEX · Original visual value, scope not established · Newer finding conflicts in scope or value"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 226
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "caption"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "caption"
+                      }
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "kind": "narrative",
+                    "narrative": {
+                      "entries": [
+                        {
+                          "index": 0,
+                          "language": "en-US",
+                          "text": "The updated ranking keeps the visual’s original order. Green marks independently matched development CAPEX. Grey marks amounts whose scope is still unresolved. Orange marks Bonga’s conflicting newer headline. Five discussion projects sit below as not ranked, with native currencies preserved.",
+                          "selected": true,
+                          "audio": "audio/updated-en-US.mp3"
+                        }
+                      ]
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "caption"
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 228
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "caption"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "close",
+        "layout": "slide-frame",
+        "title": "A ranking is only as honest as its cost boundary",
+        "template": "slide-frame.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "06 · Takeaway",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "06 · Takeaway"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 238
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "A ranking is only as honest as its cost boundary",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "A ranking is only as honest as its cost boundary"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 241
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "stack",
+                "direction": "horizontal",
+                "weight": 1,
+                "gap": "2.4rem",
+                "align": "stretch",
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "main",
+                    "default": true,
+                    "weight": 1,
+                    "align": "start",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "The arithmetic of the ten visual rows explains the US$94bn headline. Arithmetic agreement does not prove a common scope. Traceable industry perspective starts by keeping claims, comments, and primary findings in separate layers — then reconciling in public.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "The arithmetic of the ten visual rows explains the US$94bn headline. Arithmetic agreement does not prove a common scope. Traceable industry perspective starts by keeping claims, comments, and primary findings in separate layers — then reconciling in public."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 244
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "aside",
+                    "weight": "0.8",
+                    "align": "stretch",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Trigger ≠ dataset",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Trigger ≠ dataset"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 247
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 1,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "LinkedIn visuals are starting claims, not finished cost tables.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "LinkedIn visuals are starting claims, not finished cost tables."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 247
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 2,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Scope before rank",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Scope before rank"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 247
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 3,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Development CAPEX and FPSO-only prices must not be mixed silently.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Development CAPEX and FPSO-only prices must not be mixed silently."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 247
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 4,
+                        "kind": "heading",
+                        "heading": {
+                          "level": 3,
+                          "text": "Evidence stays layered",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Evidence stays layered"
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 247
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 5,
+                        "kind": "paragraph",
+                        "paragraph": {
+                          "text": "Original, discussion, and independent findings remain separable for audit.",
+                          "inlines": [
+                            {
+                              "kind": "text",
+                              "text": "Original, discussion, and independent findings remain separable for audit."
+                            }
+                          ]
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 247
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      },
+                      {
+                        "index": 6,
+                        "kind": "narrative",
+                        "narrative": {
+                          "entries": [
+                            {
+                              "index": 0,
+                              "language": "en-US",
+                              "text": "The takeaway is methodological. Treat social rankings as triggers. Establish cost scope before trusting ordinal position. Keep every evidence layer separable so the industry perspective remains auditable as new disclosures arrive.",
+                              "selected": true,
+                              "audio": "audio/close-en-US.mp3"
+                            }
+                          ]
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "aside"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 256
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "aside"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "caption",
+                "weight": 0
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "structure": [
+      {
+        "kind": "container",
+        "mode": "stack",
+        "name": "shell",
+        "direction": "vertical",
+        "children": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "name": "deck",
+            "direction": "vertical",
+            "weight": 1,
+            "children": [
+              {
+                "kind": "segments",
+                "layout": "slide-frame",
+                "template": "slide-frame.xpt"
+              }
+            ]
+          },
+          {
+            "kind": "region",
+            "name": "hud",
+            "height": 72,
+            "children": [
+              {
+                "kind": "controls",
+                "type": "hud"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "style": {
+    "typography": {
+      "title": {
+        "size": 4.2,
+        "lineHeight": 0.95
+      },
+      "subtitle": {
+        "size": 1.55,
+        "lineHeight": 1.3
+      },
+      "heading": {
+        "size": 1.55,
+        "lineHeight": 1.2
+      },
+      "body": {
+        "size": 1.2,
+        "lineHeight": 1.45
+      }
+    },
+    "spacing": {
+      "pagePadding": 1.25,
+      "contentPaddingX": 2.75,
+      "contentPaddingY": 1.25,
+      "contentGap": 0
+    },
+    "accent": "#26c6a3",
+    "fg": "#edf7f7",
+    "bg": "#071c2b",
+    "surfaceBg": "#102f3d",
+    "muted": "#9eb6bc",
+    "border": "#315965",
+    "boxShadow": "0 1rem 2.4rem rgba(0, 0, 0, .28)",
+    "textAlign": "left"
+  },
+  "styles": [
+    {
+      "kind": "style",
+      "name": "deepwater",
+      "meta": {
+        "typography": {
+          "title": {
+            "size": 4.2,
+            "lineHeight": 0.95
+          },
+          "subtitle": {
+            "size": 1.55,
+            "lineHeight": 1.3
+          },
+          "heading": {
+            "size": 1.55,
+            "lineHeight": 1.2
+          },
+          "body": {
+            "size": 1.2,
+            "lineHeight": 1.45
+          }
+        },
+        "spacing": {
+          "pagePadding": 1.25,
+          "contentPaddingX": 2.75,
+          "contentPaddingY": 1.25,
+          "contentGap": 0
+        },
+        "accent": "#26c6a3",
+        "fg": "#edf7f7",
+        "bg": "#071c2b",
+        "surfaceBg": "#102f3d",
+        "muted": "#9eb6bc",
+        "border": "#315965",
+        "boxShadow": "0 1rem 2.4rem rgba(0, 0, 0, .28)",
+        "textAlign": "left"
+      },
+      "body": "```css\n@import url(\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap\");\n\n#xframe {\n  --ink: var(--fg);\n  --line: rgba(182, 214, 220, .16);\n  --panel: rgba(14, 42, 54, .78);\n  --warm: #f4a340;\n  background:\n    radial-gradient(circle at 92% -8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 34%),\n    radial-gradient(circle at 4% 108%, rgba(244, 163, 64, .12), transparent 36%),\n    linear-gradient(155deg, var(--bg) 0%, var(--surface-bg) 58%, #163b48 100%);\n  color: var(--fg);\n  font-family: \"Sora\", ui-sans-serif, sans-serif;\n}\n\n#xframe .segment.active {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  gap: 0;\n  /* Keep side/top inset; pin content to the bottom edge of the slide. */\n  padding: 1.1rem 2.5rem 0.4rem !important;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n/* Do not override segment position — runtime uses absolute + inset:0 to fill the canvas. */\n#xframe .segment { background: transparent; }\n#xframe .segment > .layout-container {\n  display: flex;\n  flex: 1 1 auto;\n  flex-direction: column;\n  align-self: stretch;\n  width: 100%;\n  min-height: 0;\n  height: 100%;\n}\n#xframe .layout-container.layout-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  align-content: stretch;\n}\n#findings .layout-container.layout-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n\n#xframe [data-region=\"header\"] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n#xframe [data-region=\"header\"] .layout-container {\n  width: 100%;\n  height: 100%;\n  justify-content: flex-end;\n  align-items: center;\n}\n#xframe [data-region=\"header-right\"] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n}\n#xframe [data-region=\"header-right\"] img {\n  display: block;\n  width: auto;\n  height: 100%;\n  max-height: 100%;\n  object-fit: contain;\n  filter: drop-shadow(0 .25rem .7rem rgba(0, 0, 0, .3));\n}\n\n#xframe [data-region=\"footer\"] {\n  display: flex;\n  align-items: center;\n  color: var(--accent);\n  font-size: .85rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n}\n#xframe [data-region=\"footer\"] > .layout-container {\n  width: 100%;\n  align-items: center;\n}\n#xframe [data-region=\"footer-center\"] { text-align: center; }\n#xframe [data-region=\"footer-right\"] {\n  text-align: right;\n  text-transform: none;\n  letter-spacing: .04em;\n}\n#xframe [data-region=\"footer\"] p {\n  margin: 0;\n  color: inherit;\n  font: inherit;\n  letter-spacing: inherit;\n  text-transform: inherit;\n}\n\n#xframe [data-region=\"kicker\"] p {\n  margin: 0;\n  color: var(--accent);\n  font-size: .9rem;\n  font-weight: 700;\n  letter-spacing: .18em;\n  text-transform: uppercase;\n}\n\n#xframe h1 {\n  margin: 0;\n  max-width: none;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-weight: 700;\n  letter-spacing: -.04em;\n  line-height: .96;\n}\n#xframe h2 {\n  margin: .55rem 0 0;\n  max-width: 36ch;\n  color: var(--muted);\n  font-weight: 450;\n  line-height: 1.3;\n}\n#xframe h3 {\n  margin: 0;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-weight: 700;\n}\n#xframe a { color: var(--accent); text-underline-offset: .18em; }\n#xframe .xframe-qr-code {\n  display: block;\n  width: 8rem;\n  aspect-ratio: 1;\n  margin: .9rem 0;\n  padding: .35rem;\n  overflow: hidden;\n  background: #edf7f7;\n  border-radius: .35rem;\n  box-shadow: 0 .8rem 2rem rgba(0, 0, 0, .28);\n}\n#xframe .xframe-qr-code > span,\n#xframe .xframe-qr-code canvas,\n#xframe .xframe-qr-code svg {\n  display: block;\n  width: 100% !important;\n  height: 100% !important;\n}\n\n#xframe [data-region=\"title\"] h1 {\n  font-size: clamp(2.6rem, 4.4vw, 3.8rem);\n}\n#xframe [data-region=\"main\"],\n#xframe [data-region=\"aside\"] {\n  min-height: 0;\n  overflow: visible;\n}\n#xframe [data-region=\"title\"] {\n  overflow: visible;\n}\n#xframe [data-region=\"main\"] p,\n#xframe [data-region=\"aside\"] p {\n  margin: .75rem 0 0;\n  color: #d5e7ea;\n  font-size: 1.2rem;\n  line-height: 1.45;\n}\n#xframe [data-region=\"caption\"] p {\n  margin: .4rem 0 0;\n  color: var(--muted);\n  font-size: .95rem;\n}\n\n/* Title — headline + lede share main; metrics are whole cards */\n#title [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  gap: .65rem;\n  padding: .2rem .5rem 0 0;\n  overflow: hidden;\n}\n#title [data-region=\"main\"] h1 {\n  max-width: 18ch;\n  margin: 0;\n  font-size: clamp(2.2rem, 3.6vw, 3.15rem);\n  line-height: .98;\n}\n#title [data-region=\"main\"] p {\n  max-width: 36ch;\n  margin: 0;\n  color: #d5e7ea;\n  font-size: clamp(.98rem, 1.4vw, 1.15rem);\n  font-weight: 450;\n  line-height: 1.35;\n}\n#title [data-region=\"main\"] p:first-of-type {\n  max-width: 30ch;\n  color: var(--ink);\n  font-size: clamp(1.1rem, 1.6vw, 1.3rem);\n  font-weight: 500;\n  line-height: 1.3;\n}\n#title [data-region=\"main\"] ul {\n  margin: 0;\n  padding-left: 1.1rem;\n  max-width: 36ch;\n  color: #d5e7ea;\n  font-size: clamp(.95rem, 1.3vw, 1.08rem);\n  line-height: 1.38;\n}\n#title [data-region=\"main\"] li + li { margin-top: .08rem; }\n#title [data-region=\"caption\"] {\n  flex: 0 0 auto;\n  padding: 0 0 .15rem;\n  margin-top: -1.4rem;\n}\n#title [data-region=\"caption\"] p {\n  margin: 0;\n  max-width: none;\n  color: var(--accent);\n  font-size: clamp(1.05rem, 1.55vw, 1.25rem);\n  font-weight: 600;\n  font-style: italic;\n  letter-spacing: .01em;\n  line-height: 1.3;\n  text-align: center;\n  text-transform: none;\n}\n#title [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: .85rem;\n  height: 100%;\n  overflow: auto;\n}\n/* One card = one left accent; no split h3/p border seams. */\n#title [data-region=\"aside\"] .metric {\n  display: flex;\n  flex-direction: column;\n  gap: .35rem;\n  padding: 1rem 1.2rem 1.05rem 1.35rem;\n  border: 1px solid var(--line);\n  border-left: .32rem solid var(--accent);\n  border-radius: 0 .3rem .3rem 0;\n  background: var(--panel);\n}\n#title [data-region=\"aside\"] .metric strong {\n  color: var(--accent);\n  font-size: clamp(1.9rem, 2.8vw, 2.45rem);\n  font-weight: 700;\n  line-height: 1;\n}\n#title [data-region=\"aside\"] .metric span {\n  color: var(--muted);\n  font-size: .92rem;\n  font-weight: 600;\n  letter-spacing: .06em;\n  text-transform: uppercase;\n  line-height: 1.3;\n}\n\n/* Trigger */\n#trigger [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#trigger [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#trigger [data-region=\"main\"] figure { margin: 0; }\n#trigger [data-region=\"main\"] figcaption,\n#updated [data-region=\"main\"] figcaption {\n  margin-top: .55rem;\n  color: var(--muted);\n  font-size: .9rem;\n}\n#trigger [data-region=\"main\"] img,\n#updated [data-region=\"main\"] img {\n  width: 100%;\n  max-height: 28rem;\n  object-fit: contain;\n  border: 1px solid var(--line);\n  border-radius: .4rem;\n  background: rgba(0, 0, 0, .22);\n  box-shadow: var(--box-shadow);\n}\n#trigger [data-region=\"aside\"] h2 {\n  margin: 0;\n  max-width: none;\n  color: #d5e7ea;\n  font-size: 1.25rem;\n  font-weight: 450;\n  line-height: 1.4;\n}\n\n/* Question */\n#question [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#question [data-region=\"main\"] blockquote {\n  max-width: 28ch;\n  margin: 0;\n  padding: 1.6rem 1.75rem;\n  border-left: .32rem solid var(--warm);\n  background: var(--panel);\n}\n#question [data-region=\"main\"] blockquote p {\n  margin: 0;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-size: clamp(1.7rem, 2.6vw, 2.25rem);\n  font-style: italic;\n  line-height: 1.25;\n}\n#question [data-region=\"main\"] > p:nth-of-type(1) {\n  margin: 1.1rem 0 0;\n  color: var(--muted);\n  font-size: 1.05rem;\n}\n#question [data-region=\"main\"] > p:nth-of-type(2) {\n  max-width: 42ch;\n  margin: 1.4rem 0 0;\n  font-size: 1.25rem;\n}\n\n/* Cards (method + findings) */\n#xframe [data-region^=\"card\"] {\n  min-height: 0;\n  padding: 1.35rem 1.4rem;\n  border: 1px solid var(--line);\n  border-top: .32rem solid var(--accent);\n  background: var(--panel);\n}\n#findings [data-region=\"card1\"] { border-top-color: var(--accent); }\n#findings [data-region=\"card2\"] { border-top-color: #587985; }\n#findings [data-region=\"card3\"] { border-top-color: var(--warm); }\n#findings [data-region=\"card4\"] { border-top-color: #587985; }\n#xframe [data-region^=\"card\"]:empty { display: none; }\n#xframe [data-region^=\"card\"] p:first-child,\n#xframe [data-region^=\"card\"] strong {\n  color: var(--accent);\n  font-size: .85rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n}\n#findings [data-region^=\"card\"] p:first-child,\n#findings [data-region^=\"card\"] strong { color: var(--muted); }\n#xframe [data-region^=\"card\"] h3 {\n  margin: .55rem 0;\n  font-size: 1.35rem;\n}\n#xframe [data-region^=\"card\"] p {\n  margin: 0;\n  color: var(--muted);\n  font-size: 1.05rem;\n  line-height: 1.4;\n}\n\n/* Updated */\n#updated [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n/* Close */\n#close [data-region=\"main\"],\n#close [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#close [data-region=\"main\"] p {\n  max-width: 28ch;\n  font-size: 1.3rem;\n}\n#close [data-region=\"aside\"] h3 {\n  margin: 0;\n  padding: 1.2rem 1.25rem .4rem;\n  border: 1px solid var(--line);\n  border-bottom: 0;\n  border-left: .32rem solid var(--accent);\n  background: var(--panel);\n  font-size: 1.3rem;\n}\n#close [data-region=\"aside\"] h3:not(:first-child) { margin-top: .9rem; }\n#close [data-region=\"aside\"] h3 + p {\n  margin: 0;\n  padding: 0 1.25rem 1.2rem;\n  border: 1px solid var(--line);\n  border-top: 0;\n  border-left: .32rem solid var(--accent);\n  background: var(--panel);\n  color: var(--muted);\n  font-size: 1.05rem;\n}\n```"
+    }
+  ],
+  "themes": [
+    {
+      "kind": "theme",
+      "name": "deepwater",
+      "meta": {
+        "typography": {
+          "title": {
+            "size": 4.2,
+            "lineHeight": 0.95
+          },
+          "subtitle": {
+            "size": 1.55,
+            "lineHeight": 1.3
+          },
+          "heading": {
+            "size": 1.55,
+            "lineHeight": 1.2
+          },
+          "body": {
+            "size": 1.2,
+            "lineHeight": 1.45
+          }
+        },
+        "spacing": {
+          "pagePadding": 1.25,
+          "contentPaddingX": 2.75,
+          "contentPaddingY": 1.25,
+          "contentGap": 0
+        },
+        "accent": "#26c6a3",
+        "fg": "#edf7f7",
+        "bg": "#071c2b",
+        "surfaceBg": "#102f3d",
+        "muted": "#9eb6bc",
+        "border": "#315965",
+        "boxShadow": "0 1rem 2.4rem rgba(0, 0, 0, .28)",
+        "textAlign": "left"
+      }
+    }
+  ]
+}

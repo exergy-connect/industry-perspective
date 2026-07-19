@@ -1,0 +1,57 @@
+---
+defaults:
+  region: main
+---
+@stack
+  direction: vertical
+  content:
+    @region header
+      height: 72
+      content:
+        @stack
+          direction: horizontal
+          content:
+            @region header-left
+              weight: 1
+            @region header-right
+              height: 72
+              align: end
+              content:
+                {{ logo_mark }}
+    @region kicker
+      height: 40
+    @region title
+      weight: 0
+    @stack
+      direction: horizontal
+      weight: 1
+      gap: 2.4rem
+      align: stretch
+      content:
+        @region main
+          default: true
+          weight: 1
+          align: start
+        @region aside
+          weight: "{{ aside | default(0) }}"
+          align: stretch
+    @region caption
+      weight: 0
+    @region footer
+      height: 36
+      content:
+        @stack
+          direction: horizontal
+          content:
+            @region footer-left
+              weight: 1
+              content:
+                {{ author }}
+            @region footer-center
+              weight: 1
+              content:
+                {{ classification }}
+            @region footer-right
+              weight: 1
+              content:
+                {{ copyright }}

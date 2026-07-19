@@ -1,0 +1,54 @@
+---
+defaults:
+  region: card1
+---
+@stack
+  direction: vertical
+  content:
+    @region header
+      height: 72
+      content:
+        @stack
+          direction: horizontal
+          content:
+            @region header-left
+              weight: 1
+            @region header-right
+              height: 72
+              align: end
+              content:
+                {{ logo_mark }}
+    @region kicker
+      height: 40
+    @region title
+      weight: 0
+    @grid
+      columns: "{{ columns | default(3) }}"
+      gap: 1rem
+      weight: 1
+      content:
+        @region card1
+          default: true
+        @region card2
+        @region card3
+        @region card4
+        @region card5
+        @region card6
+    @region footer
+      height: 36
+      content:
+        @stack
+          direction: horizontal
+          content:
+            @region footer-left
+              weight: 1
+              content:
+                {{ author }}
+            @region footer-center
+              weight: 1
+              content:
+                {{ classification }}
+            @region footer-right
+              weight: 1
+              content:
+                {{ copyright }}

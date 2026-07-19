@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Industry Perspective">
+<title>From Industry Signal to Strategic Analysis</title>
+<style>
+:root {
+  --canvas-w: 1280px;
+  --canvas-h: 792px;
+}
+
+/* theme:deepwater */
+:root,
+[data-theme="deepwater"] {
+  color-scheme: light dark;
+  --accent: #26c6a3;
+  --fg: #edf7f7;
+  --bg: #071c2b;
+  --surface-bg: #102f3d;
+  --muted: #9eb6bc;
+  --border: #315965;
+  --box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, .28);
+  --text-align: left;
+}
+
+
+/* styles */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+}
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1.25rem;
+}
+#xframe {
+  width: var(--canvas-w);
+  height: var(--canvas-h);
+  background: var(--surface-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow, none);
+  position: relative;
+  overflow: hidden;
+  transform-origin: center center;
+  text-align: var(--text-align, start);
+}
+/* presentation:slidedeck — positioning-independent content rules */
+#xframe { overflow: visible; }
+#xframe:fullscreen { width: 100vw; height: 100vh; border: 0; border-radius: 0; box-shadow: none; }
+.segment { position: absolute; inset: 0; padding: 1.25rem 2.75rem; display: none; overflow: auto; }
+.segment h1, .segment h2, .segment h3, .segment h4, .segment h5, .segment h6 { margin: 0; line-height: 1.2; color: var(--fg); }
+.segment h1 { font-size: 4.2rem; line-height: 0.95; }
+.segment h2 { font-size: 1.55rem; line-height: 1.3; }
+.segment h3 { font-size: 1.55rem; line-height: 1.2; }
+.segment p, .segment li { margin: 0; font-size: 1.2rem; line-height: 1.45; }
+.segment ul, .segment ol { margin: 0; padding-left: 1.4rem; }
+.segment table { border-collapse: collapse; width: max-content; max-width: 100%; font-size: 1.1rem; }
+.segment th, .segment td { border: 1px solid var(--border); padding: 0.45rem 0.75rem; text-align: left; }
+.segment img { max-width: 100%; max-height: 60%; object-fit: contain; }
+.segment figure.xframe-segment-snapshot { min-height: 0; max-height: 100%; margin: 0; gap: .35rem; }
+.segment figure.xframe-segment-snapshot img,
+.segment img[data-xframe-segment] { max-width: 100%; max-height: 100%; width: auto; height: auto; min-height: 0; object-fit: contain; }
+.segment pre { margin: 0; padding: .85rem 1rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; overflow: auto; font-size: 0.95rem; }
+/* positioning:dynamic — flex layout solver */
+.layout-container.layout-stack { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; min-width: 0; }
+.layout-container[data-layout-direction="horizontal"] { flex-direction: row; }
+#xframe > .layout-container { height: 100%; }
+#xframe:fullscreen .layout-controls { top: auto; bottom: 1rem; }
+.layout-segments { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.layout-container > :is(.region, .layout-container) {
+  flex-grow: var(--layout-weight, 0);
+  flex-shrink: var(--layout-shrink, 1);
+  flex-basis: var(--layout-basis, 0%);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.layout-controls { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; }
+.segment { flex-direction: column; justify-content: center; gap: 0rem; }
+.segment.active { display: flex; }
+.segment > .layout-container { display: flex; flex: 1 1 auto; flex-direction: column; min-height: 0; }
+.segment > .layout-container > .layout-default-region { display: flex; flex: 1 1 auto; flex-direction: column; min-height: 0; }
+.segment figure.xframe-segment-snapshot { flex: 1 1 auto; display: flex; flex-direction: column; align-items: center; }
+.segment figure.xframe-segment-snapshot img,
+.segment img[data-xframe-segment] { flex: 1 1 auto; }
+
+
+img[data-click-to-zoom="true"] { cursor: zoom-in; }
+.xframe-zoom-overlay { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 2rem; background: rgba(8, 16, 28, .72); cursor: zoom-out; }
+.xframe-zoom-overlay[hidden] { display: none; }
+.xframe-zoom-stage { width: min(96vw, 1200px); max-height: 92vh; padding: 1.1rem; border-radius: 1rem; background: #fff; overflow: auto; }
+.xframe-zoom-stage img { display: block; width: 100%; height: auto; max-width: 100%; max-height: calc(92vh - 2.2rem); object-fit: contain; }
+/* @qr_code — fit the region box (regions clip; SVGs have no default max size). */
+.xframe-qr-code {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  line-height: 0;
+}
+.xframe-qr-code svg {
+  display: block;
+  width: min(100%, 9.5rem);
+  height: auto;
+  max-height: min(9.5rem, 100%);
+  aspect-ratio: 1;
+}
+.hud {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  align-items: center;
+  background: color-mix(in srgb, var(--surface-bg) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.55rem;
+  backdrop-filter: blur(8px);
+}
+.hud button {
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.hud button:hover { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+.hud button:disabled { opacity: 0.4; cursor: default; }
+.hud [data-deck-counter] {
+  min-width: 4.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.xframe-narrative-dock { position: absolute; top: calc(100% + 1rem); right: 0; z-index: 20; }
+.xframe-narrative-slide[hidden] { display: none; }
+.xframe-narrative { display: flex; align-items: center; gap: .5rem; padding: .35rem .55rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-bg); }
+.xframe-narrative > [data-narrative-text] { display: none; }
+.xframe-narrative audio { width: 15rem; height: 2.2rem; }
+.xframe-narrative-speak { min-width: 15rem; height: 2.2rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-bg); color: var(--fg); font: inherit; cursor: pointer; }
+.hud .xframe-narrative-language { min-width: 2.25rem; padding-inline: .45rem; font-size: 1.15rem; opacity: .58; }
+.hud .xframe-narrative-language[aria-pressed="true"] { opacity: 1; }
+@media print { .xframe-narrative-dock { display: none !important; } }
+@media print {
+  body { display: block; padding: 0; background: white; }
+  .hud { display: none; }
+  #xframe {
+    width: auto;
+    height: auto;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none !important;
+  }
+  .layout-container { display: block !important; height: auto !important; }
+.layout-segments { overflow: visible !important; }
+.layout-controls { display: none !important; }
+.segment {
+  position: relative;
+  display: block !important;
+  page-break-after: always;
+  min-height: 100vh;
+}
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap");
+
+#xframe {
+  --ink: var(--fg);
+  --line: rgba(182, 214, 220, .16);
+  --panel: rgba(14, 42, 54, .78);
+  --warm: #f4a340;
+  background:
+    radial-gradient(circle at 92% -8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 34%),
+    radial-gradient(circle at 4% 108%, rgba(244, 163, 64, .12), transparent 36%),
+    linear-gradient(155deg, var(--bg) 0%, var(--surface-bg) 58%, #163b48 100%);
+  color: var(--fg);
+  font-family: "Sora", ui-sans-serif, sans-serif;
+}
+
+#xframe .segment.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  /* Keep side/top inset; pin content to the bottom edge of the slide. */
+  padding: 1.1rem 2.5rem 0.4rem !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* Do not override segment position — runtime uses absolute + inset:0 to fill the canvas. */
+#xframe .segment { background: transparent; }
+#xframe .segment > .layout-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-self: stretch;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+}
+#xframe .layout-container.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: stretch;
+}
+#findings .layout-container.layout-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#xframe [data-region="header"] {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#xframe [data-region="header"] .layout-container {
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+#xframe [data-region="header-right"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#xframe [data-region="header-right"] img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 .25rem .7rem rgba(0, 0, 0, .3));
+}
+
+#xframe [data-region="footer"] {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+#xframe [data-region="footer"] > .layout-container {
+  width: 100%;
+  align-items: center;
+}
+#xframe [data-region="footer-center"] { text-align: center; }
+#xframe [data-region="footer-right"] {
+  text-align: right;
+  text-transform: none;
+  letter-spacing: .04em;
+}
+#xframe [data-region="footer"] p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+#xframe [data-region="kicker"] p {
+  margin: 0;
+  color: var(--accent);
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+#xframe h1 {
+  margin: 0;
+  max-width: none;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: .96;
+}
+#xframe h2 {
+  margin: .55rem 0 0;
+  max-width: 36ch;
+  color: var(--muted);
+  font-weight: 450;
+  line-height: 1.3;
+}
+#xframe h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+}
+#xframe a { color: var(--accent); text-underline-offset: .18em; }
+#xframe .xframe-qr-code {
+  display: block;
+  width: 8rem;
+  aspect-ratio: 1;
+  margin: .9rem 0;
+  padding: .35rem;
+  overflow: hidden;
+  background: #edf7f7;
+  border-radius: .35rem;
+  box-shadow: 0 .8rem 2rem rgba(0, 0, 0, .28);
+}
+#xframe .xframe-qr-code > span,
+#xframe .xframe-qr-code canvas,
+#xframe .xframe-qr-code svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#xframe [data-region="title"] h1 {
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+}
+#xframe [data-region="main"],
+#xframe [data-region="aside"] {
+  min-height: 0;
+  overflow: visible;
+}
+#xframe [data-region="title"] {
+  overflow: visible;
+}
+#xframe [data-region="main"] p,
+#xframe [data-region="aside"] p {
+  margin: .75rem 0 0;
+  color: #d5e7ea;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+#xframe [data-region="caption"] p {
+  margin: .4rem 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Title — headline + lede share main; metrics are whole cards */
+#title [data-region="main"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .65rem;
+  padding: .2rem .5rem 0 0;
+  overflow: hidden;
+}
+#title [data-region="main"] h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.2rem, 3.6vw, 3.15rem);
+  line-height: .98;
+}
+#title [data-region="main"] p {
+  max-width: 36ch;
+  margin: 0;
+  color: #d5e7ea;
+  font-size: clamp(.98rem, 1.4vw, 1.15rem);
+  font-weight: 450;
+  line-height: 1.35;
+}
+#title [data-region="main"] p:first-of-type {
+  max-width: 30ch;
+  color: var(--ink);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+#title [data-region="main"] ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  max-width: 36ch;
+  color: #d5e7ea;
+  font-size: clamp(.95rem, 1.3vw, 1.08rem);
+  line-height: 1.38;
+}
+#title [data-region="main"] li + li { margin-top: .08rem; }
+#title [data-region="caption"] {
+  flex: 0 0 auto;
+  padding: 0 0 .15rem;
+  margin-top: -1.4rem;
+}
+#title [data-region="caption"] p {
+  margin: 0;
+  max-width: none;
+  color: var(--accent);
+  font-size: clamp(1.05rem, 1.55vw, 1.25rem);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: .01em;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: none;
+}
+#title [data-region="aside"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .85rem;
+  height: 100%;
+  overflow: auto;
+}
+/* One card = one left accent; no split h3/p border seams. */
+#title [data-region="aside"] .metric {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: 1rem 1.2rem 1.05rem 1.35rem;
+  border: 1px solid var(--line);
+  border-left: .32rem solid var(--accent);
+  border-radius: 0 .3rem .3rem 0;
+  background: var(--panel);
+}
+#title [data-region="aside"] .metric strong {
+  color: var(--accent);
+  font-size: clamp(1.9rem, 2.8vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1;
+}
+#title [data-region="aside"] .metric span {
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+/* Trigger */
+#trigger [data-region="main"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#trigger [data-region="aside"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#trigger [data-region="main"] figure { margin: 0; }
+#trigger [data-region="main"] figcaption,
+#updated [data-region="main"] figcaption {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+#trigger [data-region="main"] img,
+#updated [data-region="main"] img {
+  width: 100%;
+  max-height: 28rem;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: .4rem;
+  background: rgba(0, 0, 0, .22);
+  box-shadow: var(--box-shadow);
+}
+#trigger [data-region="aside"] h2 {
+  margin: 0;
+  max-width: none;
+  color: #d5e7ea;
+  font-size: 1.25rem;
+  font-weight: 450;
+  line-height: 1.4;
+}
+
+/* Question */
+#question [data-region="main"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#question [data-region="main"] blockquote {
+  max-width: 28ch;
+  margin: 0;
+  padding: 1.6rem 1.75rem;
+  border-left: .32rem solid var(--warm);
+  background: var(--panel);
+}
+#question [data-region="main"] blockquote p {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.25rem);
+  font-style: italic;
+  line-height: 1.25;
+}
+#question [data-region="main"] > p:nth-of-type(1) {
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+#question [data-region="main"] > p:nth-of-type(2) {
+  max-width: 42ch;
+  margin: 1.4rem 0 0;
+  font-size: 1.25rem;
+}
+
+/* Cards (method + findings) */
+#xframe [data-region^="card"] {
+  min-height: 0;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid var(--line);
+  border-top: .32rem solid var(--accent);
+  background: var(--panel);
+}
+#findings [data-region="card1"] { border-top-color: var(--accent); }
+#findings [data-region="card2"] { border-top-color: #587985; }
+#findings [data-region="card3"] { border-top-color: var(--warm); }
+#findings [data-region="card4"] { border-top-color: #587985; }
+#xframe [data-region^="card"]:empty { display: none; }
+#xframe [data-region^="card"] p:first-child,
+#xframe [data-region^="card"] strong {
+  color: var(--accent);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+#findings [data-region^="card"] p:first-child,
+#findings [data-region^="card"] strong { color: var(--muted); }
+#xframe [data-region^="card"] h3 {
+  margin: .55rem 0;
+  font-size: 1.35rem;
+}
+#xframe [data-region^="card"] p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* Updated */
+#updated [data-region="main"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Close */
+#close [data-region="main"],
+#close [data-region="aside"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#close [data-region="main"] p {
+  max-width: 28ch;
+  font-size: 1.3rem;
+}
+#close [data-region="aside"] h3 {
+  margin: 0;
+  padding: 1.2rem 1.25rem .4rem;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-left: .32rem solid var(--accent);
+  background: var(--panel);
+  font-size: 1.3rem;
+}
+#close [data-region="aside"] h3:not(:first-child) { margin-top: .9rem; }
+#close [data-region="aside"] h3 + p {
+  margin: 0;
+  padding: 0 1.25rem 1.2rem;
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-left: .32rem solid var(--accent);
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+</style>
+
+</head>
+<body>
+<main id="xframe" data-theme="deepwater" data-themes="deepwater" data-xframe-presentation="slidedeck" data-xframe-positioning="dynamic" data-xframe-layout="framed-deck">
+<div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="layout-segments">
+    <section class="segment" id="title" data-title="From Industry Signal to Strategic Analysis" data-layout="slide-frame" data-themes="deepwater" data-theme="deepwater" data-index="0">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region slide-frame-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region slide-frame-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>Industry Perspective · Case Study</p>
+  </div>
+<div class="region slide-frame-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+<div class="layout-container layout-stack" data-layout-direction="horizontal" style="gap: 2.4rem; align-items: stretch; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region slide-frame-main layout-default-region" data-region="main" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <h1>From Industry Signal to Strategic Analysis</h1>
+    <p>A LinkedIn post became a professional industry analysis in under an hour.</p>
+    <p>A simple ranking of the largest FPSO projects became a structured examination of:</p>
+    <ul><li>project scope</li><li>CAPEX comparability</li><li>development status</li><li>omitted projects</li><li>ownership models</li><li>phased versus integrated development</li><li>and the strategic assumptions hidden inside the ranking</li></ul>
+  </div>
+<div class="region slide-frame-aside" data-region="aside" style="--layout-weight: 0.618; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="metric"><strong>$94.3bn</strong><span>CAPEX represented in the original visual</span></div>
+<div class="metric"><strong>17</strong><span>Independent sources consulted</span></div>
+<div class="metric"><strong>4</strong><span>Amounts independently verified as development CAPEX</span></div>
+    
+  </div>
+  </div>
+<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p>The input was a LinkedIn post. The output was an industry perspective.</p>
+  </div>
+<div class="region slide-frame-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region slide-frame-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region slide-frame-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section class="segment" id="trigger" data-title="Start with the LinkedIn visual" data-layout="slide-frame" data-themes="deepwater" data-theme="deepwater" data-index="1">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region slide-frame-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo-2" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region slide-frame-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>01 · The trigger</p>
+  </div>
+<div class="region slide-frame-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <h1>Start with the LinkedIn visual</h1>
+  </div>
+<div class="layout-container layout-stack" data-layout-direction="horizontal" style="gap: 2.4rem; align-items: stretch; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region slide-frame-main layout-default-region" data-region="main" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <figure><img id="Top10_FPSO_CAPEX_projects" src="Top10_FPSO_CAPEX_projects.jpeg" alt="Top 10 upcoming FPSO projects to 2030 ranked by CAPEX" data-click-to-zoom="true"><figcaption>Original ranking visual from Giacomo Prandelli’s LinkedIn post</figcaption></figure>
+  </div>
+<div class="region slide-frame-aside" data-region="aside" style="--layout-weight: 0.75; --layout-shrink: 1; --layout-basis: 0%">
+    <h2>Giacomo Prandelli’s post makes a sharp geographic argument: nine of ten highest-CAPEX FPSO projects shown sit in the South Atlantic.</h2>
+    <p>Source: <a href="https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV">linkedin.com/posts/prandelligiacomo…</a></p>
+    <a class="xframe-qr-code" href="https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV" aria-label="Open https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 256 256">
+  <rect x="0" y="0" width="256" height="256" style="fill:#ffffff;shape-rendering:crispEdges;"/>
+  <path x="0" y="0" style="fill:#000000;shape-rendering:crispEdges;" d="M19.32,19.32 V24.15 H24.15 V19.32 H19.32 Z M19.32,24.15 V28.98 H24.15 V24.15 H19.32 Z M19.32,28.98 V33.81 H24.15 V28.98 H19.32 Z M19.32,33.81 V38.64 H24.15 V33.81 H19.32 Z M19.32,38.64 V43.47 H24.15 V38.64 H19.32 Z M19.32,43.47 V48.30 H24.15 V43.47 H19.32 Z M19.32,48.30 V53.13 H24.15 V48.30 H19.32 Z M19.32,57.96 V62.79 H24.15 V57.96 H19.32 Z M19.32,72.45 V77.28 H24.15 V72.45 H19.32 Z M19.32,86.94 V91.77 H24.15 V86.94 H19.32 Z M19.32,91.77 V96.60 H24.15 V91.77 H19.32 Z M19.32,96.60 V101.43 H24.15 V96.60 H19.32 Z M19.32,106.26 V111.09 H24.15 V106.26 H19.32 Z M19.32,115.92 V120.75 H24.15 V115.92 H19.32 Z M19.32,120.75 V125.58 H24.15 V120.75 H19.32 Z M19.32,125.58 V130.42 H24.15 V125.58 H19.32 Z M19.32,135.25 V140.08 H24.15 V135.25 H19.32 Z M19.32,144.91 V149.74 H24.15 V144.91 H19.32 Z M19.32,149.74 V154.57 H24.15 V149.74 H19.32 Z M19.32,154.57 V159.40 H24.15 V154.57 H19.32 Z M19.32,164.23 V169.06 H24.15 V164.23 H19.32 Z M19.32,173.89 V178.72 H24.15 V173.89 H19.32 Z M19.32,178.72 V183.55 H24.15 V178.72 H19.32 Z M19.32,193.21 V198.04 H24.15 V193.21 H19.32 Z M19.32,202.87 V207.70 H24.15 V202.87 H19.32 Z M19.32,207.70 V212.53 H24.15 V207.70 H19.32 Z M19.32,212.53 V217.36 H24.15 V212.53 H19.32 Z M19.32,217.36 V222.19 H24.15 V217.36 H19.32 Z M19.32,222.19 V227.02 H24.15 V222.19 H19.32 Z M19.32,227.02 V231.85 H24.15 V227.02 H19.32 Z M19.32,231.85 V236.68 H24.15 V231.85 H19.32 Z M24.15,19.32 V24.15 H28.98 V19.32 H24.15 Z M24.15,48.30 V53.13 H28.98 V48.30 H24.15 Z M24.15,62.79 V67.62 H28.98 V62.79 H24.15 Z M24.15,82.11 V86.94 H28.98 V82.11 H24.15 Z M24.15,91.77 V96.60 H28.98 V91.77 H24.15 Z M24.15,101.43 V106.26 H28.98 V101.43 H24.15 Z M24.15,106.26 V111.09 H28.98 V106.26 H24.15 Z M24.15,111.09 V115.92 H28.98 V111.09 H24.15 Z M24.15,115.92 V120.75 H28.98 V115.92 H24.15 Z M24.15,120.75 V125.58 H28.98 V120.75 H24.15 Z M24.15,125.58 V130.42 H28.98 V125.58 H24.15 Z M24.15,130.42 V135.25 H28.98 V130.42 H24.15 Z M24.15,140.08 V144.91 H28.98 V140.08 H24.15 Z M24.15,173.89 V178.72 H28.98 V173.89 H24.15 Z M24.15,188.38 V193.21 H28.98 V188.38 H24.15 Z M24.15,202.87 V207.70 H28.98 V202.87 H24.15 Z M24.15,231.85 V236.68 H28.98 V231.85 H24.15 Z M28.98,19.32 V24.15 H33.81 V19.32 H28.98 Z M28.98,28.98 V33.81 H33.81 V28.98 H28.98 Z M28.98,33.81 V38.64 H33.81 V33.81 H28.98 Z M28.98,38.64 V43.47 H33.81 V38.64 H28.98 Z M28.98,48.30 V53.13 H33.81 V48.30 H28.98 Z M28.98,57.96 V62.79 H33.81 V57.96 H28.98 Z M28.98,67.62 V72.45 H33.81 V67.62 H28.98 Z M28.98,72.45 V77.28 H33.81 V72.45 H28.98 Z M28.98,77.28 V82.11 H33.81 V77.28 H28.98 Z M28.98,86.94 V91.77 H33.81 V86.94 H28.98 Z M28.98,91.77 V96.60 H33.81 V91.77 H28.98 Z M28.98,101.43 V106.26 H33.81 V101.43 H28.98 Z M28.98,115.92 V120.75 H33.81 V115.92 H28.98 Z M28.98,125.58 V130.42 H33.81 V125.58 H28.98 Z M28.98,135.25 V140.08 H33.81 V135.25 H28.98 Z M28.98,144.91 V149.74 H33.81 V144.91 H28.98 Z M28.98,154.57 V159.40 H33.81 V154.57 H28.98 Z M28.98,159.40 V164.23 H33.81 V159.40 H28.98 Z M28.98,164.23 V169.06 H33.81 V164.23 H28.98 Z M28.98,169.06 V173.89 H33.81 V169.06 H28.98 Z M28.98,173.89 V178.72 H33.81 V173.89 H28.98 Z M28.98,178.72 V183.55 H33.81 V178.72 H28.98 Z M28.98,188.38 V193.21 H33.81 V188.38 H28.98 Z M28.98,202.87 V207.70 H33.81 V202.87 H28.98 Z M28.98,212.53 V217.36 H33.81 V212.53 H28.98 Z M28.98,217.36 V222.19 H33.81 V217.36 H28.98 Z M28.98,222.19 V227.02 H33.81 V222.19 H28.98 Z M28.98,231.85 V236.68 H33.81 V231.85 H28.98 Z M33.81,19.32 V24.15 H38.64 V19.32 H33.81 Z M33.81,28.98 V33.81 H38.64 V28.98 H33.81 Z M33.81,33.81 V38.64 H38.64 V33.81 H33.81 Z M33.81,38.64 V43.47 H38.64 V38.64 H33.81 Z M33.81,48.30 V53.13 H38.64 V48.30 H33.81 Z M33.81,57.96 V62.79 H38.64 V57.96 H33.81 Z M33.81,72.45 V77.28 H38.64 V72.45 H33.81 Z M33.81,86.94 V91.77 H38.64 V86.94 H33.81 Z M33.81,106.26 V111.09 H38.64 V106.26 H33.81 Z M33.81,115.92 V120.75 H38.64 V115.92 H33.81 Z M33.81,149.74 V154.57 H38.64 V149.74 H33.81 Z M33.81,154.57 V159.40 H38.64 V154.57 H33.81 Z M33.81,164.23 V169.06 H38.64 V164.23 H33.81 Z M33.81,169.06 V173.89 H38.64 V169.06 H33.81 Z M33.81,173.89 V178.72 H38.64 V173.89 H33.81 Z M33.81,188.38 V193.21 H38.64 V188.38 H33.81 Z M33.81,193.21 V198.04 H38.64 V193.21 H33.81 Z M33.81,202.87 V207.70 H38.64 V202.87 H33.81 Z M33.81,212.53 V217.36 H38.64 V212.53 H33.81 Z M33.81,217.36 V222.19 H38.64 V217.36 H33.81 Z M33.81,222.19 V227.02 H38.64 V222.19 H33.81 Z M33.81,231.85 V236.68 H38.64 V231.85 H33.81 Z M38.64,19.32 V24.15 H43.47 V19.32 H38.64 Z M38.64,28.98 V33.81 H43.47 V28.98 H38.64 Z M38.64,33.81 V38.64 H43.47 V33.81 H38.64 Z M38.64,38.64 V43.47 H43.47 V38.64 H38.64 Z M38.64,48.30 V53.13 H43.47 V48.30 H38.64 Z M38.64,57.96 V62.79 H43.47 V57.96 H38.64 Z M38.64,62.79 V67.62 H43.47 V62.79 H38.64 Z M38.64,67.62 V72.45 H43.47 V67.62 H38.64 Z M38.64,72.45 V77.28 H43.47 V72.45 H38.64 Z M38.64,82.11 V86.94 H43.47 V82.11 H38.64 Z M38.64,91.77 V96.60 H43.47 V91.77 H38.64 Z M38.64,111.09 V115.92 H43.47 V111.09 H38.64 Z M38.64,115.92 V120.75 H43.47 V115.92 H38.64 Z M38.64,120.75 V125.58 H43.47 V120.75 H38.64 Z M38.64,125.58 V130.42 H43.47 V125.58 H38.64 Z M38.64,130.42 V135.25 H43.47 V130.42 H38.64 Z M38.64,135.25 V140.08 H43.47 V135.25 H38.64 Z M38.64,144.91 V149.74 H43.47 V144.91 H38.64 Z M38.64,154.57 V159.40 H43.47 V154.57 H38.64 Z M38.64,173.89 V178.72 H43.47 V173.89 H38.64 Z M38.64,178.72 V183.55 H43.47 V178.72 H38.64 Z M38.64,183.55 V188.38 H43.47 V183.55 H38.64 Z M38.64,188.38 V193.21 H43.47 V188.38 H38.64 Z M38.64,193.21 V198.04 H43.47 V193.21 H38.64 Z M38.64,202.87 V207.70 H43.47 V202.87 H38.64 Z M38.64,212.53 V217.36 H43.47 V212.53 H38.64 Z M38.64,217.36 V222.19 H43.47 V217.36 H38.64 Z M38.64,222.19 V227.02 H43.47 V222.19 H38.64 Z M38.64,231.85 V236.68 H43.47 V231.85 H38.64 Z M43.47,19.32 V24.15 H48.30 V19.32 H43.47 Z M43.47,48.30 V53.13 H48.30 V48.30 H43.47 Z M43.47,57.96 V62.79 H48.30 V57.96 H43.47 Z M43.47,67.62 V72.45 H48.30 V67.62 H43.47 Z M43.47,72.45 V77.28 H48.30 V72.45 H43.47 Z M43.47,82.11 V86.94 H48.30 V82.11 H43.47 Z M43.47,96.60 V101.43 H48.30 V96.60 H43.47 Z M43.47,106.26 V111.09 H48.30 V106.26 H43.47 Z M43.47,115.92 V120.75 H48.30 V115.92 H43.47 Z M43.47,135.25 V140.08 H48.30 V135.25 H43.47 Z M43.47,149.74 V154.57 H48.30 V149.74 H43.47 Z M43.47,154.57 V159.40 H48.30 V154.57 H43.47 Z M43.47,164.23 V169.06 H48.30 V164.23 H43.47 Z M43.47,169.06 V173.89 H48.30 V169.06 H43.47 Z M43.47,173.89 V178.72 H48.30 V173.89 H43.47 Z M43.47,202.87 V207.70 H48.30 V202.87 H43.47 Z M43.47,231.85 V236.68 H48.30 V231.85 H43.47 Z M48.30,19.32 V24.15 H53.13 V19.32 H48.30 Z M48.30,24.15 V28.98 H53.13 V24.15 H48.30 Z M48.30,28.98 V33.81 H53.13 V28.98 H48.30 Z M48.30,33.81 V38.64 H53.13 V33.81 H48.30 Z M48.30,38.64 V43.47 H53.13 V38.64 H48.30 Z M48.30,43.47 V48.30 H53.13 V43.47 H48.30 Z M48.30,48.30 V53.13 H53.13 V48.30 H48.30 Z M48.30,57.96 V62.79 H53.13 V57.96 H48.30 Z M48.30,67.62 V72.45 H53.13 V67.62 H48.30 Z M48.30,77.28 V82.11 H53.13 V77.28 H48.30 Z M48.30,86.94 V91.77 H53.13 V86.94 H48.30 Z M48.30,96.60 V101.43 H53.13 V96.60 H48.30 Z M48.30,106.26 V111.09 H53.13 V106.26 H48.30 Z M48.30,115.92 V120.75 H53.13 V115.92 H48.30 Z M48.30,125.58 V130.42 H53.13 V125.58 H48.30 Z M48.30,135.25 V140.08 H53.13 V135.25 H48.30 Z M48.30,144.91 V149.74 H53.13 V144.91 H48.30 Z M48.30,154.57 V159.40 H53.13 V154.57 H48.30 Z M48.30,164.23 V169.06 H53.13 V164.23 H48.30 Z M48.30,173.89 V178.72 H53.13 V173.89 H48.30 Z M48.30,183.55 V188.38 H53.13 V183.55 H48.30 Z M48.30,193.21 V198.04 H53.13 V193.21 H48.30 Z M48.30,202.87 V207.70 H53.13 V202.87 H48.30 Z M48.30,207.70 V212.53 H53.13 V207.70 H48.30 Z M48.30,212.53 V217.36 H53.13 V212.53 H48.30 Z M48.30,217.36 V222.19 H53.13 V217.36 H48.30 Z M48.30,222.19 V227.02 H53.13 V222.19 H48.30 Z M48.30,227.02 V231.85 H53.13 V227.02 H48.30 Z M48.30,231.85 V236.68 H53.13 V231.85 H48.30 Z M53.13,67.62 V72.45 H57.96 V67.62 H53.13 Z M53.13,82.11 V86.94 H57.96 V82.11 H53.13 Z M53.13,96.60 V101.43 H57.96 V96.60 H53.13 Z M53.13,111.09 V115.92 H57.96 V111.09 H53.13 Z M53.13,115.92 V120.75 H57.96 V115.92 H53.13 Z M53.13,135.25 V140.08 H57.96 V135.25 H53.13 Z M53.13,140.08 V144.91 H57.96 V140.08 H53.13 Z M53.13,149.74 V154.57 H57.96 V149.74 H53.13 Z M53.13,159.40 V164.23 H57.96 V159.40 H53.13 Z M53.13,169.06 V173.89 H57.96 V169.06 H53.13 Z M53.13,173.89 V178.72 H57.96 V173.89 H53.13 Z M53.13,183.55 V188.38 H57.96 V183.55 H53.13 Z M53.13,188.38 V193.21 H57.96 V188.38 H53.13 Z M53.13,193.21 V198.04 H57.96 V193.21 H53.13 Z M57.96,28.98 V33.81 H62.79 V28.98 H57.96 Z M57.96,33.81 V38.64 H62.79 V33.81 H57.96 Z M57.96,38.64 V43.47 H62.79 V38.64 H57.96 Z M57.96,43.47 V48.30 H62.79 V43.47 H57.96 Z M57.96,48.30 V53.13 H62.79 V48.30 H57.96 Z M57.96,53.13 V57.96 H62.79 V53.13 H57.96 Z M57.96,67.62 V72.45 H62.79 V67.62 H57.96 Z M57.96,72.45 V77.28 H62.79 V72.45 H57.96 Z M57.96,86.94 V91.77 H62.79 V86.94 H57.96 Z M57.96,96.60 V101.43 H62.79 V96.60 H57.96 Z M57.96,101.43 V106.26 H62.79 V101.43 H57.96 Z M57.96,111.09 V115.92 H62.79 V111.09 H57.96 Z M57.96,115.92 V120.75 H62.79 V115.92 H57.96 Z M57.96,120.75 V125.58 H62.79 V120.75 H57.96 Z M57.96,125.58 V130.42 H62.79 V125.58 H57.96 Z M57.96,130.42 V135.25 H62.79 V130.42 H57.96 Z M57.96,135.25 V140.08 H62.79 V135.25 H57.96 Z M57.96,140.08 V144.91 H62.79 V140.08 H57.96 Z M57.96,149.74 V154.57 H62.79 V149.74 H57.96 Z M57.96,164.23 V169.06 H62.79 V164.23 H57.96 Z M57.96,183.55 V188.38 H62.79 V183.55 H57.96 Z M57.96,193.21 V198.04 H62.79 V193.21 H57.96 Z M57.96,198.04 V202.87 H62.79 V198.04 H57.96 Z M57.96,207.70 V212.53 H62.79 V207.70 H57.96 Z M57.96,212.53 V217.36 H62.79 V212.53 H57.96 Z M57.96,217.36 V222.19 H62.79 V217.36 H57.96 Z M57.96,222.19 V227.02 H62.79 V222.19 H57.96 Z M57.96,231.85 V236.68 H62.79 V231.85 H57.96 Z M62.79,24.15 V28.98 H67.62 V24.15 H62.79 Z M62.79,33.81 V38.64 H67.62 V33.81 H62.79 Z M62.79,38.64 V43.47 H67.62 V38.64 H62.79 Z M62.79,62.79 V67.62 H67.62 V62.79 H62.79 Z M62.79,77.28 V82.11 H67.62 V77.28 H62.79 Z M62.79,86.94 V91.77 H67.62 V86.94 H62.79 Z M62.79,91.77 V96.60 H67.62 V91.77 H62.79 Z M62.79,101.43 V106.26 H67.62 V101.43 H62.79 Z M62.79,111.09 V115.92 H67.62 V111.09 H62.79 Z M62.79,130.42 V135.25 H67.62 V130.42 H62.79 Z M62.79,135.25 V140.08 H67.62 V135.25 H62.79 Z M62.79,144.91 V149.74 H67.62 V144.91 H62.79 Z M62.79,159.40 V164.23 H67.62 V159.40 H62.79 Z M62.79,164.23 V169.06 H67.62 V164.23 H62.79 Z M62.79,173.89 V178.72 H67.62 V173.89 H62.79 Z M62.79,183.55 V188.38 H67.62 V183.55 H62.79 Z M62.79,188.38 V193.21 H67.62 V188.38 H62.79 Z M62.79,198.04 V202.87 H67.62 V198.04 H62.79 Z M62.79,202.87 V207.70 H67.62 V202.87 H62.79 Z M62.79,207.70 V212.53 H67.62 V207.70 H62.79 Z M62.79,212.53 V217.36 H67.62 V212.53 H62.79 Z M62.79,227.02 V231.85 H67.62 V227.02 H62.79 Z M62.79,231.85 V236.68 H67.62 V231.85 H62.79 Z M67.62,19.32 V24.15 H72.45 V19.32 H67.62 Z M67.62,28.98 V33.81 H72.45 V28.98 H67.62 Z M67.62,33.81 V38.64 H72.45 V33.81 H67.62 Z M67.62,43.47 V48.30 H72.45 V43.47 H67.62 Z M67.62,48.30 V53.13 H72.45 V48.30 H67.62 Z M67.62,67.62 V72.45 H72.45 V67.62 H67.62 Z M67.62,72.45 V77.28 H72.45 V72.45 H67.62 Z M67.62,86.94 V91.77 H72.45 V86.94 H67.62 Z M67.62,91.77 V96.60 H72.45 V91.77 H67.62 Z M67.62,96.60 V101.43 H72.45 V96.60 H67.62 Z M67.62,111.09 V115.92 H72.45 V111.09 H67.62 Z M67.62,125.58 V130.42 H72.45 V125.58 H67.62 Z M67.62,135.25 V140.08 H72.45 V135.25 H67.62 Z M67.62,140.08 V144.91 H72.45 V140.08 H67.62 Z M67.62,144.91 V149.74 H72.45 V144.91 H67.62 Z M67.62,164.23 V169.06 H72.45 V164.23 H67.62 Z M67.62,178.72 V183.55 H72.45 V178.72 H67.62 Z M67.62,212.53 V217.36 H72.45 V212.53 H67.62 Z M67.62,217.36 V222.19 H72.45 V217.36 H67.62 Z M67.62,227.02 V231.85 H72.45 V227.02 H67.62 Z M72.45,19.32 V24.15 H77.28 V19.32 H72.45 Z M72.45,24.15 V28.98 H77.28 V24.15 H72.45 Z M72.45,33.81 V38.64 H77.28 V33.81 H72.45 Z M72.45,38.64 V43.47 H77.28 V38.64 H72.45 Z M72.45,57.96 V62.79 H77.28 V57.96 H72.45 Z M72.45,67.62 V72.45 H77.28 V67.62 H72.45 Z M72.45,77.28 V82.11 H77.28 V77.28 H72.45 Z M72.45,82.11 V86.94 H77.28 V82.11 H72.45 Z M72.45,86.94 V91.77 H77.28 V86.94 H72.45 Z M72.45,96.60 V101.43 H77.28 V96.60 H72.45 Z M72.45,111.09 V115.92 H77.28 V111.09 H72.45 Z M72.45,140.08 V144.91 H77.28 V140.08 H72.45 Z M72.45,144.91 V149.74 H77.28 V144.91 H72.45 Z M72.45,154.57 V159.40 H77.28 V154.57 H72.45 Z M72.45,164.23 V169.06 H77.28 V164.23 H72.45 Z M72.45,169.06 V173.89 H77.28 V169.06 H72.45 Z M72.45,188.38 V193.21 H77.28 V188.38 H72.45 Z M72.45,193.21 V198.04 H77.28 V193.21 H72.45 Z M72.45,231.85 V236.68 H77.28 V231.85 H72.45 Z M77.28,19.32 V24.15 H82.11 V19.32 H77.28 Z M77.28,48.30 V53.13 H82.11 V48.30 H77.28 Z M77.28,53.13 V57.96 H82.11 V53.13 H77.28 Z M77.28,62.79 V67.62 H82.11 V62.79 H77.28 Z M77.28,72.45 V77.28 H82.11 V72.45 H77.28 Z M77.28,82.11 V86.94 H82.11 V82.11 H77.28 Z M77.28,86.94 V91.77 H82.11 V86.94 H77.28 Z M77.28,96.60 V101.43 H82.11 V96.60 H77.28 Z M77.28,101.43 V106.26 H82.11 V101.43 H77.28 Z M77.28,106.26 V111.09 H82.11 V106.26 H77.28 Z M77.28,111.09 V115.92 H82.11 V111.09 H77.28 Z M77.28,115.92 V120.75 H82.11 V115.92 H77.28 Z M77.28,120.75 V125.58 H82.11 V120.75 H77.28 Z M77.28,135.25 V140.08 H82.11 V135.25 H77.28 Z M77.28,140.08 V144.91 H82.11 V140.08 H77.28 Z M77.28,144.91 V149.74 H82.11 V144.91 H77.28 Z M77.28,154.57 V159.40 H82.11 V154.57 H77.28 Z M77.28,159.40 V164.23 H82.11 V159.40 H77.28 Z M77.28,164.23 V169.06 H82.11 V164.23 H77.28 Z M77.28,188.38 V193.21 H82.11 V188.38 H77.28 Z M77.28,193.21 V198.04 H82.11 V193.21 H77.28 Z M77.28,198.04 V202.87 H82.11 V198.04 H77.28 Z M77.28,207.70 V212.53 H82.11 V207.70 H77.28 Z M77.28,212.53 V217.36 H82.11 V212.53 H77.28 Z M77.28,222.19 V227.02 H82.11 V222.19 H77.28 Z M77.28,231.85 V236.68 H82.11 V231.85 H77.28 Z M82.11,19.32 V24.15 H86.94 V19.32 H82.11 Z M82.11,38.64 V43.47 H86.94 V38.64 H82.11 Z M82.11,43.47 V48.30 H86.94 V43.47 H82.11 Z M82.11,57.96 V62.79 H86.94 V57.96 H82.11 Z M82.11,67.62 V72.45 H86.94 V67.62 H82.11 Z M82.11,82.11 V86.94 H86.94 V82.11 H82.11 Z M82.11,96.60 V101.43 H86.94 V96.60 H82.11 Z M82.11,101.43 V106.26 H86.94 V101.43 H82.11 Z M82.11,125.58 V130.42 H86.94 V125.58 H82.11 Z M82.11,144.91 V149.74 H86.94 V144.91 H82.11 Z M82.11,149.74 V154.57 H86.94 V149.74 H82.11 Z M82.11,159.40 V164.23 H86.94 V159.40 H82.11 Z M82.11,169.06 V173.89 H86.94 V169.06 H82.11 Z M82.11,173.89 V178.72 H86.94 V173.89 H82.11 Z M82.11,188.38 V193.21 H86.94 V188.38 H82.11 Z M82.11,217.36 V222.19 H86.94 V217.36 H82.11 Z M82.11,222.19 V227.02 H86.94 V222.19 H82.11 Z M82.11,231.85 V236.68 H86.94 V231.85 H82.11 Z M86.94,24.15 V28.98 H91.77 V24.15 H86.94 Z M86.94,28.98 V33.81 H91.77 V28.98 H86.94 Z M86.94,33.81 V38.64 H91.77 V33.81 H86.94 Z M86.94,43.47 V48.30 H91.77 V43.47 H86.94 Z M86.94,48.30 V53.13 H91.77 V48.30 H86.94 Z M86.94,53.13 V57.96 H91.77 V53.13 H86.94 Z M86.94,57.96 V62.79 H91.77 V57.96 H86.94 Z M86.94,62.79 V67.62 H91.77 V62.79 H86.94 Z M86.94,72.45 V77.28 H91.77 V72.45 H86.94 Z M86.94,101.43 V106.26 H91.77 V101.43 H86.94 Z M86.94,111.09 V115.92 H91.77 V111.09 H86.94 Z M86.94,135.25 V140.08 H91.77 V135.25 H86.94 Z M86.94,149.74 V154.57 H91.77 V149.74 H86.94 Z M86.94,154.57 V159.40 H91.77 V154.57 H86.94 Z M86.94,159.40 V164.23 H91.77 V159.40 H86.94 Z M86.94,173.89 V178.72 H91.77 V173.89 H86.94 Z M86.94,188.38 V193.21 H91.77 V188.38 H86.94 Z M86.94,198.04 V202.87 H91.77 V198.04 H86.94 Z M86.94,202.87 V207.70 H91.77 V202.87 H86.94 Z M86.94,222.19 V227.02 H91.77 V222.19 H86.94 Z M91.77,19.32 V24.15 H96.60 V19.32 H91.77 Z M91.77,24.15 V28.98 H96.60 V24.15 H91.77 Z M91.77,33.81 V38.64 H96.60 V33.81 H91.77 Z M91.77,38.64 V43.47 H96.60 V38.64 H91.77 Z M91.77,43.47 V48.30 H96.60 V43.47 H91.77 Z M91.77,72.45 V77.28 H96.60 V72.45 H91.77 Z M91.77,77.28 V82.11 H96.60 V77.28 H91.77 Z M91.77,86.94 V91.77 H96.60 V86.94 H91.77 Z M91.77,91.77 V96.60 H96.60 V91.77 H91.77 Z M91.77,106.26 V111.09 H96.60 V106.26 H91.77 Z M91.77,115.92 V120.75 H96.60 V115.92 H91.77 Z M91.77,120.75 V125.58 H96.60 V120.75 H91.77 Z M91.77,130.42 V135.25 H96.60 V130.42 H91.77 Z M91.77,140.08 V144.91 H96.60 V140.08 H91.77 Z M91.77,164.23 V169.06 H96.60 V164.23 H91.77 Z M91.77,173.89 V178.72 H96.60 V173.89 H91.77 Z M91.77,178.72 V183.55 H96.60 V178.72 H91.77 Z M91.77,188.38 V193.21 H96.60 V188.38 H91.77 Z M91.77,198.04 V202.87 H96.60 V198.04 H91.77 Z M91.77,212.53 V217.36 H96.60 V212.53 H91.77 Z M96.60,19.32 V24.15 H101.43 V19.32 H96.60 Z M96.60,24.15 V28.98 H101.43 V24.15 H96.60 Z M96.60,28.98 V33.81 H101.43 V28.98 H96.60 Z M96.60,38.64 V43.47 H101.43 V38.64 H96.60 Z M96.60,43.47 V48.30 H101.43 V43.47 H96.60 Z M96.60,48.30 V53.13 H101.43 V48.30 H96.60 Z M96.60,57.96 V62.79 H101.43 V57.96 H96.60 Z M96.60,82.11 V86.94 H101.43 V82.11 H96.60 Z M96.60,86.94 V91.77 H101.43 V86.94 H96.60 Z M96.60,91.77 V96.60 H101.43 V91.77 H96.60 Z M96.60,101.43 V106.26 H101.43 V101.43 H96.60 Z M96.60,106.26 V111.09 H101.43 V106.26 H96.60 Z M96.60,115.92 V120.75 H101.43 V115.92 H96.60 Z M96.60,130.42 V135.25 H101.43 V130.42 H96.60 Z M96.60,140.08 V144.91 H101.43 V140.08 H96.60 Z M96.60,149.74 V154.57 H101.43 V149.74 H96.60 Z M96.60,164.23 V169.06 H101.43 V164.23 H96.60 Z M96.60,178.72 V183.55 H101.43 V178.72 H96.60 Z M96.60,188.38 V193.21 H101.43 V188.38 H96.60 Z M96.60,202.87 V207.70 H101.43 V202.87 H96.60 Z M96.60,217.36 V222.19 H101.43 V217.36 H96.60 Z M96.60,222.19 V227.02 H101.43 V222.19 H96.60 Z M96.60,231.85 V236.68 H101.43 V231.85 H96.60 Z M101.43,19.32 V24.15 H106.26 V19.32 H101.43 Z M101.43,28.98 V33.81 H106.26 V28.98 H101.43 Z M101.43,33.81 V38.64 H106.26 V33.81 H101.43 Z M101.43,38.64 V43.47 H106.26 V38.64 H101.43 Z M101.43,53.13 V57.96 H106.26 V53.13 H101.43 Z M101.43,62.79 V67.62 H106.26 V62.79 H101.43 Z M101.43,67.62 V72.45 H106.26 V67.62 H101.43 Z M101.43,77.28 V82.11 H106.26 V77.28 H101.43 Z M101.43,82.11 V86.94 H106.26 V82.11 H101.43 Z M101.43,86.94 V91.77 H106.26 V86.94 H101.43 Z M101.43,96.60 V101.43 H106.26 V96.60 H101.43 Z M101.43,106.26 V111.09 H106.26 V106.26 H101.43 Z M101.43,115.92 V120.75 H106.26 V115.92 H101.43 Z M101.43,125.58 V130.42 H106.26 V125.58 H101.43 Z M101.43,135.25 V140.08 H106.26 V135.25 H101.43 Z M101.43,154.57 V159.40 H106.26 V154.57 H101.43 Z M101.43,169.06 V173.89 H106.26 V169.06 H101.43 Z M101.43,188.38 V193.21 H106.26 V188.38 H101.43 Z M101.43,202.87 V207.70 H106.26 V202.87 H101.43 Z M101.43,212.53 V217.36 H106.26 V212.53 H101.43 Z M101.43,222.19 V227.02 H106.26 V222.19 H101.43 Z M101.43,227.02 V231.85 H106.26 V227.02 H101.43 Z M106.26,28.98 V33.81 H111.09 V28.98 H106.26 Z M106.26,33.81 V38.64 H111.09 V33.81 H106.26 Z M106.26,43.47 V48.30 H111.09 V43.47 H106.26 Z M106.26,48.30 V53.13 H111.09 V48.30 H106.26 Z M106.26,53.13 V57.96 H111.09 V53.13 H106.26 Z M106.26,57.96 V62.79 H111.09 V57.96 H106.26 Z M106.26,62.79 V67.62 H111.09 V62.79 H106.26 Z M106.26,67.62 V72.45 H111.09 V67.62 H106.26 Z M106.26,72.45 V77.28 H111.09 V72.45 H106.26 Z M106.26,77.28 V82.11 H111.09 V77.28 H106.26 Z M106.26,86.94 V91.77 H111.09 V86.94 H106.26 Z M106.26,91.77 V96.60 H111.09 V91.77 H106.26 Z M106.26,96.60 V101.43 H111.09 V96.60 H106.26 Z M106.26,106.26 V111.09 H111.09 V106.26 H106.26 Z M106.26,115.92 V120.75 H111.09 V115.92 H106.26 Z M106.26,140.08 V144.91 H111.09 V140.08 H106.26 Z M106.26,154.57 V159.40 H111.09 V154.57 H106.26 Z M106.26,159.40 V164.23 H111.09 V159.40 H106.26 Z M106.26,173.89 V178.72 H111.09 V173.89 H106.26 Z M106.26,178.72 V183.55 H111.09 V178.72 H106.26 Z M106.26,188.38 V193.21 H111.09 V188.38 H106.26 Z M106.26,207.70 V212.53 H111.09 V207.70 H106.26 Z M106.26,212.53 V217.36 H111.09 V212.53 H106.26 Z M106.26,217.36 V222.19 H111.09 V217.36 H106.26 Z M106.26,222.19 V227.02 H111.09 V222.19 H106.26 Z M106.26,227.02 V231.85 H111.09 V227.02 H106.26 Z M111.09,19.32 V24.15 H115.92 V19.32 H111.09 Z M111.09,24.15 V28.98 H115.92 V24.15 H111.09 Z M111.09,28.98 V33.81 H115.92 V28.98 H111.09 Z M111.09,33.81 V38.64 H115.92 V33.81 H111.09 Z M111.09,38.64 V43.47 H115.92 V38.64 H111.09 Z M111.09,53.13 V57.96 H115.92 V53.13 H111.09 Z M111.09,57.96 V62.79 H115.92 V57.96 H111.09 Z M111.09,72.45 V77.28 H115.92 V72.45 H111.09 Z M111.09,82.11 V86.94 H115.92 V82.11 H111.09 Z M111.09,91.77 V96.60 H115.92 V91.77 H111.09 Z M111.09,101.43 V106.26 H115.92 V101.43 H111.09 Z M111.09,120.75 V125.58 H115.92 V120.75 H111.09 Z M111.09,125.58 V130.42 H115.92 V125.58 H111.09 Z M111.09,130.42 V135.25 H115.92 V130.42 H111.09 Z M111.09,135.25 V140.08 H115.92 V135.25 H111.09 Z M111.09,140.08 V144.91 H115.92 V140.08 H111.09 Z M111.09,149.74 V154.57 H115.92 V149.74 H111.09 Z M111.09,154.57 V159.40 H115.92 V154.57 H111.09 Z M111.09,169.06 V173.89 H115.92 V169.06 H111.09 Z M111.09,178.72 V183.55 H115.92 V178.72 H111.09 Z M111.09,188.38 V193.21 H115.92 V188.38 H111.09 Z M111.09,202.87 V207.70 H115.92 V202.87 H111.09 Z M111.09,207.70 V212.53 H115.92 V207.70 H111.09 Z M111.09,217.36 V222.19 H115.92 V217.36 H111.09 Z M111.09,222.19 V227.02 H115.92 V222.19 H111.09 Z M111.09,231.85 V236.68 H115.92 V231.85 H111.09 Z M115.92,28.98 V33.81 H120.75 V28.98 H115.92 Z M115.92,33.81 V38.64 H120.75 V33.81 H115.92 Z M115.92,38.64 V43.47 H120.75 V38.64 H115.92 Z M115.92,43.47 V48.30 H120.75 V43.47 H115.92 Z M115.92,48.30 V53.13 H120.75 V48.30 H115.92 Z M115.92,53.13 V57.96 H120.75 V53.13 H115.92 Z M115.92,57.96 V62.79 H120.75 V57.96 H115.92 Z M115.92,72.45 V77.28 H120.75 V72.45 H115.92 Z M115.92,77.28 V82.11 H120.75 V77.28 H115.92 Z M115.92,82.11 V86.94 H120.75 V82.11 H115.92 Z M115.92,86.94 V91.77 H120.75 V86.94 H115.92 Z M115.92,106.26 V111.09 H120.75 V106.26 H115.92 Z M115.92,115.92 V120.75 H120.75 V115.92 H115.92 Z M115.92,120.75 V125.58 H120.75 V120.75 H115.92 Z M115.92,125.58 V130.42 H120.75 V125.58 H115.92 Z M115.92,130.42 V135.25 H120.75 V130.42 H115.92 Z M115.92,135.25 V140.08 H120.75 V135.25 H115.92 Z M115.92,140.08 V144.91 H120.75 V140.08 H115.92 Z M115.92,144.91 V149.74 H120.75 V144.91 H115.92 Z M115.92,149.74 V154.57 H120.75 V149.74 H115.92 Z M115.92,169.06 V173.89 H120.75 V169.06 H115.92 Z M115.92,173.89 V178.72 H120.75 V173.89 H115.92 Z M115.92,178.72 V183.55 H120.75 V178.72 H115.92 Z M115.92,183.55 V188.38 H120.75 V183.55 H115.92 Z M115.92,193.21 V198.04 H120.75 V193.21 H115.92 Z M115.92,198.04 V202.87 H120.75 V198.04 H115.92 Z M115.92,202.87 V207.70 H120.75 V202.87 H115.92 Z M115.92,207.70 V212.53 H120.75 V207.70 H115.92 Z M115.92,212.53 V217.36 H120.75 V212.53 H115.92 Z M115.92,217.36 V222.19 H120.75 V217.36 H115.92 Z M115.92,222.19 V227.02 H120.75 V222.19 H115.92 Z M115.92,227.02 V231.85 H120.75 V227.02 H115.92 Z M120.75,24.15 V28.98 H125.58 V24.15 H120.75 Z M120.75,33.81 V38.64 H125.58 V33.81 H120.75 Z M120.75,38.64 V43.47 H125.58 V38.64 H120.75 Z M120.75,57.96 V62.79 H125.58 V57.96 H120.75 Z M120.75,77.28 V82.11 H125.58 V77.28 H120.75 Z M120.75,86.94 V91.77 H125.58 V86.94 H120.75 Z M120.75,96.60 V101.43 H125.58 V96.60 H120.75 Z M120.75,115.92 V120.75 H125.58 V115.92 H120.75 Z M120.75,135.25 V140.08 H125.58 V135.25 H120.75 Z M120.75,144.91 V149.74 H125.58 V144.91 H120.75 Z M120.75,159.40 V164.23 H125.58 V159.40 H120.75 Z M120.75,164.23 V169.06 H125.58 V164.23 H120.75 Z M120.75,178.72 V183.55 H125.58 V178.72 H120.75 Z M120.75,183.55 V188.38 H125.58 V183.55 H120.75 Z M120.75,193.21 V198.04 H125.58 V193.21 H120.75 Z M120.75,212.53 V217.36 H125.58 V212.53 H120.75 Z M120.75,227.02 V231.85 H125.58 V227.02 H120.75 Z M120.75,231.85 V236.68 H125.58 V231.85 H120.75 Z M125.58,19.32 V24.15 H130.42 V19.32 H125.58 Z M125.58,33.81 V38.64 H130.42 V33.81 H125.58 Z M125.58,38.64 V43.47 H130.42 V38.64 H125.58 Z M125.58,48.30 V53.13 H130.42 V48.30 H125.58 Z M125.58,57.96 V62.79 H130.42 V57.96 H125.58 Z M125.58,62.79 V67.62 H130.42 V62.79 H125.58 Z M125.58,77.28 V82.11 H130.42 V77.28 H125.58 Z M125.58,96.60 V101.43 H130.42 V96.60 H125.58 Z M125.58,101.43 V106.26 H130.42 V101.43 H125.58 Z M125.58,106.26 V111.09 H130.42 V106.26 H125.58 Z M125.58,115.92 V120.75 H130.42 V115.92 H125.58 Z M125.58,125.58 V130.42 H130.42 V125.58 H125.58 Z M125.58,135.25 V140.08 H130.42 V135.25 H125.58 Z M125.58,140.08 V144.91 H130.42 V140.08 H125.58 Z M125.58,144.91 V149.74 H130.42 V144.91 H125.58 Z M125.58,159.40 V164.23 H130.42 V159.40 H125.58 Z M125.58,178.72 V183.55 H130.42 V178.72 H125.58 Z M125.58,183.55 V188.38 H130.42 V183.55 H125.58 Z M125.58,188.38 V193.21 H130.42 V188.38 H125.58 Z M125.58,193.21 V198.04 H130.42 V193.21 H125.58 Z M125.58,202.87 V207.70 H130.42 V202.87 H125.58 Z M125.58,212.53 V217.36 H130.42 V212.53 H125.58 Z M130.42,28.98 V33.81 H135.25 V28.98 H130.42 Z M130.42,33.81 V38.64 H135.25 V33.81 H130.42 Z M130.42,38.64 V43.47 H135.25 V38.64 H130.42 Z M130.42,57.96 V62.79 H135.25 V57.96 H130.42 Z M130.42,67.62 V72.45 H135.25 V67.62 H130.42 Z M130.42,77.28 V82.11 H135.25 V77.28 H130.42 Z M130.42,91.77 V96.60 H135.25 V91.77 H130.42 Z M130.42,96.60 V101.43 H135.25 V96.60 H130.42 Z M130.42,106.26 V111.09 H135.25 V106.26 H130.42 Z M130.42,115.92 V120.75 H135.25 V115.92 H130.42 Z M130.42,135.25 V140.08 H135.25 V135.25 H130.42 Z M130.42,140.08 V144.91 H135.25 V140.08 H130.42 Z M130.42,149.74 V154.57 H135.25 V149.74 H130.42 Z M130.42,154.57 V159.40 H135.25 V154.57 H130.42 Z M130.42,159.40 V164.23 H135.25 V159.40 H130.42 Z M130.42,169.06 V173.89 H135.25 V169.06 H130.42 Z M130.42,173.89 V178.72 H135.25 V173.89 H130.42 Z M130.42,178.72 V183.55 H135.25 V178.72 H130.42 Z M130.42,188.38 V193.21 H135.25 V188.38 H130.42 Z M130.42,193.21 V198.04 H135.25 V193.21 H130.42 Z M130.42,212.53 V217.36 H135.25 V212.53 H130.42 Z M130.42,217.36 V222.19 H135.25 V217.36 H130.42 Z M130.42,231.85 V236.68 H135.25 V231.85 H130.42 Z M135.25,24.15 V28.98 H140.08 V24.15 H135.25 Z M135.25,28.98 V33.81 H140.08 V28.98 H135.25 Z M135.25,38.64 V43.47 H140.08 V38.64 H135.25 Z M135.25,43.47 V48.30 H140.08 V43.47 H135.25 Z M135.25,48.30 V53.13 H140.08 V48.30 H135.25 Z M135.25,53.13 V57.96 H140.08 V53.13 H135.25 Z M135.25,57.96 V62.79 H140.08 V57.96 H135.25 Z M135.25,67.62 V72.45 H140.08 V67.62 H135.25 Z M135.25,72.45 V77.28 H140.08 V72.45 H135.25 Z M135.25,77.28 V82.11 H140.08 V77.28 H135.25 Z M135.25,86.94 V91.77 H140.08 V86.94 H135.25 Z M135.25,106.26 V111.09 H140.08 V106.26 H135.25 Z M135.25,111.09 V115.92 H140.08 V111.09 H135.25 Z M135.25,115.92 V120.75 H140.08 V115.92 H135.25 Z M135.25,120.75 V125.58 H140.08 V120.75 H135.25 Z M135.25,125.58 V130.42 H140.08 V125.58 H135.25 Z M135.25,130.42 V135.25 H140.08 V130.42 H135.25 Z M135.25,135.25 V140.08 H140.08 V135.25 H135.25 Z M135.25,149.74 V154.57 H140.08 V149.74 H135.25 Z M135.25,164.23 V169.06 H140.08 V164.23 H135.25 Z M135.25,169.06 V173.89 H140.08 V169.06 H135.25 Z M135.25,173.89 V178.72 H140.08 V173.89 H135.25 Z M135.25,188.38 V193.21 H140.08 V188.38 H135.25 Z M135.25,193.21 V198.04 H140.08 V193.21 H135.25 Z M135.25,198.04 V202.87 H140.08 V198.04 H135.25 Z M135.25,202.87 V207.70 H140.08 V202.87 H135.25 Z M135.25,207.70 V212.53 H140.08 V207.70 H135.25 Z M135.25,212.53 V217.36 H140.08 V212.53 H135.25 Z M135.25,222.19 V227.02 H140.08 V222.19 H135.25 Z M135.25,231.85 V236.68 H140.08 V231.85 H135.25 Z M140.08,19.32 V24.15 H144.91 V19.32 H140.08 Z M140.08,28.98 V33.81 H144.91 V28.98 H140.08 Z M140.08,43.47 V48.30 H144.91 V43.47 H140.08 Z M140.08,53.13 V57.96 H144.91 V53.13 H140.08 Z M140.08,72.45 V77.28 H144.91 V72.45 H140.08 Z M140.08,77.28 V82.11 H144.91 V77.28 H140.08 Z M140.08,82.11 V86.94 H144.91 V82.11 H140.08 Z M140.08,91.77 V96.60 H144.91 V91.77 H140.08 Z M140.08,101.43 V106.26 H144.91 V101.43 H140.08 Z M140.08,106.26 V111.09 H144.91 V106.26 H140.08 Z M140.08,125.58 V130.42 H144.91 V125.58 H140.08 Z M140.08,130.42 V135.25 H144.91 V130.42 H140.08 Z M140.08,140.08 V144.91 H144.91 V140.08 H140.08 Z M140.08,159.40 V164.23 H144.91 V159.40 H140.08 Z M140.08,178.72 V183.55 H144.91 V178.72 H140.08 Z M140.08,183.55 V188.38 H144.91 V183.55 H140.08 Z M140.08,212.53 V217.36 H144.91 V212.53 H140.08 Z M140.08,217.36 V222.19 H144.91 V217.36 H140.08 Z M140.08,231.85 V236.68 H144.91 V231.85 H140.08 Z M144.91,24.15 V28.98 H149.74 V24.15 H144.91 Z M144.91,43.47 V48.30 H149.74 V43.47 H144.91 Z M144.91,48.30 V53.13 H149.74 V48.30 H144.91 Z M144.91,53.13 V57.96 H149.74 V53.13 H144.91 Z M144.91,57.96 V62.79 H149.74 V57.96 H144.91 Z M144.91,67.62 V72.45 H149.74 V67.62 H144.91 Z M144.91,72.45 V77.28 H149.74 V72.45 H144.91 Z M144.91,86.94 V91.77 H149.74 V86.94 H144.91 Z M144.91,96.60 V101.43 H149.74 V96.60 H144.91 Z M144.91,106.26 V111.09 H149.74 V106.26 H144.91 Z M144.91,111.09 V115.92 H149.74 V111.09 H144.91 Z M144.91,125.58 V130.42 H149.74 V125.58 H144.91 Z M144.91,130.42 V135.25 H149.74 V130.42 H144.91 Z M144.91,135.25 V140.08 H149.74 V135.25 H144.91 Z M144.91,144.91 V149.74 H149.74 V144.91 H144.91 Z M144.91,154.57 V159.40 H149.74 V154.57 H144.91 Z M144.91,164.23 V169.06 H149.74 V164.23 H144.91 Z M144.91,183.55 V188.38 H149.74 V183.55 H144.91 Z M144.91,188.38 V193.21 H149.74 V188.38 H144.91 Z M144.91,202.87 V207.70 H149.74 V202.87 H144.91 Z M144.91,212.53 V217.36 H149.74 V212.53 H144.91 Z M144.91,222.19 V227.02 H149.74 V222.19 H144.91 Z M144.91,227.02 V231.85 H149.74 V227.02 H144.91 Z M149.74,28.98 V33.81 H154.57 V28.98 H149.74 Z M149.74,33.81 V38.64 H154.57 V33.81 H149.74 Z M149.74,38.64 V43.47 H154.57 V38.64 H149.74 Z M149.74,53.13 V57.96 H154.57 V53.13 H149.74 Z M149.74,67.62 V72.45 H154.57 V67.62 H149.74 Z M149.74,77.28 V82.11 H154.57 V77.28 H149.74 Z M149.74,91.77 V96.60 H154.57 V91.77 H149.74 Z M149.74,96.60 V101.43 H154.57 V96.60 H149.74 Z M149.74,101.43 V106.26 H154.57 V101.43 H149.74 Z M149.74,106.26 V111.09 H154.57 V106.26 H149.74 Z M149.74,115.92 V120.75 H154.57 V115.92 H149.74 Z M149.74,125.58 V130.42 H154.57 V125.58 H149.74 Z M149.74,130.42 V135.25 H154.57 V130.42 H149.74 Z M149.74,140.08 V144.91 H154.57 V140.08 H149.74 Z M149.74,154.57 V159.40 H154.57 V154.57 H149.74 Z M149.74,164.23 V169.06 H154.57 V164.23 H149.74 Z M149.74,173.89 V178.72 H154.57 V173.89 H149.74 Z M149.74,183.55 V188.38 H154.57 V183.55 H149.74 Z M149.74,193.21 V198.04 H154.57 V193.21 H149.74 Z M149.74,207.70 V212.53 H154.57 V207.70 H149.74 Z M149.74,231.85 V236.68 H154.57 V231.85 H149.74 Z M154.57,24.15 V28.98 H159.40 V24.15 H154.57 Z M154.57,28.98 V33.81 H159.40 V28.98 H154.57 Z M154.57,48.30 V53.13 H159.40 V48.30 H154.57 Z M154.57,53.13 V57.96 H159.40 V53.13 H154.57 Z M154.57,67.62 V72.45 H159.40 V67.62 H154.57 Z M154.57,72.45 V77.28 H159.40 V72.45 H154.57 Z M154.57,91.77 V96.60 H159.40 V91.77 H154.57 Z M154.57,111.09 V115.92 H159.40 V111.09 H154.57 Z M154.57,125.58 V130.42 H159.40 V125.58 H154.57 Z M154.57,130.42 V135.25 H159.40 V130.42 H154.57 Z M154.57,149.74 V154.57 H159.40 V149.74 H154.57 Z M154.57,169.06 V173.89 H159.40 V169.06 H154.57 Z M154.57,188.38 V193.21 H159.40 V188.38 H154.57 Z M154.57,198.04 V202.87 H159.40 V198.04 H154.57 Z M154.57,202.87 V207.70 H159.40 V202.87 H154.57 Z M154.57,207.70 V212.53 H159.40 V207.70 H154.57 Z M154.57,227.02 V231.85 H159.40 V227.02 H154.57 Z M159.40,19.32 V24.15 H164.23 V19.32 H159.40 Z M159.40,28.98 V33.81 H164.23 V28.98 H159.40 Z M159.40,33.81 V38.64 H164.23 V33.81 H159.40 Z M159.40,38.64 V43.47 H164.23 V38.64 H159.40 Z M159.40,53.13 V57.96 H164.23 V53.13 H159.40 Z M159.40,57.96 V62.79 H164.23 V57.96 H159.40 Z M159.40,62.79 V67.62 H164.23 V62.79 H159.40 Z M159.40,67.62 V72.45 H164.23 V67.62 H159.40 Z M159.40,77.28 V82.11 H164.23 V77.28 H159.40 Z M159.40,86.94 V91.77 H164.23 V86.94 H159.40 Z M159.40,91.77 V96.60 H164.23 V91.77 H159.40 Z M159.40,101.43 V106.26 H164.23 V101.43 H159.40 Z M159.40,111.09 V115.92 H164.23 V111.09 H159.40 Z M159.40,115.92 V120.75 H164.23 V115.92 H159.40 Z M159.40,120.75 V125.58 H164.23 V120.75 H159.40 Z M159.40,164.23 V169.06 H164.23 V164.23 H159.40 Z M159.40,173.89 V178.72 H164.23 V173.89 H159.40 Z M159.40,178.72 V183.55 H164.23 V178.72 H159.40 Z M159.40,188.38 V193.21 H164.23 V188.38 H159.40 Z M159.40,193.21 V198.04 H164.23 V193.21 H159.40 Z M159.40,198.04 V202.87 H164.23 V198.04 H159.40 Z M159.40,202.87 V207.70 H164.23 V202.87 H159.40 Z M159.40,207.70 V212.53 H164.23 V207.70 H159.40 Z M159.40,212.53 V217.36 H164.23 V212.53 H159.40 Z M159.40,222.19 V227.02 H164.23 V222.19 H159.40 Z M164.23,19.32 V24.15 H169.06 V19.32 H164.23 Z M164.23,38.64 V43.47 H169.06 V38.64 H164.23 Z M164.23,48.30 V53.13 H169.06 V48.30 H164.23 Z M164.23,62.79 V67.62 H169.06 V62.79 H164.23 Z M164.23,72.45 V77.28 H169.06 V72.45 H164.23 Z M164.23,77.28 V82.11 H169.06 V77.28 H164.23 Z M164.23,82.11 V86.94 H169.06 V82.11 H164.23 Z M164.23,101.43 V106.26 H169.06 V101.43 H164.23 Z M164.23,115.92 V120.75 H169.06 V115.92 H164.23 Z M164.23,120.75 V125.58 H169.06 V120.75 H164.23 Z M164.23,130.42 V135.25 H169.06 V130.42 H164.23 Z M164.23,135.25 V140.08 H169.06 V135.25 H164.23 Z M164.23,140.08 V144.91 H169.06 V140.08 H164.23 Z M164.23,149.74 V154.57 H169.06 V149.74 H164.23 Z M164.23,154.57 V159.40 H169.06 V154.57 H164.23 Z M164.23,159.40 V164.23 H169.06 V159.40 H164.23 Z M164.23,178.72 V183.55 H169.06 V178.72 H164.23 Z M164.23,198.04 V202.87 H169.06 V198.04 H164.23 Z M164.23,202.87 V207.70 H169.06 V202.87 H164.23 Z M164.23,212.53 V217.36 H169.06 V212.53 H164.23 Z M164.23,217.36 V222.19 H169.06 V217.36 H164.23 Z M164.23,231.85 V236.68 H169.06 V231.85 H164.23 Z M169.06,19.32 V24.15 H173.89 V19.32 H169.06 Z M169.06,28.98 V33.81 H173.89 V28.98 H169.06 Z M169.06,57.96 V62.79 H173.89 V57.96 H169.06 Z M169.06,67.62 V72.45 H173.89 V67.62 H169.06 Z M169.06,77.28 V82.11 H173.89 V77.28 H169.06 Z M169.06,82.11 V86.94 H173.89 V82.11 H169.06 Z M169.06,96.60 V101.43 H173.89 V96.60 H169.06 Z M169.06,106.26 V111.09 H173.89 V106.26 H169.06 Z M169.06,111.09 V115.92 H173.89 V111.09 H169.06 Z M169.06,120.75 V125.58 H173.89 V120.75 H169.06 Z M169.06,125.58 V130.42 H173.89 V125.58 H169.06 Z M169.06,130.42 V135.25 H173.89 V130.42 H169.06 Z M169.06,135.25 V140.08 H173.89 V135.25 H169.06 Z M169.06,140.08 V144.91 H173.89 V140.08 H169.06 Z M169.06,144.91 V149.74 H173.89 V144.91 H169.06 Z M169.06,154.57 V159.40 H173.89 V154.57 H169.06 Z M169.06,159.40 V164.23 H173.89 V159.40 H169.06 Z M169.06,173.89 V178.72 H173.89 V173.89 H169.06 Z M169.06,183.55 V188.38 H173.89 V183.55 H169.06 Z M169.06,188.38 V193.21 H173.89 V188.38 H169.06 Z M169.06,202.87 V207.70 H173.89 V202.87 H169.06 Z M169.06,217.36 V222.19 H173.89 V217.36 H169.06 Z M169.06,222.19 V227.02 H173.89 V222.19 H169.06 Z M169.06,231.85 V236.68 H173.89 V231.85 H169.06 Z M173.89,24.15 V28.98 H178.72 V24.15 H173.89 Z M173.89,28.98 V33.81 H178.72 V28.98 H173.89 Z M173.89,38.64 V43.47 H178.72 V38.64 H173.89 Z M173.89,48.30 V53.13 H178.72 V48.30 H173.89 Z M173.89,53.13 V57.96 H178.72 V53.13 H173.89 Z M173.89,72.45 V77.28 H178.72 V72.45 H173.89 Z M173.89,82.11 V86.94 H178.72 V82.11 H173.89 Z M173.89,91.77 V96.60 H178.72 V91.77 H173.89 Z M173.89,106.26 V111.09 H178.72 V106.26 H173.89 Z M173.89,111.09 V115.92 H178.72 V111.09 H173.89 Z M173.89,120.75 V125.58 H178.72 V120.75 H173.89 Z M173.89,130.42 V135.25 H178.72 V130.42 H173.89 Z M173.89,144.91 V149.74 H178.72 V144.91 H173.89 Z M173.89,149.74 V154.57 H178.72 V149.74 H173.89 Z M173.89,169.06 V173.89 H178.72 V169.06 H173.89 Z M173.89,178.72 V183.55 H178.72 V178.72 H173.89 Z M173.89,183.55 V188.38 H178.72 V183.55 H173.89 Z M173.89,188.38 V193.21 H178.72 V188.38 H173.89 Z M173.89,207.70 V212.53 H178.72 V207.70 H173.89 Z M173.89,227.02 V231.85 H178.72 V227.02 H173.89 Z M178.72,24.15 V28.98 H183.55 V24.15 H178.72 Z M178.72,28.98 V33.81 H183.55 V28.98 H178.72 Z M178.72,33.81 V38.64 H183.55 V33.81 H178.72 Z M178.72,72.45 V77.28 H183.55 V72.45 H178.72 Z M178.72,86.94 V91.77 H183.55 V86.94 H178.72 Z M178.72,96.60 V101.43 H183.55 V96.60 H178.72 Z M178.72,106.26 V111.09 H183.55 V106.26 H178.72 Z M178.72,111.09 V115.92 H183.55 V111.09 H178.72 Z M178.72,115.92 V120.75 H183.55 V115.92 H178.72 Z M178.72,120.75 V125.58 H183.55 V120.75 H178.72 Z M178.72,164.23 V169.06 H183.55 V164.23 H178.72 Z M178.72,169.06 V173.89 H183.55 V169.06 H178.72 Z M178.72,173.89 V178.72 H183.55 V173.89 H178.72 Z M178.72,183.55 V188.38 H183.55 V183.55 H178.72 Z M178.72,188.38 V193.21 H183.55 V188.38 H178.72 Z M178.72,193.21 V198.04 H183.55 V193.21 H178.72 Z M178.72,198.04 V202.87 H183.55 V198.04 H178.72 Z M178.72,217.36 V222.19 H183.55 V217.36 H178.72 Z M178.72,222.19 V227.02 H183.55 V222.19 H178.72 Z M178.72,227.02 V231.85 H183.55 V227.02 H178.72 Z M183.55,38.64 V43.47 H188.38 V38.64 H183.55 Z M183.55,48.30 V53.13 H188.38 V48.30 H183.55 Z M183.55,57.96 V62.79 H188.38 V57.96 H183.55 Z M183.55,67.62 V72.45 H188.38 V67.62 H183.55 Z M183.55,72.45 V77.28 H188.38 V72.45 H183.55 Z M183.55,86.94 V91.77 H188.38 V86.94 H183.55 Z M183.55,106.26 V111.09 H188.38 V106.26 H183.55 Z M183.55,125.58 V130.42 H188.38 V125.58 H183.55 Z M183.55,135.25 V140.08 H188.38 V135.25 H183.55 Z M183.55,144.91 V149.74 H188.38 V144.91 H183.55 Z M183.55,154.57 V159.40 H188.38 V154.57 H183.55 Z M183.55,164.23 V169.06 H188.38 V164.23 H183.55 Z M183.55,169.06 V173.89 H188.38 V169.06 H183.55 Z M183.55,183.55 V188.38 H188.38 V183.55 H183.55 Z M183.55,193.21 V198.04 H188.38 V193.21 H183.55 Z M183.55,202.87 V207.70 H188.38 V202.87 H183.55 Z M183.55,212.53 V217.36 H188.38 V212.53 H183.55 Z M183.55,222.19 V227.02 H188.38 V222.19 H183.55 Z M183.55,227.02 V231.85 H188.38 V227.02 H183.55 Z M188.38,24.15 V28.98 H193.21 V24.15 H188.38 Z M188.38,28.98 V33.81 H193.21 V28.98 H188.38 Z M188.38,33.81 V38.64 H193.21 V33.81 H188.38 Z M188.38,38.64 V43.47 H193.21 V38.64 H188.38 Z M188.38,57.96 V62.79 H193.21 V57.96 H188.38 Z M188.38,62.79 V67.62 H193.21 V62.79 H188.38 Z M188.38,67.62 V72.45 H193.21 V67.62 H188.38 Z M188.38,72.45 V77.28 H193.21 V72.45 H188.38 Z M188.38,82.11 V86.94 H193.21 V82.11 H188.38 Z M188.38,91.77 V96.60 H193.21 V91.77 H188.38 Z M188.38,96.60 V101.43 H193.21 V96.60 H188.38 Z M188.38,101.43 V106.26 H193.21 V101.43 H188.38 Z M188.38,106.26 V111.09 H193.21 V106.26 H188.38 Z M188.38,111.09 V115.92 H193.21 V111.09 H188.38 Z M188.38,115.92 V120.75 H193.21 V115.92 H188.38 Z M188.38,120.75 V125.58 H193.21 V120.75 H188.38 Z M188.38,149.74 V154.57 H193.21 V149.74 H188.38 Z M188.38,169.06 V173.89 H193.21 V169.06 H188.38 Z M188.38,183.55 V188.38 H193.21 V183.55 H188.38 Z M188.38,188.38 V193.21 H193.21 V188.38 H188.38 Z M188.38,198.04 V202.87 H193.21 V198.04 H188.38 Z M188.38,202.87 V207.70 H193.21 V202.87 H188.38 Z M188.38,207.70 V212.53 H193.21 V207.70 H188.38 Z M188.38,212.53 V217.36 H193.21 V212.53 H188.38 Z M188.38,217.36 V222.19 H193.21 V217.36 H188.38 Z M193.21,19.32 V24.15 H198.04 V19.32 H193.21 Z M193.21,33.81 V38.64 H198.04 V33.81 H193.21 Z M193.21,38.64 V43.47 H198.04 V38.64 H193.21 Z M193.21,48.30 V53.13 H198.04 V48.30 H193.21 Z M193.21,53.13 V57.96 H198.04 V53.13 H193.21 Z M193.21,62.79 V67.62 H198.04 V62.79 H193.21 Z M193.21,67.62 V72.45 H198.04 V67.62 H193.21 Z M193.21,82.11 V86.94 H198.04 V82.11 H193.21 Z M193.21,86.94 V91.77 H198.04 V86.94 H193.21 Z M193.21,101.43 V106.26 H198.04 V101.43 H193.21 Z M193.21,115.92 V120.75 H198.04 V115.92 H193.21 Z M193.21,120.75 V125.58 H198.04 V120.75 H193.21 Z M193.21,125.58 V130.42 H198.04 V125.58 H193.21 Z M193.21,130.42 V135.25 H198.04 V130.42 H193.21 Z M193.21,135.25 V140.08 H198.04 V135.25 H193.21 Z M193.21,140.08 V144.91 H198.04 V140.08 H193.21 Z M193.21,144.91 V149.74 H198.04 V144.91 H193.21 Z M193.21,149.74 V154.57 H198.04 V149.74 H193.21 Z M193.21,154.57 V159.40 H198.04 V154.57 H193.21 Z M193.21,164.23 V169.06 H198.04 V164.23 H193.21 Z M193.21,173.89 V178.72 H198.04 V173.89 H193.21 Z M193.21,183.55 V188.38 H198.04 V183.55 H193.21 Z M193.21,188.38 V193.21 H198.04 V188.38 H193.21 Z M193.21,193.21 V198.04 H198.04 V193.21 H193.21 Z M193.21,198.04 V202.87 H198.04 V198.04 H193.21 Z M193.21,202.87 V207.70 H198.04 V202.87 H193.21 Z M193.21,207.70 V212.53 H198.04 V207.70 H193.21 Z M193.21,212.53 V217.36 H198.04 V212.53 H193.21 Z M193.21,222.19 V227.02 H198.04 V222.19 H193.21 Z M193.21,231.85 V236.68 H198.04 V231.85 H193.21 Z M198.04,67.62 V72.45 H202.87 V67.62 H198.04 Z M198.04,72.45 V77.28 H202.87 V72.45 H198.04 Z M198.04,82.11 V86.94 H202.87 V82.11 H198.04 Z M198.04,101.43 V106.26 H202.87 V101.43 H198.04 Z M198.04,115.92 V120.75 H202.87 V115.92 H198.04 Z M198.04,135.25 V140.08 H202.87 V135.25 H198.04 Z M198.04,149.74 V154.57 H202.87 V149.74 H198.04 Z M198.04,173.89 V178.72 H202.87 V173.89 H198.04 Z M198.04,178.72 V183.55 H202.87 V178.72 H198.04 Z M198.04,183.55 V188.38 H202.87 V183.55 H198.04 Z M198.04,193.21 V198.04 H202.87 V193.21 H198.04 Z M198.04,212.53 V217.36 H202.87 V212.53 H198.04 Z M198.04,222.19 V227.02 H202.87 V222.19 H198.04 Z M198.04,227.02 V231.85 H202.87 V227.02 H198.04 Z M198.04,231.85 V236.68 H202.87 V231.85 H198.04 Z M202.87,19.32 V24.15 H207.70 V19.32 H202.87 Z M202.87,24.15 V28.98 H207.70 V24.15 H202.87 Z M202.87,28.98 V33.81 H207.70 V28.98 H202.87 Z M202.87,33.81 V38.64 H207.70 V33.81 H202.87 Z M202.87,38.64 V43.47 H207.70 V38.64 H202.87 Z M202.87,43.47 V48.30 H207.70 V43.47 H202.87 Z M202.87,48.30 V53.13 H207.70 V48.30 H202.87 Z M202.87,57.96 V62.79 H207.70 V57.96 H202.87 Z M202.87,67.62 V72.45 H207.70 V67.62 H202.87 Z M202.87,86.94 V91.77 H207.70 V86.94 H202.87 Z M202.87,91.77 V96.60 H207.70 V91.77 H202.87 Z M202.87,106.26 V111.09 H207.70 V106.26 H202.87 Z M202.87,111.09 V115.92 H207.70 V111.09 H202.87 Z M202.87,115.92 V120.75 H207.70 V115.92 H202.87 Z M202.87,125.58 V130.42 H207.70 V125.58 H202.87 Z M202.87,135.25 V140.08 H207.70 V135.25 H202.87 Z M202.87,149.74 V154.57 H207.70 V149.74 H202.87 Z M202.87,154.57 V159.40 H207.70 V154.57 H202.87 Z M202.87,159.40 V164.23 H207.70 V159.40 H202.87 Z M202.87,169.06 V173.89 H207.70 V169.06 H202.87 Z M202.87,188.38 V193.21 H207.70 V188.38 H202.87 Z M202.87,193.21 V198.04 H207.70 V193.21 H202.87 Z M202.87,202.87 V207.70 H207.70 V202.87 H202.87 Z M202.87,212.53 V217.36 H207.70 V212.53 H202.87 Z M202.87,231.85 V236.68 H207.70 V231.85 H202.87 Z M207.70,19.32 V24.15 H212.53 V19.32 H207.70 Z M207.70,48.30 V53.13 H212.53 V48.30 H207.70 Z M207.70,57.96 V62.79 H212.53 V57.96 H207.70 Z M207.70,67.62 V72.45 H212.53 V67.62 H207.70 Z M207.70,77.28 V82.11 H212.53 V77.28 H207.70 Z M207.70,82.11 V86.94 H212.53 V82.11 H207.70 Z M207.70,91.77 V96.60 H212.53 V91.77 H207.70 Z M207.70,111.09 V115.92 H212.53 V111.09 H207.70 Z M207.70,115.92 V120.75 H212.53 V115.92 H207.70 Z M207.70,135.25 V140.08 H212.53 V135.25 H207.70 Z M207.70,144.91 V149.74 H212.53 V144.91 H207.70 Z M207.70,164.23 V169.06 H212.53 V164.23 H207.70 Z M207.70,169.06 V173.89 H212.53 V169.06 H207.70 Z M207.70,178.72 V183.55 H212.53 V178.72 H207.70 Z M207.70,193.21 V198.04 H212.53 V193.21 H207.70 Z M207.70,212.53 V217.36 H212.53 V212.53 H207.70 Z M212.53,19.32 V24.15 H217.36 V19.32 H212.53 Z M212.53,28.98 V33.81 H217.36 V28.98 H212.53 Z M212.53,33.81 V38.64 H217.36 V33.81 H212.53 Z M212.53,38.64 V43.47 H217.36 V38.64 H212.53 Z M212.53,48.30 V53.13 H217.36 V48.30 H212.53 Z M212.53,57.96 V62.79 H217.36 V57.96 H212.53 Z M212.53,62.79 V67.62 H217.36 V62.79 H212.53 Z M212.53,72.45 V77.28 H217.36 V72.45 H212.53 Z M212.53,91.77 V96.60 H217.36 V91.77 H212.53 Z M212.53,101.43 V106.26 H217.36 V101.43 H212.53 Z M212.53,111.09 V115.92 H217.36 V111.09 H212.53 Z M212.53,115.92 V120.75 H217.36 V115.92 H212.53 Z M212.53,120.75 V125.58 H217.36 V120.75 H212.53 Z M212.53,125.58 V130.42 H217.36 V125.58 H212.53 Z M212.53,130.42 V135.25 H217.36 V130.42 H212.53 Z M212.53,135.25 V140.08 H217.36 V135.25 H212.53 Z M212.53,144.91 V149.74 H217.36 V144.91 H212.53 Z M212.53,149.74 V154.57 H217.36 V149.74 H212.53 Z M212.53,154.57 V159.40 H217.36 V154.57 H212.53 Z M212.53,173.89 V178.72 H217.36 V173.89 H212.53 Z M212.53,183.55 V188.38 H217.36 V183.55 H212.53 Z M212.53,193.21 V198.04 H217.36 V193.21 H212.53 Z M212.53,198.04 V202.87 H217.36 V198.04 H212.53 Z M212.53,202.87 V207.70 H217.36 V202.87 H212.53 Z M212.53,207.70 V212.53 H217.36 V207.70 H212.53 Z M212.53,212.53 V217.36 H217.36 V212.53 H212.53 Z M212.53,217.36 V222.19 H217.36 V217.36 H212.53 Z M212.53,231.85 V236.68 H217.36 V231.85 H212.53 Z M217.36,19.32 V24.15 H222.19 V19.32 H217.36 Z M217.36,28.98 V33.81 H222.19 V28.98 H217.36 Z M217.36,33.81 V38.64 H222.19 V33.81 H217.36 Z M217.36,38.64 V43.47 H222.19 V38.64 H217.36 Z M217.36,48.30 V53.13 H222.19 V48.30 H217.36 Z M217.36,57.96 V62.79 H222.19 V57.96 H217.36 Z M217.36,72.45 V77.28 H222.19 V72.45 H217.36 Z M217.36,77.28 V82.11 H222.19 V77.28 H217.36 Z M217.36,82.11 V86.94 H222.19 V82.11 H217.36 Z M217.36,91.77 V96.60 H222.19 V91.77 H217.36 Z M217.36,96.60 V101.43 H222.19 V96.60 H217.36 Z M217.36,106.26 V111.09 H222.19 V106.26 H217.36 Z M217.36,120.75 V125.58 H222.19 V120.75 H217.36 Z M217.36,130.42 V135.25 H222.19 V130.42 H217.36 Z M217.36,135.25 V140.08 H222.19 V135.25 H217.36 Z M217.36,149.74 V154.57 H222.19 V149.74 H217.36 Z M217.36,164.23 V169.06 H222.19 V164.23 H217.36 Z M217.36,178.72 V183.55 H222.19 V178.72 H217.36 Z M217.36,183.55 V188.38 H222.19 V183.55 H217.36 Z M217.36,193.21 V198.04 H222.19 V193.21 H217.36 Z M217.36,198.04 V202.87 H222.19 V198.04 H217.36 Z M217.36,207.70 V212.53 H222.19 V207.70 H217.36 Z M217.36,212.53 V217.36 H222.19 V212.53 H217.36 Z M217.36,222.19 V227.02 H222.19 V222.19 H217.36 Z M217.36,227.02 V231.85 H222.19 V227.02 H217.36 Z M222.19,19.32 V24.15 H227.02 V19.32 H222.19 Z M222.19,28.98 V33.81 H227.02 V28.98 H222.19 Z M222.19,33.81 V38.64 H227.02 V33.81 H222.19 Z M222.19,38.64 V43.47 H227.02 V38.64 H222.19 Z M222.19,48.30 V53.13 H227.02 V48.30 H222.19 Z M222.19,57.96 V62.79 H227.02 V57.96 H222.19 Z M222.19,62.79 V67.62 H227.02 V62.79 H222.19 Z M222.19,67.62 V72.45 H227.02 V67.62 H222.19 Z M222.19,72.45 V77.28 H227.02 V72.45 H222.19 Z M222.19,82.11 V86.94 H227.02 V82.11 H222.19 Z M222.19,86.94 V91.77 H227.02 V86.94 H222.19 Z M222.19,91.77 V96.60 H227.02 V91.77 H222.19 Z M222.19,106.26 V111.09 H227.02 V106.26 H222.19 Z M222.19,111.09 V115.92 H227.02 V111.09 H222.19 Z M222.19,120.75 V125.58 H227.02 V120.75 H222.19 Z M222.19,125.58 V130.42 H227.02 V125.58 H222.19 Z M222.19,130.42 V135.25 H227.02 V130.42 H222.19 Z M222.19,140.08 V144.91 H227.02 V140.08 H222.19 Z M222.19,149.74 V154.57 H227.02 V149.74 H222.19 Z M222.19,159.40 V164.23 H227.02 V159.40 H222.19 Z M222.19,169.06 V173.89 H227.02 V169.06 H222.19 Z M222.19,183.55 V188.38 H227.02 V183.55 H222.19 Z M222.19,188.38 V193.21 H227.02 V188.38 H222.19 Z M222.19,198.04 V202.87 H227.02 V198.04 H222.19 Z M222.19,202.87 V207.70 H227.02 V202.87 H222.19 Z M222.19,207.70 V212.53 H227.02 V207.70 H222.19 Z M222.19,217.36 V222.19 H227.02 V217.36 H222.19 Z M222.19,222.19 V227.02 H227.02 V222.19 H222.19 Z M222.19,227.02 V231.85 H227.02 V227.02 H222.19 Z M227.02,19.32 V24.15 H231.85 V19.32 H227.02 Z M227.02,48.30 V53.13 H231.85 V48.30 H227.02 Z M227.02,62.79 V67.62 H231.85 V62.79 H227.02 Z M227.02,67.62 V72.45 H231.85 V67.62 H227.02 Z M227.02,82.11 V86.94 H231.85 V82.11 H227.02 Z M227.02,86.94 V91.77 H231.85 V86.94 H227.02 Z M227.02,96.60 V101.43 H231.85 V96.60 H227.02 Z M227.02,101.43 V106.26 H231.85 V101.43 H227.02 Z M227.02,106.26 V111.09 H231.85 V106.26 H227.02 Z M227.02,111.09 V115.92 H231.85 V111.09 H227.02 Z M227.02,120.75 V125.58 H231.85 V120.75 H227.02 Z M227.02,125.58 V130.42 H231.85 V125.58 H227.02 Z M227.02,130.42 V135.25 H231.85 V130.42 H227.02 Z M227.02,135.25 V140.08 H231.85 V135.25 H227.02 Z M227.02,144.91 V149.74 H231.85 V144.91 H227.02 Z M227.02,149.74 V154.57 H231.85 V149.74 H227.02 Z M227.02,154.57 V159.40 H231.85 V154.57 H227.02 Z M227.02,159.40 V164.23 H231.85 V159.40 H227.02 Z M227.02,164.23 V169.06 H231.85 V164.23 H227.02 Z M227.02,169.06 V173.89 H231.85 V169.06 H227.02 Z M227.02,183.55 V188.38 H231.85 V183.55 H227.02 Z M227.02,207.70 V212.53 H231.85 V207.70 H227.02 Z M227.02,217.36 V222.19 H231.85 V217.36 H227.02 Z M227.02,222.19 V227.02 H231.85 V222.19 H227.02 Z M227.02,231.85 V236.68 H231.85 V231.85 H227.02 Z M231.85,19.32 V24.15 H236.68 V19.32 H231.85 Z M231.85,24.15 V28.98 H236.68 V24.15 H231.85 Z M231.85,28.98 V33.81 H236.68 V28.98 H231.85 Z M231.85,33.81 V38.64 H236.68 V33.81 H231.85 Z M231.85,38.64 V43.47 H236.68 V38.64 H231.85 Z M231.85,43.47 V48.30 H236.68 V43.47 H231.85 Z M231.85,48.30 V53.13 H236.68 V48.30 H231.85 Z M231.85,62.79 V67.62 H236.68 V62.79 H231.85 Z M231.85,77.28 V82.11 H236.68 V77.28 H231.85 Z M231.85,82.11 V86.94 H236.68 V82.11 H231.85 Z M231.85,101.43 V106.26 H236.68 V101.43 H231.85 Z M231.85,120.75 V125.58 H236.68 V120.75 H231.85 Z M231.85,130.42 V135.25 H236.68 V130.42 H231.85 Z M231.85,135.25 V140.08 H236.68 V135.25 H231.85 Z M231.85,140.08 V144.91 H236.68 V140.08 H231.85 Z M231.85,149.74 V154.57 H236.68 V149.74 H231.85 Z M231.85,159.40 V164.23 H236.68 V159.40 H231.85 Z M231.85,173.89 V178.72 H236.68 V173.89 H231.85 Z M231.85,178.72 V183.55 H236.68 V178.72 H231.85 Z M231.85,193.21 V198.04 H236.68 V193.21 H231.85 Z M231.85,198.04 V202.87 H236.68 V198.04 H231.85 Z M231.85,207.70 V212.53 H236.68 V207.70 H231.85 Z M231.85,217.36 V222.19 H236.68 V217.36 H231.85 Z " /></svg></a>
+    <p>Scan to open the original LinkedIn post and visual.</p>
+    <p>Uaru and Whiptail lead at US$12.7bn each. Petrobras supplies five entries. Only Bonga Southwest/Aparo sits outside the South Atlantic cluster.</p>
+    
+  </div>
+  </div>
+<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+<div class="region slide-frame-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region slide-frame-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region slide-frame-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section class="segment" id="question" data-title="What do the numbers actually include?" data-layout="slide-frame" data-themes="deepwater" data-theme="deepwater" data-index="2">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region slide-frame-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo-3" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region slide-frame-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>02 · The research question</p>
+  </div>
+<div class="region slide-frame-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <h1>What do the numbers actually include?</h1>
+  </div>
+<div class="layout-container layout-stack" data-layout-direction="horizontal" style="gap: 2.4rem; align-items: stretch; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region slide-frame-main layout-default-region" data-region="main" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Those values are including which investments, besides the FPSOs per se?</p>
+    <p>Luciano Jorge de Carvalho Junior · LinkedIn comment</p>
+    <p>A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX.</p>
+    
+  </div>
+<div class="region slide-frame-aside" data-region="aside" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+  </div>
+<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+<div class="region slide-frame-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region slide-frame-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region slide-frame-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section class="segment" id="method" data-title="Separate claims before reconciling them" data-layout="grid" data-themes="deepwater" data-theme="deepwater" data-index="3">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region grid-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region grid-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region grid-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo-4" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region grid-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>03 · Research steps</p>
+  </div>
+<div class="region grid-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <h1>Separate claims before reconciling them</h1>
+  </div>
+<div class="layout-container layout-grid" data-layout-direction="vertical" style="gap: 1rem; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region grid-card1 layout-default-region" data-region="card1" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Step 01</strong></p>
+    <h3>Preserve the trigger</h3>
+    <p>Transcribe the LinkedIn ranking and ten project rows into their own provenance file. Do not rewrite the published visual.</p>
+  </div>
+<div class="region grid-card2" data-region="card2" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Step 02</strong></p>
+    <h3>Capture discussion</h3>
+    <p>Store comment-proposed projects — Wisting, Tangkulo, Bay du Nord, Venus, PAJ — as discussion mentions, not silent inserts into the top ten.</p>
+  </div>
+<div class="region grid-card3" data-region="card3" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Step 03</strong></p>
+    <h3>Seek primary sources</h3>
+    <p>Match each amount against operator, regulator, and contract disclosures from ExxonMobil, TotalEnergies, Equinor, Petrobras, ANPG, and others.</p>
+  </div>
+<div class="region grid-card4" data-region="card4" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Step 04</strong></p>
+    <h3>Classify evidence</h3>
+    <p>Label each row verified development CAPEX, identity-only, conflicting scope, or not ranked — keeping currencies and horizons intact.</p>
+  </div>
+<div class="region grid-card5" data-region="card5" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Step 05</strong></p>
+    <h3>Refuse false precision</h3>
+    <p>Do not convert CAD or NOK, or promote lower-bound estimates, into a new ordinal league table without a common basis.</p>
+  </div>
+<div class="region grid-card6" data-region="card6" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Step 06</strong></p>
+    <h3>Publish the reconciliation</h3>
+    <p>Keep original, comment, and independent values in separate fields so downstream analysis cannot silently substitute one layer for another.</p>
+    
+  </div>
+  </div>
+<div class="region grid-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region grid-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region grid-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region grid-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section class="segment" id="findings" data-title="What the sources establish" data-layout="grid" data-themes="deepwater" data-theme="deepwater" data-index="4">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region grid-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region grid-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region grid-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo-5" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region grid-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>04 · Independent verification</p>
+  </div>
+<div class="region grid-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <h1>What the sources establish</h1>
+  </div>
+<div class="layout-container layout-grid" data-layout-direction="vertical" style="gap: 1rem; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region grid-card1 layout-default-region" data-region="card1" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Verified · full development</strong></p>
+    <h3>Uaru, Whiptail, GranMorgu, Raia</h3>
+    <p>Published amounts match operator disclosures — as whole-development investment, including FPSO, not vessel-only prices. Luciano’s scope question is answered for these four.</p>
+  </div>
+<div class="region grid-card2" data-region="card2" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Identity only · amount open</strong></p>
+    <h3>Atapu 2, Sépia 2, Búzios 9–11</h3>
+    <p>Petrobras materials confirm project identity and naming (P-80 to P-85), but the visual’s CAPEX figures remain unverified. Ranks are retained provisionally.</p>
+  </div>
+<div class="region grid-card3" data-region="card3" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Conflicting scope · flagged</strong></p>
+    <h3>Bonga Southwest/Aparo</h3>
+    <p>Visual shows US$8bn. Newer reporting points to roughly US$10bn CAPEX and up to US$20bn total investment including life-cycle opex. Flagged, not re-ranked.</p>
+  </div>
+<div class="region grid-card4" data-region="card4" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p><strong>Not ranked · discussion layer</strong></p>
+    <h3>Bay du Nord, Wisting, Greater PAJ, Tangkulo, Venus</h3>
+    <p>Comment additions expand geography, but stay NR until currency, horizon, and cost boundary are comparable to the visual’s USD top ten.</p>
+    
+  </div>
+<div class="region grid-card5" data-region="card5" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+<div class="region grid-card6" data-region="card6" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+  </div>
+<div class="region grid-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region grid-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region grid-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region grid-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section class="segment" id="updated" data-title="Same order. Clearer evidence." data-layout="slide-frame" data-themes="deepwater" data-theme="deepwater" data-index="5">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region slide-frame-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo-6" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region slide-frame-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>05 · Updated ranking</p>
+  </div>
+<div class="region slide-frame-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <h1>Same order. Clearer evidence.</h1>
+  </div>
+<div class="layout-container layout-stack" data-layout-direction="horizontal" style="gap: 2.4rem; align-items: stretch; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region slide-frame-main layout-default-region" data-region="main" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <figure><img id="updated_FPSO_CAPEX_ranking" src="updated_FPSO_CAPEX_ranking.svg" alt="Updated FPSO CAPEX ranking reconciled with independent findings" data-click-to-zoom="true"><figcaption>Original US$94.287bn visual reconciled with independent findings · 19 July 2026</figcaption></figure>
+  </div>
+<div class="region slide-frame-aside" data-region="aside" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+  </div>
+<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p>Independently matched development CAPEX · Original visual value, scope not established · Newer finding conflicts in scope or value</p>
+    
+  </div>
+<div class="region slide-frame-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region slide-frame-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region slide-frame-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section class="segment" id="close" data-title="A ranking is only as honest as its cost boundary" data-layout="slide-frame" data-themes="deepwater" data-theme="deepwater" data-index="6">
+  <div class="layout-container layout-stack" data-layout-direction="vertical" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header" data-region="header" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-header-left" data-region="header-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%"></div>
+<div class="region slide-frame-header-right" data-region="header-right" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <img id="exergy_connect_logo-7" src="exergy_connect_logo.png" alt="Exergy logo">
+  </div>
+  </div>
+  </div>
+<div class="region slide-frame-kicker" data-region="kicker" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 40px">
+    <p>06 · Takeaway</p>
+  </div>
+<div class="region slide-frame-title" data-region="title" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <h1>A ranking is only as honest as its cost boundary</h1>
+  </div>
+<div class="layout-container layout-stack" data-layout-direction="horizontal" style="gap: 2.4rem; align-items: stretch; --layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <div class="region slide-frame-main layout-default-region" data-region="main" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>The arithmetic of the ten visual rows explains the US$94bn headline. Arithmetic agreement does not prove a common scope. Traceable industry perspective starts by keeping claims, comments, and primary findings in separate layers — then reconciling in public.</p>
+  </div>
+<div class="region slide-frame-aside" data-region="aside" style="--layout-weight: 0.8; --layout-shrink: 1; --layout-basis: 0%">
+    <h3>Trigger ≠ dataset</h3>
+    <p>LinkedIn visuals are starting claims, not finished cost tables.</p>
+    <h3>Scope before rank</h3>
+    <p>Development CAPEX and FPSO-only prices must not be mixed silently.</p>
+    <h3>Evidence stays layered</h3>
+    <p>Original, discussion, and independent findings remain separable for audit.</p>
+    
+  </div>
+  </div>
+<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
+<div class="region slide-frame-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
+    <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <div class="region slide-frame-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Industry Perspective</p>
+  </div>
+<div class="region slide-frame-footer-center" data-region="footer-center" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>Case study · 19 July 2026</p>
+  </div>
+<div class="region slide-frame-footer-right" data-region="footer-right" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">
+    <p>© Exergy ∞ LLC</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+  </div>
+  </div>
+<div class="region framed-deck-hud layout-controls" data-region="hud" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 72px">
+    <nav class="hud" data-xframe-component="hud" data-deck-hud data-themes="deepwater" aria-label="Slide controls">
+  <button type="button" data-deck-previous title="Previous (←)" aria-label="Previous slide">←</button>
+  <span data-deck-counter>1 / 7</span>
+  <button type="button" data-deck-next title="Next (→)" aria-label="Next slide">→</button>
+  <button type="button" data-deck-theme title="Toggle theme (t)" aria-label="Toggle theme">◐</button>
+  <button type="button" data-deck-fullscreen title="Enter full screen (f)" aria-label="Enter full screen">⛶</button>
+  
+</nav>
+<script>
+(() => {
+  if (window.__xframeDeckControlsScheduled) return;
+  window.__xframeDeckControlsScheduled = true;
+  const initialize = () => {
+    const root = document.getElementById("xframe");
+    if (!root) return;
+    const slides = [...root.querySelectorAll(".segment")];
+    const hud = root.querySelector(".hud");
+    const deckThemes = (hud?.dataset.themes || root.dataset.themes || "")
+      .split(",").map((name) => name.trim()).filter(Boolean);
+    let index = 0;
+    const fromHash = () => {
+      const n = Number.parseInt((location.hash || "").replace("#", ""), 10);
+      return Number.isNaN(n) ? 0 : Math.min(Math.max(n - 1, 0), Math.max(slides.length - 1, 0));
+    };
+    const fitCanvas = () => {
+      if (document.fullscreenElement === root) {
+        root.style.transform = "";
+        return;
+      }
+      const w = root.offsetWidth || 1;
+      const h = root.offsetHeight || 1;
+      const chrome = hud ? hud.offsetHeight + 16 : 0;
+      const scale = Math.min((window.innerWidth * 0.92) / w, (window.innerHeight * 0.82) / (h + chrome), 1);
+      root.style.transform = "scale(" + scale + ")";
+    };
+    const applyTheme = (name) => {
+      if (!name) return;
+      root.dataset.theme = name;
+      slides.forEach((slide) => { slide.dataset.theme = name; });
+      document.documentElement.dataset.theme = name;
+    };
+    const show = (nextIndex) => {
+      index = Math.min(Math.max(nextIndex, 0), Math.max(slides.length - 1, 0));
+      slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === index));
+      const counter = hud?.querySelector("[data-deck-counter]");
+      if (counter) counter.textContent = (index + 1) + " / " + Math.max(slides.length, 1);
+      const prev = hud?.querySelector("[data-deck-previous]");
+      const next = hud?.querySelector("[data-deck-next]");
+      if (prev instanceof HTMLButtonElement) prev.disabled = index === 0;
+      if (next instanceof HTMLButtonElement) next.disabled = index >= slides.length - 1;
+      const themeBtn = hud?.querySelector("[data-deck-theme]");
+      if (themeBtn instanceof HTMLButtonElement) {
+        themeBtn.disabled = deckThemes.length < 2;
+        themeBtn.hidden = deckThemes.length < 1;
+      }
+      if (!root.dataset.theme) applyTheme(deckThemes[0]);
+      const hash = "#" + (index + 1);
+      if (hash !== location.hash) {
+        try { history.replaceState(null, "", hash); } catch {}
+      }
+      root.dispatchEvent(new CustomEvent("xframe:slidechange", { detail: { index } }));
+    };
+    const cycleTheme = () => {
+      if (deckThemes.length < 2) return;
+      const current = root.dataset.theme || deckThemes[0];
+      const at = deckThemes.indexOf(current);
+      const nextTheme = deckThemes[(at < 0 ? 0 : at + 1) % deckThemes.length];
+      applyTheme(nextTheme);
+    };
+    const updateFullscreenControl = () => {
+      const button = hud?.querySelector("[data-deck-fullscreen]");
+      if (!(button instanceof HTMLButtonElement)) return;
+      const active = document.fullscreenElement === root;
+      button.textContent = active ? "⤢" : "⛶";
+      button.title = active ? "Exit full screen (f)" : "Enter full screen (f)";
+      button.setAttribute("aria-label", active ? "Exit full screen" : "Enter full screen");
+    };
+    const toggleFullscreen = async () => {
+      try {
+        if (document.fullscreenElement === root) await document.exitFullscreen();
+        else await root.requestFullscreen();
+      } catch {}
+    };
+    hud?.querySelector("[data-deck-previous]")?.addEventListener("click", () => show(index - 1));
+    hud?.querySelector("[data-deck-next]")?.addEventListener("click", () => show(index + 1));
+    hud?.querySelector("[data-deck-theme]")?.addEventListener("click", cycleTheme);
+    hud?.querySelector("[data-deck-fullscreen]")?.addEventListener("click", toggleFullscreen);
+    window.addEventListener("keydown", (event) => {
+      const target = event.target;
+      // Do not steal keys from form fields or contentEditable editors (editable-slot).
+      if (
+        target instanceof HTMLInputElement
+        || target instanceof HTMLTextAreaElement
+        || target instanceof HTMLSelectElement
+        || (target instanceof HTMLElement && (target.isContentEditable || Boolean(target.closest("[contenteditable='true']"))))
+      ) return;
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+        event.preventDefault(); show(index + 1);
+      }
+      if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        event.preventDefault(); show(index - 1);
+      }
+      if (event.key === "Home") show(0);
+      if (event.key === "End") show(slides.length - 1);
+      if (event.key === "t") cycleTheme();
+      if (event.key === "f") toggleFullscreen();
+    });
+    window.addEventListener("hashchange", () => show(fromHash()));
+    window.addEventListener("resize", fitCanvas);
+    document.addEventListener("fullscreenchange", () => {
+      updateFullscreenControl();
+      fitCanvas();
+    });
+    applyTheme(root.dataset.theme || deckThemes[0]);
+    show(fromHash());
+    updateFullscreenControl();
+    fitCanvas();
+
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize, { once: true });
+  } else {
+    initialize();
+  }
+})();
+</script>
+  </div>
+  </div>
+<aside class="xframe-narrative-dock" aria-label="Slide narration"><div class="xframe-narrative-slide" data-xframe-narrative-slide="0"><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">The input was a LinkedIn post. The output was an industry perspective. In under an hour, a simple ranking of the largest FPSO projects became a structured examination of project scope, CAPEX comparability, development status, omitted projects, ownership models, phased versus integrated development, and the strategic assumptions hidden inside the ranking.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/title-en-US.mp3"></audio></div></div>
+<div class="xframe-narrative-slide" data-xframe-narrative-slide="1" hidden><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">We begin with the original LinkedIn visual. Giacomo Prandelli’s post claims the top ten FPSO projects through 2030 are worth about ninety-four billion dollars. Scan the QR code to open the source post. The chart concentrates capital in Guyana, Suriname, Brazil, and one Nigerian project.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/trigger-en-US.mp3"></audio></div></div>
+<div class="xframe-narrative-slide" data-xframe-narrative-slide="2" hidden><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">A comment under the post asked the decisive question: which investments, besides the FPSOs themselves, are included in these values? That question sets the research agenda. Without a shared cost boundary, the ranking can look exact while comparing unlike scopes.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/question-en-US.mp3"></audio></div></div>
+<div class="xframe-narrative-slide" data-xframe-narrative-slide="3" hidden><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">The method is deliberate. First preserve the trigger visual. Then capture LinkedIn discussion separately. Next consult primary sources. Classify what each source actually proves. Refuse false precision when currencies or horizons do not match. Finally publish a reconciliation that keeps every evidence layer distinct.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/method-en-US.mp3"></audio></div></div>
+<div class="xframe-narrative-slide" data-xframe-narrative-slide="4" hidden><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">Independent sources verify four of the original amounts — Uaru, Whiptail, GranMorgu, and Raia — as full development investments. Petrobras rows are identity-confirmed but amount-open. Bonga conflicts in scope and is flagged. Comment projects remain unranked rather than forced into the table.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/findings-en-US.mp3"></audio></div></div>
+<div class="xframe-narrative-slide" data-xframe-narrative-slide="5" hidden><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">The updated ranking keeps the visual’s original order. Green marks independently matched development CAPEX. Grey marks amounts whose scope is still unresolved. Orange marks Bonga’s conflicting newer headline. Five discussion projects sit below as not ranked, with native currencies preserved.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/updated-en-US.mp3"></audio></div></div>
+<div class="xframe-narrative-slide" data-xframe-narrative-slide="6" hidden><div class="xframe-narrative" data-xframe-narrative data-selected-language="en-US"><div data-narrative-text><span data-narrative-language="en-US" data-selected="true">The takeaway is methodological. Treat social rankings as triggers. Establish cost scope before trusting ordinal position. Keep every evidence layer separable so the industry perspective remains auditable as new disclosures arrive.</span></div><audio controls preload="none" data-narrative-audio data-narrative-language="en-US" src="audio/close-en-US.mp3"></audio></div></div></aside>
+</main>
+
+
+
+<script>
+(() => {
+  const overlay = document.createElement("div");
+  overlay.className = "xframe-zoom-overlay";
+  overlay.hidden = true;
+  overlay.innerHTML = '<div class="xframe-zoom-stage" role="dialog" aria-modal="true" aria-label="Enlarged image"></div>';
+  const stage = overlay.querySelector(".xframe-zoom-stage");
+  document.body.appendChild(overlay);
+  const close = () => { overlay.hidden = true; stage.replaceChildren(); };
+  document.addEventListener("click", (event) => {
+    if (!overlay.hidden) { if (event.target === overlay) close(); return; }
+    const image = event.target instanceof Element ? event.target.closest("img[data-click-to-zoom='true']") : null;
+    if (!image) return;
+    event.preventDefault();
+    const clone = image.cloneNode(true);
+    clone.removeAttribute("data-click-to-zoom");
+    stage.replaceChildren(clone);
+    overlay.hidden = false;
+  });
+  window.addEventListener("keydown", (event) => { if (event.key === "Escape" && !overlay.hidden) close(); });
+})();
+</script>
+
+
+<script>
+(() => {
+  const STORAGE_KEY = "xframe-narrative-language";
+  const root = document.getElementById("xframe");
+  const resolveLanguage = (narrative, requested) => {
+    const codes = [...narrative.querySelectorAll("[data-narrative-language]")]
+      .map((entry) => entry instanceof HTMLElement ? entry.dataset.narrativeLanguage : undefined)
+      .filter((value) => typeof value === "string" && value);
+    if (codes.includes(requested)) return requested;
+    const primary = requested.split("-")[0] ?? requested;
+    return codes.find((code) => code === primary || code.startsWith(primary + "-")) ?? codes[0];
+  };
+  const applyNarrativeLanguage = (language) => {
+    if (!root || !language) return;
+    root.dataset.narrationLanguage = language;
+    root.querySelectorAll("[data-narrative-language-button]").forEach((button) => {
+      if (!(button instanceof HTMLButtonElement)) return;
+      const code = button.dataset.narrativeLanguageButton ?? "";
+      const primary = language.split("-")[0] ?? language;
+      const pressed = code === language || code === primary || code.startsWith(primary + "-");
+      button.setAttribute("aria-pressed", String(pressed));
+    });
+    root.querySelectorAll("[data-xframe-narrative]").forEach((narrative) => {
+      if (!(narrative instanceof HTMLElement)) return;
+      const selectedLanguage = resolveLanguage(narrative, language);
+      if (!selectedLanguage) return;
+      narrative.dataset.selectedLanguage = selectedLanguage;
+      narrative.querySelectorAll("[data-narrative-language]").forEach((entry) => {
+        if (!(entry instanceof HTMLElement)) return;
+        const selected = entry.dataset.narrativeLanguage === selectedLanguage;
+        entry.hidden = !selected;
+        if (selected) entry.dataset.selected = "true";
+        else delete entry.dataset.selected;
+      });
+      narrative.querySelectorAll("audio[data-narrative-audio]").forEach((audio) => {
+        if (!(audio instanceof HTMLAudioElement)) return;
+        const selected = audio.dataset.narrativeLanguage === selectedLanguage;
+        if (!selected) audio.pause();
+        audio.hidden = !selected;
+      });
+    });
+    try { localStorage.setItem(STORAGE_KEY, language); } catch {}
+  };
+  document.addEventListener("click", (event) => {
+    const button = event.target instanceof Element
+      ? event.target.closest("[data-narrative-language-button]")
+      : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    const language = button.dataset.narrativeLanguageButton;
+    if (language) applyNarrativeLanguage(language);
+  });
+  root?.addEventListener("xframe:languagechange", (event) => {
+    const locale = event instanceof CustomEvent ? String(event.detail?.locale || event.detail?.language || "") : "";
+    if (locale) applyNarrativeLanguage(locale);
+  });
+  if (!root) return;
+  const controls = [...root.querySelectorAll("[data-xframe-narrative-slide]")];
+  const showNarrative = (index) => controls.forEach((control) => {
+    if (!(control instanceof HTMLElement)) return;
+    const selected = Number(control.dataset.xframeNarrativeSlide) === index;
+    control.hidden = !selected;
+    if (!selected) control.querySelectorAll("audio").forEach((audio) => audio.pause());
+  });
+  root.addEventListener("xframe:slidechange", (event) => {
+    const index = event instanceof CustomEvent ? Number(event.detail?.index) : 0;
+    showNarrative(Number.isFinite(index) ? index : 0);
+  });
+  const active = root.querySelector(".segment.active");
+  showNarrative(active instanceof HTMLElement ? Number(active.dataset.index ?? 0) : 0);
+  const available = [...root.querySelectorAll("[data-narrative-language-button]")]
+    .map((button) => button instanceof HTMLButtonElement ? button.dataset.narrativeLanguageButton : undefined)
+    .filter((value) => typeof value === "string" && value);
+  let initial = available[0];
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && available.some((code) => code === stored || code?.split("-")[0] === stored.split("-")[0])) {
+      initial = available.find((code) => code === stored || code?.split("-")[0] === stored.split("-")[0]) ?? initial;
+    }
+  } catch {}
+  if (initial) applyNarrativeLanguage(initial);
+})();
+</script>
+</body>
+</html>

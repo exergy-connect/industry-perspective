@@ -1,0 +1,258 @@
+---
+presentation: slidedeck
+title: From Industry Signal to Strategic Analysis
+subtitle: A LinkedIn post became a professional industry analysis in under an hour.
+author: Industry Perspective
+classification: Case study · 19 July 2026
+copyright: "© Exergy ∞ LLC"
+logo_mark: "![Exergy logo](exergy_connect_logo.png)"
+styles: [deepwater]
+themes: [deepwater]
+image:
+  click_to_zoom: true
+linkedin_url: https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV
+narrative:
+  voice: male
+---
+@id title
+@layout slide-frame
+  aside: 0.618
+
+@region kicker
+Industry Perspective · Case Study
+
+@region main
+# From Industry Signal to Strategic Analysis
+
+A LinkedIn post became a professional industry analysis in under an hour.
+
+A simple ranking of the largest FPSO projects became a structured examination of:
+
+- project scope
+- CAPEX comparability
+- development status
+- omitted projects
+- ownership models
+- phased versus integrated development
+- and the strategic assumptions hidden inside the ranking
+
+@region caption
+The input was a LinkedIn post. The output was an industry perspective.
+
+@region aside
+```html
+<div class="metric"><strong>$94.3bn</strong><span>CAPEX represented in the original visual</span></div>
+<div class="metric"><strong>17</strong><span>Independent sources consulted</span></div>
+<div class="metric"><strong>4</strong><span>Amounts independently verified as development CAPEX</span></div>
+```
+
+@narrative
+  - en-US: >-
+      The input was a LinkedIn post. The output was an industry perspective. In under an hour, a simple ranking of the largest FPSO projects became a structured examination of project scope, CAPEX comparability, development status, omitted projects, ownership models, phased versus integrated development, and the strategic assumptions hidden inside the ranking.
+
+---
+@id trigger
+@layout slide-frame
+  aside: 0.75
+
+@region kicker
+01 · The trigger
+
+@region title
+# Start with the LinkedIn visual
+
+@region main
+@image
+  url: Top10_FPSO_CAPEX_projects.jpeg
+  alt: Top 10 upcoming FPSO projects to 2030 ranked by CAPEX
+  caption: Original ranking visual from Giacomo Prandelli’s LinkedIn post
+  click_to_zoom: true
+
+@region aside
+## Giacomo Prandelli’s post makes a sharp geographic argument: nine of ten highest-CAPEX FPSO projects shown sit in the South Atlantic.
+
+Source: [linkedin.com/posts/prandelligiacomo…]({{ linkedin_url }})
+
+@qr_code
+  url: "{{ linkedin_url }}"
+
+Scan to open the original LinkedIn post and visual.
+
+Uaru and Whiptail lead at US$12.7bn each. Petrobras supplies five entries. Only Bonga Southwest/Aparo sits outside the South Atlantic cluster.
+
+@narrative
+  - en-US: >-
+      We begin with the original LinkedIn visual. Giacomo Prandelli’s post claims the top ten FPSO projects through 2030 are worth about ninety-four billion dollars. Scan the QR code to open the source post. The chart concentrates capital in Guyana, Suriname, Brazil, and one Nigerian project.
+
+---
+@id question
+@layout slide-frame
+
+@region kicker
+02 · The research question
+
+@region title
+# What do the numbers actually include?
+
+@region main
+> Those values are including which investments, besides the FPSOs per se?
+
+Luciano Jorge de Carvalho Junior · LinkedIn comment
+
+A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX.
+
+@narrative
+  - en-US: >-
+      A comment under the post asked the decisive question: which investments, besides the FPSOs themselves, are included in these values? That question sets the research agenda. Without a shared cost boundary, the ranking can look exact while comparing unlike scopes.
+
+---
+@id method
+@layout grid
+  columns: 3
+
+@region kicker
+03 · Research steps
+
+@region title
+# Separate claims before reconciling them
+
+@region card1
+**Step 01**
+
+### Preserve the trigger
+
+Transcribe the LinkedIn ranking and ten project rows into their own provenance file. Do not rewrite the published visual.
+
+@region card2
+**Step 02**
+
+### Capture discussion
+
+Store comment-proposed projects — Wisting, Tangkulo, Bay du Nord, Venus, PAJ — as discussion mentions, not silent inserts into the top ten.
+
+@region card3
+**Step 03**
+
+### Seek primary sources
+
+Match each amount against operator, regulator, and contract disclosures from ExxonMobil, TotalEnergies, Equinor, Petrobras, ANPG, and others.
+
+@region card4
+**Step 04**
+
+### Classify evidence
+
+Label each row verified development CAPEX, identity-only, conflicting scope, or not ranked — keeping currencies and horizons intact.
+
+@region card5
+**Step 05**
+
+### Refuse false precision
+
+Do not convert CAD or NOK, or promote lower-bound estimates, into a new ordinal league table without a common basis.
+
+@region card6
+**Step 06**
+
+### Publish the reconciliation
+
+Keep original, comment, and independent values in separate fields so downstream analysis cannot silently substitute one layer for another.
+
+@narrative
+  - en-US: >-
+      The method is deliberate. First preserve the trigger visual. Then capture LinkedIn discussion separately. Next consult primary sources. Classify what each source actually proves. Refuse false precision when currencies or horizons do not match. Finally publish a reconciliation that keeps every evidence layer distinct.
+
+---
+@id findings
+@layout grid
+  columns: 2
+
+@region kicker
+04 · Independent verification
+
+@region title
+# What the sources establish
+
+@region card1
+**Verified · full development**
+
+### Uaru, Whiptail, GranMorgu, Raia
+
+Published amounts match operator disclosures — as whole-development investment, including FPSO, not vessel-only prices. Luciano’s scope question is answered for these four.
+
+@region card2
+**Identity only · amount open**
+
+### Atapu 2, Sépia 2, Búzios 9–11
+
+Petrobras materials confirm project identity and naming (P-80 to P-85), but the visual’s CAPEX figures remain unverified. Ranks are retained provisionally.
+
+@region card3
+**Conflicting scope · flagged**
+
+### Bonga Southwest/Aparo
+
+Visual shows US$8bn. Newer reporting points to roughly US$10bn CAPEX and up to US$20bn total investment including life-cycle opex. Flagged, not re-ranked.
+
+@region card4
+**Not ranked · discussion layer**
+
+### Bay du Nord, Wisting, Greater PAJ, Tangkulo, Venus
+
+Comment additions expand geography, but stay NR until currency, horizon, and cost boundary are comparable to the visual’s USD top ten.
+
+@narrative
+  - en-US: >-
+      Independent sources verify four of the original amounts — Uaru, Whiptail, GranMorgu, and Raia — as full development investments. Petrobras rows are identity-confirmed but amount-open. Bonga conflicts in scope and is flagged. Comment projects remain unranked rather than forced into the table.
+
+---
+@id updated
+@layout slide-frame
+
+@region kicker
+05 · Updated ranking
+
+@region title
+# Same order. Clearer evidence.
+
+@region main
+@image
+  url: updated_FPSO_CAPEX_ranking.svg
+  alt: Updated FPSO CAPEX ranking reconciled with independent findings
+  caption: Original US$94.287bn visual reconciled with independent findings · 19 July 2026
+  click_to_zoom: true
+
+@region caption
+Independently matched development CAPEX · Original visual value, scope not established · Newer finding conflicts in scope or value
+
+@narrative
+  - en-US: >-
+      The updated ranking keeps the visual’s original order. Green marks independently matched development CAPEX. Grey marks amounts whose scope is still unresolved. Orange marks Bonga’s conflicting newer headline. Five discussion projects sit below as not ranked, with native currencies preserved.
+
+---
+@id close
+@layout slide-frame
+  aside: 0.8
+
+@region kicker
+06 · Takeaway
+
+@region title
+# A ranking is only as honest as its cost boundary
+
+@region main
+The arithmetic of the ten visual rows explains the US$94bn headline. Arithmetic agreement does not prove a common scope. Traceable industry perspective starts by keeping claims, comments, and primary findings in separate layers — then reconciling in public.
+
+@region aside
+### Trigger ≠ dataset
+LinkedIn visuals are starting claims, not finished cost tables.
+
+### Scope before rank
+Development CAPEX and FPSO-only prices must not be mixed silently.
+
+### Evidence stays layered
+Original, discussion, and independent findings remain separable for audit.
+
+@narrative
+  - en-US: >-
+      The takeaway is methodological. Treat social rankings as triggers. Establish cost scope before trusting ordinal position. Keep every evidence layer separable so the industry perspective remains auditable as new disclosures arrive.
