@@ -25,13 +25,14 @@ defaults:
     @stack
       direction: horizontal
       weight: 1
-      gap: 2.4rem
+      # No gap when aside is unset/0 — an empty aside must not steal main width.
+      gap: "{{ '2.4rem' if aside else 0 }}"
       align: stretch
       content:
         @region main
           default: true
           weight: 1
-          align: start
+          align: stretch
         @region aside
           weight: "{{ aside | default(0) }}"
           align: stretch

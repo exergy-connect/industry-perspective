@@ -11,14 +11,14 @@
     { "country_id": "AO", "country_name": "Angola", "region": "South Atlantic" }
   ],
   "operator": [
-    { "operator_id": "exxonmobil", "operator_name": "ExxonMobil" },
-    { "operator_id": "totalenergies", "operator_name": "TotalEnergies" },
-    { "operator_id": "petrobras", "operator_name": "Petrobras" },
-    { "operator_id": "equinor", "operator_name": "Equinor" },
-    { "operator_id": "shell", "operator_name": "Shell" },
-    { "operator_id": "yinson", "operator_name": "Yinson" },
-    { "operator_id": "azule-energy", "operator_name": "Azule Energy" },
-    { "operator_id": "mubadala-energy", "operator_name": "Mubadala Energy" }
+    { "operator_id": "exxonmobil", "operator_name": "ExxonMobil", "display_colors": { "primary": "#0047BA", "secondary": "#D42E12" } },
+    { "operator_id": "totalenergies", "operator_name": "TotalEnergies", "display_colors": { "primary": "#7B2CBF", "secondary": "#00C1CE" } },
+    { "operator_id": "petrobras", "operator_name": "Petrobras", "display_colors": { "primary": "#008542", "secondary": "#FDC82F" } },
+    { "operator_id": "equinor", "operator_name": "Equinor", "display_colors": { "primary": "#FF1243", "secondary": "#FFB3C1" } },
+    { "operator_id": "shell", "operator_name": "Shell", "display_colors": { "primary": "#FFD500", "secondary": "#DD1D21" } },
+    { "operator_id": "yinson", "operator_name": "Yinson", "display_colors": { "primary": "#003B5C", "secondary": "#00A7A5" } },
+    { "operator_id": "azule-energy", "operator_name": "Azule Energy", "display_colors": { "primary": "#0057B8", "secondary": "#00A6A6" } },
+    { "operator_id": "mubadala-energy", "operator_name": "Mubadala Energy", "display_colors": { "primary": "#003B5C", "secondary": "#B4975A" } }
   ],
   "contractor": [
     { "contractor_id": "bw-offshore", "contractor_name": "BW Offshore" }

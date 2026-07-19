@@ -36,12 +36,32 @@
         "operator_name": {
           "type": "string",
           "description": "Operator display name as shown on the ranking visual."
+        },
+        "display_colors": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "string",
+              "description": "Primary operator display color as a six-digit hexadecimal RGB value."
+            },
+            "secondary": {
+              "type": "string",
+              "description": "Secondary operator display color as a six-digit hexadecimal RGB value."
+            }
+          },
+          "required": [
+            "primary",
+            "secondary"
+          ],
+          "additionalProperties": false,
+          "description": "Primary and secondary brand-matched colors for consistent operator display in maps, charts, and legends."
         }
       },
       "description": "Company named as operator on a ranked FPSO project. Supports operator-concentration views of the investment cycle.",
       "required": [
         "operator_id",
-        "operator_name"
+        "operator_name",
+        "display_colors"
       ],
       "x-primaryKey": "operator_id"
     },

@@ -126,16 +126,21 @@ textAlign: left
   text-transform: uppercase;
 }
 
+/* Regions already get flex from --layout-* (slidedeck.dynamic). Only set
+   inner stacking here — never flex-basis:auto on fill widgets, and never
+   redeclare `flex` on regions (that bypasses the layout weights). */
 #xframe [data-region="main"],
 #xframe [data-region="aside"] {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 0;
-  overflow: visible;
+  justify-content: flex-start;
   gap: .85rem;
 }
-#xframe [data-region="title"] { overflow: visible; }
+#xframe [data-region="title"] {
+  /* Keep glyph overflow + breathing room above the fill track (map/chart). */
+  overflow: visible;
+  padding-bottom: 0.45rem;
+}
 #xframe [data-region="title"] h1 {
   font-size: clamp(2.6rem, 4.4vw, 3.8rem);
 }
@@ -327,6 +332,7 @@ textAlign: left
   background: rgba(0, 0, 0, .22);
   box-shadow: var(--box-shadow);
 }
+/* Map fill/shrink is owned by ir2html map-layout.css (flex: 1 1 0). */
 
 /* ── 6. Caption ─────────────────────────────────────── */
 /* Region caption = supporting note under media/maps */

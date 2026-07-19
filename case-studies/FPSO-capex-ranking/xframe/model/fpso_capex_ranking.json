@@ -50,6 +50,27 @@
           "description": "Operator display name as shown on the ranking visual.",
           "type": { "primitive": "string" },
           "required": true
+        },
+        {
+          "name": "display_colors",
+          "description": "Primary and secondary brand-matched colors for consistent operator display in maps, charts, and legends.",
+          "type": {
+            "composite": [
+              {
+                "name": "primary",
+                "description": "Primary operator display color as a six-digit hexadecimal RGB value.",
+                "type": { "primitive": "string" },
+                "required": true
+              },
+              {
+                "name": "secondary",
+                "description": "Secondary operator display color as a six-digit hexadecimal RGB value.",
+                "type": { "primitive": "string" },
+                "required": true
+              }
+            ]
+          },
+          "required": true
         }
       ]
     },

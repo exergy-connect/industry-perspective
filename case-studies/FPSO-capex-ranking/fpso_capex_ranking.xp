@@ -99,13 +99,13 @@ Uaru and Whiptail lead at US$12.7bn each. Petrobras supplies five entries. Only 
 @region main
 @map
   type: markers
-  title: Top 10 project locations · US$94.287bn stated CAPEX
   entity: data.capex_ranking.prandelli-top10-fpso-to-2030.projects
   label: project_name
   location: offshore_area
   latitude: latitude
   longitude: longitude
   color: operator_name
+  colormap: operator.display_colors
   size: claimed_capex_m
   flag: country_id
   limit: 10

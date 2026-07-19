@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "timestamp": "2026-07-19T17:07:13Z",
+  "version": 6,
+  "timestamp": "2026-07-19T17:46:50Z",
   "model": {
     "name": "FPSO CAPEX Ranking",
     "version": "26.07.19.5",
@@ -67,6 +67,18 @@
         "timestamp": "2026-07-19T17:07:13Z",
         "author": "Industry Perspective",
         "note": "Add representative project coordinates for CAPEX map"
+      },
+      "000000000005": {
+        "id": 5,
+        "timestamp": "2026-07-19T17:42:30Z",
+        "author": "Industry Perspective",
+        "note": "Add operator display color pairs"
+      },
+      "000000000006": {
+        "id": 6,
+        "timestamp": "2026-07-19T17:46:50Z",
+        "author": "Industry Perspective",
+        "note": "Increase operator color contrast for map display"
       }
     },
     "country": {
@@ -138,50 +150,110 @@
       "exxonmobil": {
         "operator_id": "exxonmobil",
         "operator_name": "ExxonMobil",
+        "display_colors": {
+          "primary": "#0047BA",
+          "secondary": "#D42E12"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5,
+          6
+        ],
+        "v": 6
       },
       "totalenergies": {
         "operator_id": "totalenergies",
         "operator_name": "TotalEnergies",
+        "display_colors": {
+          "primary": "#7B2CBF",
+          "secondary": "#00C1CE"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5,
+          6
+        ],
+        "v": 6
       },
       "petrobras": {
         "operator_id": "petrobras",
         "operator_name": "Petrobras",
+        "display_colors": {
+          "primary": "#008542",
+          "secondary": "#FDC82F"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5
+        ],
+        "v": 5
       },
       "equinor": {
         "operator_id": "equinor",
         "operator_name": "Equinor",
+        "display_colors": {
+          "primary": "#FF1243",
+          "secondary": "#FFB3C1"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5,
+          6
+        ],
+        "v": 6
       },
       "shell": {
         "operator_id": "shell",
         "operator_name": "Shell",
+        "display_colors": {
+          "primary": "#FFD500",
+          "secondary": "#DD1D21"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5,
+          6
+        ],
+        "v": 6
       },
       "yinson": {
         "operator_id": "yinson",
         "operator_name": "Yinson",
+        "display_colors": {
+          "primary": "#003B5C",
+          "secondary": "#00A7A5"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5
+        ],
+        "v": 5
       },
       "azule-energy": {
         "operator_id": "azule-energy",
         "operator_name": "Azule Energy",
+        "display_colors": {
+          "primary": "#0057B8",
+          "secondary": "#00A6A6"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5
+        ],
+        "v": 5
       },
       "mubadala-energy": {
         "operator_id": "mubadala-energy",
         "operator_name": "Mubadala Energy",
+        "display_colors": {
+          "primary": "#003B5C",
+          "secondary": "#B4975A"
+        },
         "c": 1,
-        "v": 1
+        "m": [
+          5
+        ],
+        "v": 5
       }
     },
     "capex_ranking": {
