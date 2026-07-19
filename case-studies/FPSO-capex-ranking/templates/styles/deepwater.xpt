@@ -357,4 +357,8 @@ textAlign: left
   line-height: 1.3;
   text-align: center;
 }
+
+/* Closing slide: lower the body without changing the shell's intrinsic height. */
+#close [data-region="main"],
+#close [data-region="aside"] { transform: translateY(2.75rem); }
 ```
