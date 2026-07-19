@@ -70,6 +70,15 @@ textAlign: left
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Keep the methodology and evidence cards compact, then spend the recovered
+   space on more legible copy instead of stretching the panels edge to edge. */
+#method .layout-container.layout-grid,
+#findings .layout-container.layout-grid {
+  grid-template-rows: repeat(2, max-content);
+  align-content: center;
+  gap: .85rem 1rem;
+}
+
 #xframe [data-region="header"],
 #xframe [data-region="header"] .layout-container,
 #xframe [data-region="header-right"] {
@@ -289,6 +298,26 @@ textAlign: left
 #findings [data-region="card3"] { border-left-color: var(--warm); }
 #findings [data-region^="card"] p:first-child,
 #findings [data-region^="card"] strong { color: var(--muted); }
+
+#method [data-region^="card"],
+#findings [data-region^="card"] {
+  padding: .78rem 1rem .85rem 1.15rem;
+}
+#method [data-region^="card"] h3,
+#findings [data-region^="card"] h3 {
+  font-size: 1.38rem;
+}
+#method [data-region^="card"] p,
+#findings [data-region^="card"] p {
+  font-size: 1.02rem;
+  line-height: 1.38;
+}
+#method [data-region^="card"] p:first-child,
+#method [data-region^="card"] strong,
+#findings [data-region^="card"] p:first-child,
+#findings [data-region^="card"] strong {
+  font-size: .88rem;
+}
 
 /* ── 4. Pull ────────────────────────────────────────── */
 #xframe .pull,
