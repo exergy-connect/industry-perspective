@@ -1,7 +1,6 @@
 {
   "language": "en-US",
   "audio": "audio/deck-en-US.wav",
-  "source": "audio/deck-en-US.source.wav",
   "pause_seconds": 3,
   "voice": "Erinome",
   "model": "gemini-3.1-flash-tts-preview",
@@ -9,42 +8,42 @@
     {
       "id": "title",
       "startSeconds": 0,
-      "endSeconds": 23.9
+      "endSeconds": 24.55
     },
     {
       "id": "trigger",
-      "startSeconds": 26.9,
-      "endSeconds": 45.6
+      "startSeconds": 27.55,
+      "endSeconds": 46.6
     },
     {
       "id": "geography",
-      "startSeconds": 48.6,
-      "endSeconds": 68.5
+      "startSeconds": 49.6,
+      "endSeconds": 70
     },
     {
       "id": "question",
-      "startSeconds": 71.5,
-      "endSeconds": 87.55
+      "startSeconds": 73,
+      "endSeconds": 89.25
     },
     {
       "id": "method",
-      "startSeconds": 90.55,
-      "endSeconds": 110.3
+      "startSeconds": 92.25,
+      "endSeconds": 111.95
     },
     {
       "id": "findings",
-      "startSeconds": 113.3,
-      "endSeconds": 131.75
+      "startSeconds": 114.95,
+      "endSeconds": 133.00004166666668
     },
     {
       "id": "updated",
-      "startSeconds": 134.75,
-      "endSeconds": 151.65
+      "startSeconds": 136.00004166666668,
+      "endSeconds": 152.15004166666668
     },
     {
       "id": "close",
-      "startSeconds": 154.65,
-      "endSeconds": 175.68
+      "startSeconds": 155.15004166666668,
+      "endSeconds": 175.37008333333333
     }
   ]
 }

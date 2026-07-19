@@ -15,7 +15,7 @@ Sound like an experienced industry analyst: confident, clear, and conversational
 
 Do not simply read the slides. Interpret the information and guide the audience through the argument.
 
-Use measured emphasis for important numbers, contrasts, and strategic implications. Maintain a coherent, continuous presentation across all slides.
+Use measured emphasis for important numbers, contrasts, and strategic implications. Maintain a coherent presentation across all slides, and honor any explicit pause markers in the transcript as real silence.
 
 ## Scene
 
@@ -27,9 +27,11 @@ Evidence-led analysis of upstream developments, offshore projects, FPSOs, FLNGs,
 
 The presenter should clearly distinguish between facts, analysis, and strategic interpretation.
 
+{% if instructions %}
 ## Additional Direction
 
-{{ instructions | default("") }}
+{{ instructions }}
+{% endif %}
 
 ## Transcript
 
