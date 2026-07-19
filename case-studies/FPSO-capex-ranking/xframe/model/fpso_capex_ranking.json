@@ -1,6 +1,6 @@
 {
   "name": "FPSO CAPEX Ranking",
-  "version": "26.07.19.4",
+  "version": "26.07.19.5",
   "author": "Industry Perspective",
   "description": "Initial data model for the Top 10 upcoming FPSO projects by CAPEX case study. Captures attributed ranking claims (source, currency, horizon), reference operators and countries, and project rows with rank, stated CAPEX, and stage so the LinkedIn trigger visual can be checked and extended against primary sources.",
   "source": "case-studies/FPSO-capex-ranking: Giacomo Prandelli LinkedIn post and Top10_FPSO_CAPEX_projects.jpeg",
@@ -415,6 +415,39 @@
           "type": { "primitive": "string" },
           "required": false
         }
+      ]
+    },
+    {
+      "name": "independent_source",
+      "brief": "Source independent of the trigger post and comments",
+      "description": "An operator, contractor, regulator, government, or other publication used to verify or qualify a project claim independently of the LinkedIn discussion.",
+      "primary_key": "source_id",
+      "fields": [
+        { "name": "source_id", "description": "Stable source identifier.", "type": { "primitive": "string" }, "required": true },
+        { "name": "publisher", "description": "Publishing organization.", "type": { "primitive": "string" }, "required": true },
+        { "name": "source_class", "description": "Authority and relationship of the publisher to the fact.", "type": { "primitive": "string", "enum": ["operator", "contractor", "regulator", "government", "partner", "industry_source"] }, "required": true },
+        { "name": "title", "description": "Source title.", "type": { "primitive": "string" }, "required": true },
+        { "name": "source_url", "description": "Direct URL to the independent source.", "type": { "primitive": "string" }, "required": true },
+        { "name": "published_date", "description": "Publication date when known (ISO date).", "type": { "primitive": "string" }, "required": false },
+        { "name": "accessed_date", "description": "Date this case study accessed the source (ISO date).", "type": { "primitive": "string" }, "required": true }
+      ]
+    },
+    {
+      "name": "independent_finding",
+      "brief": "Independently supported project finding",
+      "description": "A fact or reconciliation derived from an independent source. Target identifiers refer to either an original ranked project or a comment-sourced mention and do not mutate those source records.",
+      "primary_key": "finding_id",
+      "fields": [
+        { "name": "finding_id", "description": "Stable finding identifier.", "type": { "primitive": "string" }, "required": true },
+        { "name": "source_id", "description": "Foreign key to the supporting independent source.", "type": { "primitive": "string", "foreignKeys": [{ "entity": "independent_source" }] }, "required": true },
+        { "name": "target_type", "description": "Which provenance layer contains the claim being assessed.", "type": { "primitive": "string", "enum": ["original_project", "comment_mention", "ranking"] }, "required": true },
+        { "name": "target_id", "description": "Identifier of the original project, comment mention, or ranking being assessed.", "type": { "primitive": "string" }, "required": true },
+        { "name": "project_name", "description": "Canonical or source-supported project name used in this finding.", "type": { "primitive": "string" }, "required": true },
+        { "name": "finding_type", "description": "Kind of fact or reconciliation.", "type": { "primitive": "string", "enum": ["identity", "operator", "contractor", "status", "capex", "capex_scope", "name_mapping", "development_concept"] }, "required": true },
+        { "name": "statement", "description": "Paraphrased finding supported by the cited source.", "type": { "primitive": "string" }, "required": true },
+        { "name": "derivation", "description": "Whether the source states the fact directly or the case study infers a reconciliation.", "type": { "primitive": "string", "enum": ["direct", "inferred"] }, "required": true },
+        { "name": "confidence", "description": "Confidence in this individual finding.", "type": { "primitive": "string", "enum": ["high", "medium", "low"] }, "required": true },
+        { "name": "notes", "description": "Caveats, especially conflicts with the trigger visual or comment wording.", "type": { "primitive": "string" }, "required": false }
       ]
     }
   ]

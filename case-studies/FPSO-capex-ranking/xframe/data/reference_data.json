@@ -1,0 +1,26 @@
+{
+  "country": [
+    { "country_id": "GY", "country_name": "Guyana", "region": "South Atlantic" },
+    { "country_id": "SR", "country_name": "Suriname", "region": "South Atlantic" },
+    { "country_id": "BR", "country_name": "Brazil", "region": "South Atlantic" },
+    { "country_id": "NG", "country_name": "Nigeria", "region": "West Africa" },
+    { "country_id": "NO", "country_name": "Norway", "region": "Barents Sea" },
+    { "country_id": "ID", "country_name": "Indonesia", "region": "Southeast Asia" },
+    { "country_id": "CA", "country_name": "Canada", "region": "North Atlantic" },
+    { "country_id": "NA", "country_name": "Namibia", "region": "South Atlantic" },
+    { "country_id": "AO", "country_name": "Angola", "region": "South Atlantic" }
+  ],
+  "operator": [
+    { "operator_id": "exxonmobil", "operator_name": "ExxonMobil" },
+    { "operator_id": "totalenergies", "operator_name": "TotalEnergies" },
+    { "operator_id": "petrobras", "operator_name": "Petrobras" },
+    { "operator_id": "equinor", "operator_name": "Equinor" },
+    { "operator_id": "shell", "operator_name": "Shell" },
+    { "operator_id": "yinson", "operator_name": "Yinson" },
+    { "operator_id": "azule-energy", "operator_name": "Azule Energy" },
+    { "operator_id": "mubadala-energy", "operator_name": "Mubadala Energy" }
+  ],
+  "contractor": [
+    { "contractor_id": "bw-offshore", "contractor_name": "BW Offshore" }
+  ]
+}

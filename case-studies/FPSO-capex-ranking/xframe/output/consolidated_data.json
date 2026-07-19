@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "timestamp": "2026-07-19T15:43:46Z",
+  "timestamp": "2026-07-19T15:51:54Z",
   "model": {
     "name": "FPSO CAPEX Ranking",
-    "version": "26.07.19.4",
+    "version": "26.07.19.5",
     "author": "Industry Perspective",
     "description": "Initial data model for the Top 10 upcoming FPSO projects by CAPEX case study. Captures attributed ranking claims (source, currency, horizon), reference operators and countries, and project rows with rank, stated CAPEX, and stage so the LinkedIn trigger visual can be checked and extended against primary sources.",
     "include_x_fields": true,
@@ -14,16 +14,35 @@
   "sourcefiles": {
     "000000000001": {
       "id": 1,
-      "path": "data/sample_data.json"
+      "path": "data/comment_additions.json",
+      "dependencies": [
+        3,
+        4
+      ]
+    },
+    "000000000002": {
+      "id": 2,
+      "path": "data/independent_findings.json"
+    },
+    "000000000003": {
+      "id": 3,
+      "path": "data/original_post.json",
+      "dependencies": [
+        4
+      ]
+    },
+    "000000000004": {
+      "id": 4,
+      "path": "data/reference_data.json"
     }
   },
   "data": {
     "change": {
       "000000000001": {
         "id": 1,
-        "timestamp": "2026-07-19T15:43:46Z",
+        "timestamp": "2026-07-19T15:51:54Z",
         "author": "Industry Perspective",
-        "note": "Add independent PAJ mention identifying Azule Energy (forced --clean)"
+        "note": "Split original, comment, and independently inferred provenance data (forced --clean)"
       }
     },
     "country": {
@@ -33,7 +52,7 @@
         "region": "South Atlantic",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "SR": {
         "country_id": "SR",
@@ -41,7 +60,7 @@
         "region": "South Atlantic",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "BR": {
         "country_id": "BR",
@@ -49,7 +68,7 @@
         "region": "South Atlantic",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "NG": {
         "country_id": "NG",
@@ -57,7 +76,7 @@
         "region": "West Africa",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "NO": {
         "country_id": "NO",
@@ -65,7 +84,7 @@
         "region": "Barents Sea",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "ID": {
         "country_id": "ID",
@@ -73,7 +92,7 @@
         "region": "Southeast Asia",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "CA": {
         "country_id": "CA",
@@ -81,7 +100,7 @@
         "region": "North Atlantic",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "NA": {
         "country_id": "NA",
@@ -89,7 +108,7 @@
         "region": "South Atlantic",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "AO": {
         "country_id": "AO",
@@ -97,7 +116,7 @@
         "region": "South Atlantic",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       }
     },
     "operator": {
@@ -106,49 +125,56 @@
         "operator_name": "ExxonMobil",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "totalenergies": {
         "operator_id": "totalenergies",
         "operator_name": "TotalEnergies",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "petrobras": {
         "operator_id": "petrobras",
         "operator_name": "Petrobras",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "equinor": {
         "operator_id": "equinor",
         "operator_name": "Equinor",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "shell": {
         "operator_id": "shell",
         "operator_name": "Shell",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "yinson": {
         "operator_id": "yinson",
         "operator_name": "Yinson",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
       },
       "azule-energy": {
         "operator_id": "azule-energy",
         "operator_name": "Azule Energy",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
+      },
+      "mubadala-energy": {
+        "operator_id": "mubadala-energy",
+        "operator_name": "Mubadala Energy",
+        "c": 1,
+        "v": 1,
+        "f": 4
       }
     },
     "capex_ranking": {
@@ -266,7 +292,8 @@
             "comment_text": "Those values are including which investments, besides the FPSOs per se?",
             "issue_type": "capex_scope",
             "resolution_status": "open",
-            "interpretation": "The published values must not be described as FPSO-only CAPEX until their cost boundary is established. They may include subsea, drilling, installation, topsides, or broader field-development scope; the trigger source does not say."
+            "interpretation": "The published values must not be described as FPSO-only CAPEX until their cost boundary is established.",
+            "f": 1
           },
           {
             "comment_id": "jean-carlos-pina-other-projects",
@@ -277,7 +304,7 @@
             "comment_text": "What about Wisting FPSO (Equinor, Barents Sea) and Tangkulo (Yinson, Indonesian Sea)?",
             "issue_type": "project_identity",
             "resolution_status": "open",
-            "interpretation": "The comment proposes two projects outside the published top ten. Their omission or eligibility cannot be assessed until the ranking methodology, CAPEX basis, horizon, and project status are known.",
+            "interpretation": "The comment proposes two projects outside the published top ten; omission cannot be assessed without ranking methodology and comparable CAPEX.",
             "project_mentions": [
               {
                 "mention_id": "jean-carlos-pina-wisting",
@@ -286,7 +313,7 @@
                 "country_id": "NO",
                 "offshore_area": "Barents Sea",
                 "inclusion_status": "suggested_in_comment",
-                "notes": "Comment-sourced mention only; no CAPEX value, rank, stage, or ranking eligibility is asserted."
+                "notes": "No CAPEX, rank, stage, or eligibility asserted."
               },
               {
                 "mention_id": "jean-carlos-pina-tangkulo",
@@ -295,9 +322,10 @@
                 "country_id": "ID",
                 "offshore_area": "Indonesian Sea",
                 "inclusion_status": "suggested_in_comment",
-                "notes": "Comment-sourced mention only; no CAPEX value, rank, stage, or ranking eligibility is asserted."
+                "notes": "No CAPEX, rank, stage, or eligibility asserted."
               }
-            ]
+            ],
+            "f": 1
           },
           {
             "comment_id": "frode-kristoffersen-bay-du-nord",
@@ -308,7 +336,7 @@
             "comment_text": "Bay du Nord is also progressing by Equinor and BW Offshore as contractor 👍🏻",
             "issue_type": "project_identity",
             "resolution_status": "open",
-            "interpretation": "The comment proposes Bay du Nord as another project to consider and distinguishes Equinor's operator role from BW Offshore's contractor role. Ranking eligibility and comparable CAPEX remain unverified.",
+            "interpretation": "The comment proposes Bay du Nord and distinguishes Equinor's operator role from BW Offshore's contractor role.",
             "project_mentions": [
               {
                 "mention_id": "frode-kristoffersen-bay-du-nord",
@@ -318,9 +346,10 @@
                 "contractor_id": "bw-offshore",
                 "offshore_area": "Offshore Newfoundland and Labrador",
                 "inclusion_status": "suggested_in_comment",
-                "notes": "Comment-sourced mention. The source says the project is progressing and identifies BW Offshore as contractor; no CAPEX value, rank, formal stage, or ranking eligibility is asserted."
+                "notes": "No CAPEX, rank, formal stage, or eligibility asserted."
               }
-            ]
+            ],
+            "f": 1
           },
           {
             "comment_id": "gouabi-mohammed-elhabri-venus",
@@ -331,7 +360,7 @@
             "comment_text": "You forget Namibia's Venus FPSO for Total Energies",
             "issue_type": "project_identity",
             "resolution_status": "open",
-            "interpretation": "The comment proposes Venus FPSO in Namibia as another project to consider. Its omission or eligibility cannot be assessed without the ranking methodology and comparable CAPEX basis.",
+            "interpretation": "The comment proposes Venus FPSO as another project to consider.",
             "project_mentions": [
               {
                 "mention_id": "gouabi-mohammed-elhabri-venus",
@@ -340,9 +369,10 @@
                 "country_id": "NA",
                 "offshore_area": "Offshore Namibia",
                 "inclusion_status": "suggested_in_comment",
-                "notes": "Comment-sourced mention only; no CAPEX value, rank, stage, or ranking eligibility is asserted."
+                "notes": "No CAPEX, rank, stage, or eligibility asserted."
               }
-            ]
+            ],
+            "f": 1
           },
           {
             "comment_id": "fernando-rueda-angola-paj",
@@ -353,7 +383,7 @@
             "comment_text": "Just Brasil? Where is Angola PAJ?",
             "issue_type": "project_identity",
             "resolution_status": "open",
-            "interpretation": "The comment challenges the ranking's geographic and project completeness by proposing Angola PAJ. The comment does not identify an operator, CAPEX value, stage, or basis for eligibility.",
+            "interpretation": "The comment challenges geographic completeness by proposing Angola PAJ.",
             "project_mentions": [
               {
                 "mention_id": "fernando-rueda-angola-paj",
@@ -361,9 +391,10 @@
                 "country_id": "AO",
                 "offshore_area": "Offshore Angola",
                 "inclusion_status": "suggested_in_comment",
-                "notes": "Comment-sourced mention using the name supplied by the commenter. Operator, expanded project name, CAPEX, rank, stage, and ranking eligibility remain unverified."
+                "notes": "Operator and expanded identity unstated by this source."
               }
-            ]
+            ],
+            "f": 1
           },
           {
             "comment_id": "manuel-domingos-ngunza-paj",
@@ -374,7 +405,7 @@
             "comment_text": "Where’s the PAJ Azule Energy",
             "issue_type": "project_identity",
             "resolution_status": "open",
-            "interpretation": "This independently repeats PAJ as a proposed omission and identifies Azule Energy as operator. It corroborates the project mention but does not establish comparable CAPEX or ranking eligibility.",
+            "interpretation": "This independently repeats PAJ and identifies Azule Energy as operator.",
             "project_mentions": [
               {
                 "mention_id": "manuel-domingos-ngunza-paj",
@@ -383,14 +414,15 @@
                 "country_id": "AO",
                 "offshore_area": "Offshore Angola",
                 "inclusion_status": "under_review",
-                "notes": "Second independent LinkedIn comment mentioning PAJ; this source identifies Azule Energy. CAPEX, rank, stage, expanded project name, and ranking eligibility remain unverified."
+                "notes": "Second comment identifies Azule Energy; CAPEX and eligibility remain unverified."
               }
-            ]
+            ],
+            "f": 1
           }
         ],
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 3
       }
     },
     "contractor": {
@@ -399,7 +431,400 @@
         "contractor_name": "BW Offshore",
         "c": 1,
         "v": 1,
-        "f": 1
+        "f": 4
+      }
+    },
+    "independent_source": {
+      "exxon-guyana-2023-report": {
+        "source_id": "exxon-guyana-2023-report",
+        "publisher": "ExxonMobil Guyana",
+        "source_class": "operator",
+        "title": "ExxonMobil Guyana Limited Annual Report 2023",
+        "source_url": "https://corporate.exxonmobil.com/-/media/global/files/locations/guyana-operations/2023-exxonmobil-guyana-limited-annual-report.pdf",
+        "published_date": "2024-01-01",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "totalenergies-granmorgu-fid": {
+        "source_id": "totalenergies-granmorgu-fid",
+        "publisher": "TotalEnergies",
+        "source_class": "operator",
+        "title": "Final Investment Decision for the GranMorgu development",
+        "source_url": "https://totalenergies.com/newsroom/suriname-totalenergies-announces-final-investment-decision-granmorgu/",
+        "published_date": "2024-10-01",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "petrobras-p84-p85-contracts": {
+        "source_id": "petrobras-p84-p85-contracts",
+        "publisher": "Petrobras",
+        "source_class": "operator",
+        "title": "Petrobras signs contracts for Platforms P-84 and P-85",
+        "source_url": "https://agencia.petrobras.com.br/en/w/negocio/petrobras-assina-contratos-para-aquisicao-das-plataformas-p-84-e-p-85",
+        "published_date": "2024-05-24",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "equinor-raia": {
+        "source_id": "equinor-raia",
+        "publisher": "Equinor",
+        "source_class": "operator",
+        "title": "Raia",
+        "source_url": "https://www.equinor.com/energy/raia",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "petrobras-etapa4-rima": {
+        "source_id": "petrobras-etapa4-rima",
+        "publisher": "Petrobras",
+        "source_class": "operator",
+        "title": "RIMA Etapa 4",
+        "source_url": "https://comunicabaciadesantos.petrobras.com.br/documents/d/comunica-bacia-de-santos/rima_-_etapa_4_rev02_1-1?download=true",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "nipex-bswa-tender": {
+        "source_id": "nipex-bswa-tender",
+        "publisher": "Nigerian Petroleum Exchange / SNEPco",
+        "source_class": "operator",
+        "title": "Bonga South West Aparo subsea EPC expression of interest",
+        "source_url": "https://nipexmain2.nipex-ng.com/wp-content/uploads/2026/02/EOI-Advert-Subsea-EPC2-for-Publication.pdf",
+        "published_date": "2026-02-01",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "equinor-wisting-eia": {
+        "source_id": "equinor-wisting-eia",
+        "publisher": "Equinor",
+        "source_class": "operator",
+        "title": "Wisting environmental impact assessment programme consultation",
+        "source_url": "https://www.equinor.com/news/20260625-wisting-proposal-environmental-impact-assessment-programme",
+        "published_date": "2026-06-25",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "indonesia-migas-2024": {
+        "source_id": "indonesia-migas-2024",
+        "publisher": "Indonesia Directorate General of Oil and Gas",
+        "source_class": "government",
+        "title": "2024 Performance Report",
+        "source_url": "https://migas.esdm.go.id/cms/uploads/informasi-publik/Laporan-Kinerja/LAKIN-2024.pdf",
+        "published_date": "2025-01-01",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "equinor-bay-du-nord": {
+        "source_id": "equinor-bay-du-nord",
+        "publisher": "Equinor",
+        "source_class": "operator",
+        "title": "Equinor acquires bp interest in Bay du Nord project",
+        "source_url": "https://www.equinor.com/news/equinor-bp-bay-du-nord-project",
+        "published_date": "2026-07-06",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "bw-bay-du-nord": {
+        "source_id": "bw-bay-du-nord",
+        "publisher": "BW Offshore",
+        "source_class": "contractor",
+        "title": "Selected for Bay du Nord pre-FEED study",
+        "source_url": "https://www.bwoffshore.com/ir/recent-news/news/2025/celebrating-success/",
+        "published_date": "2025-01-22",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "totalenergies-venus-esia": {
+        "source_id": "totalenergies-venus-esia",
+        "publisher": "TotalEnergies Namibia",
+        "source_class": "operator",
+        "title": "ESIA for proposed development of the offshore Venus field",
+        "source_url": "https://totalenergies.na/esia-proposed-development-offshore-venus-field-block-2913b",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "anpg-greater-paj-fid": {
+        "source_id": "anpg-greater-paj-fid",
+        "publisher": "Angola National Oil, Gas and Biofuels Agency",
+        "source_class": "regulator",
+        "title": "Final Investment Decision for Greater PAJ",
+        "source_url": "https://anpg.co.ao/noticias/anpg-azule-energy-e-parceiros-dos-blocos-31-e-31-21-anunciam-decisao-final-de-investimento-do-projecto-greater-paj/",
+        "published_date": "2026-06-22",
+        "accessed_date": "2026-07-19",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      }
+    },
+    "independent_finding": {
+      "uaru-exxon-verification": {
+        "finding_id": "uaru-exxon-verification",
+        "source_id": "exxon-guyana-2023-report",
+        "target_type": "original_project",
+        "target_id": "uaru",
+        "project_name": "Uaru / Errea Wittu FPSO",
+        "finding_type": "capex_scope",
+        "statement": "ExxonMobil reports a US$12.7 billion investment for the Uaru development and names its FPSO Errea Wittu.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "The amount is development investment, not demonstrated to be FPSO-only cost.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "whiptail-exxon-verification": {
+        "finding_id": "whiptail-exxon-verification",
+        "source_id": "exxon-guyana-2023-report",
+        "target_type": "original_project",
+        "target_id": "whiptail",
+        "project_name": "Whiptail / Jaguar FPSO",
+        "finding_type": "capex_scope",
+        "statement": "ExxonMobil reports a US$12.7 billion investment for Whiptail and names its FPSO Jaguar.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "The amount is development investment, not demonstrated to be FPSO-only cost.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "granmorgu-fid": {
+        "finding_id": "granmorgu-fid",
+        "source_id": "totalenergies-granmorgu-fid",
+        "target_type": "original_project",
+        "target_id": "granmorgu",
+        "project_name": "GranMorgu",
+        "finding_type": "status",
+        "statement": "TotalEnergies took FID in October 2024 for a development including a 220,000 bpd FPSO.",
+        "derivation": "direct",
+        "confidence": "high",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "atapu2-status": {
+        "finding_id": "atapu2-status",
+        "source_id": "petrobras-p84-p85-contracts",
+        "target_type": "original_project",
+        "target_id": "atapu-development",
+        "project_name": "Atapu 2 / P-84",
+        "finding_type": "name_mapping",
+        "statement": "Petrobras identifies P-84 as the Atapu second unit, planned for production in 2029; Atapu already produces through P-70.",
+        "derivation": "inferred",
+        "confidence": "medium",
+        "notes": "The visual's generic Atapu Development label and Producing stage mix the operating field with its future expansion.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "sepia2-status": {
+        "finding_id": "sepia2-status",
+        "source_id": "petrobras-p84-p85-contracts",
+        "target_type": "original_project",
+        "target_id": "sepia-development",
+        "project_name": "Sépia 2 / P-85",
+        "finding_type": "name_mapping",
+        "statement": "Petrobras identifies P-85 as the Sépia second unit, planned for production in 2030; Sépia already produces through FPSO Carioca.",
+        "derivation": "inferred",
+        "confidence": "medium",
+        "notes": "The visual's generic Sépia Development label and Producing stage mix the operating field with its future expansion.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "raia-verification": {
+        "finding_id": "raia-verification",
+        "source_id": "equinor-raia",
+        "target_type": "original_project",
+        "target_id": "raia",
+        "project_name": "Raia",
+        "finding_type": "capex_scope",
+        "statement": "Equinor describes a roughly US$9 billion field development with an FPSO and expected 2028 start-up.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "The US$9 billion figure is explicitly project development investment, not FPSO-only cost.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "buzios10-verification": {
+        "finding_id": "buzios10-verification",
+        "source_id": "petrobras-etapa4-rima",
+        "target_type": "original_project",
+        "target_id": "buzios-x-franco",
+        "project_name": "Búzios 10",
+        "finding_type": "identity",
+        "statement": "Petrobras environmental documentation includes Búzios 10 among planned FPSO developments.",
+        "derivation": "direct",
+        "confidence": "medium",
+        "notes": "This verifies identity, not the visual's CAPEX value or a specific P-number mapping.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "buzios11-verification": {
+        "finding_id": "buzios11-verification",
+        "source_id": "petrobras-etapa4-rima",
+        "target_type": "original_project",
+        "target_id": "buzios-xi-franco",
+        "project_name": "Búzios 11",
+        "finding_type": "identity",
+        "statement": "Petrobras environmental documentation includes Búzios 11 among planned FPSO developments.",
+        "derivation": "direct",
+        "confidence": "medium",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "buzios9-verification": {
+        "finding_id": "buzios9-verification",
+        "source_id": "petrobras-etapa4-rima",
+        "target_type": "original_project",
+        "target_id": "buzios-ix-franco",
+        "project_name": "Búzios 9",
+        "finding_type": "identity",
+        "statement": "Petrobras environmental documentation includes Búzios 9 among planned FPSO developments.",
+        "derivation": "direct",
+        "confidence": "medium",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "bswa-verification": {
+        "finding_id": "bswa-verification",
+        "source_id": "nipex-bswa-tender",
+        "target_type": "original_project",
+        "target_id": "bonga-southwest-aparo",
+        "project_name": "Bonga South West Aparo",
+        "finding_type": "status",
+        "statement": "A 2026 SNEPco tender identifies Shell as operator and shows active procurement for the BSWA field development.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "Tender activity does not establish FID or validate the visual's US$8 billion value.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "wisting-verification": {
+        "finding_id": "wisting-verification",
+        "source_id": "equinor-wisting-eia",
+        "target_type": "comment_mention",
+        "target_id": "jean-carlos-pina-wisting",
+        "project_name": "Wisting",
+        "finding_type": "status",
+        "statement": "Equinor says Wisting remains pre-FID, has selected an FPSO concept, and plans a possible FID at the end of 2027.",
+        "derivation": "direct",
+        "confidence": "high",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "tangkulo-operator-correction": {
+        "finding_id": "tangkulo-operator-correction",
+        "source_id": "indonesia-migas-2024",
+        "target_type": "comment_mention",
+        "target_id": "jean-carlos-pina-tangkulo",
+        "project_name": "Tangkulo",
+        "finding_type": "operator",
+        "statement": "Indonesia's government confirms Tangkulo as a South Andaman gas-condensate discovery; independent evidence does not establish Yinson as operator.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "Mubadala Energy operates South Andaman; Yinson was named by the comment in a potential FPSO-provider context.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "bay-du-nord-concept": {
+        "finding_id": "bay-du-nord-concept",
+        "source_id": "equinor-bay-du-nord",
+        "target_type": "comment_mention",
+        "target_id": "frode-kristoffersen-bay-du-nord",
+        "project_name": "Bay du Nord",
+        "finding_type": "development_concept",
+        "statement": "Equinor confirms a Bay du Nord concept based on an FPSO with subsea tiebacks.",
+        "derivation": "direct",
+        "confidence": "high",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "bay-du-nord-bw-role": {
+        "finding_id": "bay-du-nord-bw-role",
+        "source_id": "bw-bay-du-nord",
+        "target_type": "comment_mention",
+        "target_id": "frode-kristoffersen-bay-du-nord",
+        "project_name": "Bay du Nord",
+        "finding_type": "contractor",
+        "statement": "BW Offshore confirms selection to perform the Bay du Nord FPSO pre-FEED study.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "Pre-FEED selection is narrower than a final FPSO construction or operating contract.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "venus-verification": {
+        "finding_id": "venus-verification",
+        "source_id": "totalenergies-venus-esia",
+        "target_type": "comment_mention",
+        "target_id": "gouabi-mohammed-elhabri-venus",
+        "project_name": "Venus",
+        "finding_type": "status",
+        "statement": "TotalEnergies is conducting ESIA consultation for a proposed Venus field development in Block 2913B offshore Namibia.",
+        "derivation": "direct",
+        "confidence": "high",
+        "notes": "Proposed development; no FID or comparable CAPEX established by this source.",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "paj-verification-fernando": {
+        "finding_id": "paj-verification-fernando",
+        "source_id": "anpg-greater-paj-fid",
+        "target_type": "comment_mention",
+        "target_id": "fernando-rueda-angola-paj",
+        "project_name": "Greater PAJ",
+        "finding_type": "identity",
+        "statement": "ANPG confirms Greater PAJ means Palas, Astrea and Juno and is operated by Azule Energy offshore Angola.",
+        "derivation": "direct",
+        "confidence": "high",
+        "c": 1,
+        "v": 1,
+        "f": 2
+      },
+      "paj-verification-manuel": {
+        "finding_id": "paj-verification-manuel",
+        "source_id": "anpg-greater-paj-fid",
+        "target_type": "comment_mention",
+        "target_id": "manuel-domingos-ngunza-paj",
+        "project_name": "Greater PAJ",
+        "finding_type": "status",
+        "statement": "ANPG confirms FID on 22 June 2026 for Greater PAJ in Blocks 31 and 31/21, operated by Azule Energy.",
+        "derivation": "direct",
+        "confidence": "high",
+        "c": 1,
+        "v": 1,
+        "f": 2
       }
     }
   }

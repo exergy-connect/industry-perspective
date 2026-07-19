@@ -37,6 +37,17 @@ This repository can develop the visual into a traceable industry perspective by 
 
 The LinkedIn post and visual are the **trigger source**, not a complete project-cost dataset. Names, rankings, values, and the $94 billion total should be treated as attributed claims until checked against operator disclosures, contract announcements, regulatory filings, and other primary sources. Any derived dataset or updated visual added here should record its source, date, CAPEX definition, currency basis, and confidence level.
 
+### Data provenance layout
+
+The source layers are deliberately stored in separate files:
+
+- [`original_post.json`](./xframe/data/original_post.json) contains only the ranking and ten project rows transcribed from the original post and visual.
+- [`comment_additions.json`](./xframe/data/comment_additions.json) contains the attributed LinkedIn comments and their proposed project mentions.
+- [`independent_findings.json`](./xframe/data/independent_findings.json) contains independent sources and the direct or inferred findings derived from them.
+- [`reference_data.json`](./xframe/data/reference_data.json) contains shared countries, operators, and contractors referenced across the three provenance layers.
+
+Independent findings qualify the source claims without rewriting them. For example, the original visual remains preserved as published even where independent research indicates a broader development-level CAPEX scope, an ambiguous project-to-FPSO mapping, or a different operator/contractor role.
+
 ### An important question from the discussion
 
 [Luciano Jorge de Carvalho Junior](https://www.linkedin.com/in/luciano-jorge-de-carvalho-junior-349bb530) asked in a comment:

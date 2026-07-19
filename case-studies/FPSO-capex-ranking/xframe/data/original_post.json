@@ -1,0 +1,109 @@
+{
+  "capex_ranking": [
+    {
+      "ranking_id": "prandelli-top10-fpso-to-2030",
+      "title": "Top 10 upcoming FPSO projects to 2030",
+      "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+      "source_attribution": "Giacomo Prandelli LinkedIn post and accompanying CAPEX visual (local copy: Top10_FPSO_CAPEX_projects.jpeg)",
+      "horizon_year": 2030,
+      "currency": "USD",
+      "claimed_total_m": 94000,
+      "capex_scope": "unknown",
+      "capex_scope_status": "unresolved",
+      "confidence": "trigger_claim",
+      "notes": "Trigger source for the case study, not a complete project-cost dataset. Names, ranks, values, and the ~$94B total are attributed claims until checked against operator disclosures, contracts, and filings. The visual does not establish whether each value represents the FPSO alone or wider field-development investment.",
+      "projects": [
+        {
+          "project_id": "uaru",
+          "project_name": "Uaru",
+          "rank": 1,
+          "claimed_capex_m": 12700,
+          "stage": "Planned",
+          "operator_id": "exxonmobil",
+          "country_id": "GY"
+        },
+        {
+          "project_id": "whiptail",
+          "project_name": "Whiptail",
+          "rank": 2,
+          "claimed_capex_m": 12700,
+          "stage": "Planned",
+          "operator_id": "exxonmobil",
+          "country_id": "GY"
+        },
+        {
+          "project_id": "granmorgu",
+          "project_name": "GranMorgu",
+          "rank": 3,
+          "claimed_capex_m": 10500,
+          "stage": "Planned",
+          "operator_id": "totalenergies",
+          "country_id": "SR"
+        },
+        {
+          "project_id": "atapu-development",
+          "project_name": "Atapu Development",
+          "rank": 4,
+          "claimed_capex_m": 9741,
+          "stage": "Producing",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "raia",
+          "project_name": "Raia",
+          "rank": 5,
+          "claimed_capex_m": 9000,
+          "stage": "Planned",
+          "operator_id": "equinor",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "sepia-development",
+          "project_name": "Sepia Development",
+          "rank": 6,
+          "claimed_capex_m": 8499,
+          "stage": "Producing",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "buzios-x-franco",
+          "project_name": "Buzios X (Franco)",
+          "rank": 7,
+          "claimed_capex_m": 8427,
+          "stage": "Planned",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "bonga-southwest-aparo",
+          "project_name": "Bonga Southwest/Aparo",
+          "rank": 8,
+          "claimed_capex_m": 8000,
+          "stage": "Announced",
+          "operator_id": "shell",
+          "country_id": "NG"
+        },
+        {
+          "project_id": "buzios-xi-franco",
+          "project_name": "Buzios XI (Franco)",
+          "rank": 9,
+          "claimed_capex_m": 7641,
+          "stage": "Planned",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "buzios-ix-franco",
+          "project_name": "Buzios IX (Franco)",
+          "rank": 10,
+          "claimed_capex_m": 7079,
+          "stage": "Planned",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        }
+      ]
+    }
+  ]
+}

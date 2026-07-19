@@ -214,6 +214,7 @@
             "azule-energy",
             "equinor",
             "exxonmobil",
+            "mubadala-energy",
             "petrobras",
             "shell",
             "totalenergies",
@@ -400,6 +401,7 @@
             "azule-energy",
             "equinor",
             "exxonmobil",
+            "mubadala-energy",
             "petrobras",
             "shell",
             "totalenergies",
@@ -470,6 +472,158 @@
           "parent_array": "project_mentions"
         }
       ]
+    },
+    "independent_source": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "description": "Stable source identifier."
+        },
+        "publisher": {
+          "type": "string",
+          "description": "Publishing organization."
+        },
+        "source_class": {
+          "type": "string",
+          "description": "Authority and relationship of the publisher to the fact.",
+          "enum": [
+            "operator",
+            "contractor",
+            "regulator",
+            "government",
+            "partner",
+            "industry_source"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "description": "Source title."
+        },
+        "source_url": {
+          "type": "string",
+          "description": "Direct URL to the independent source."
+        },
+        "published_date": {
+          "type": "string",
+          "description": "Publication date when known (ISO date)."
+        },
+        "accessed_date": {
+          "type": "string",
+          "description": "Date this case study accessed the source (ISO date)."
+        }
+      },
+      "description": "An operator, contractor, regulator, government, or other publication used to verify or qualify a project claim independently of the LinkedIn discussion.",
+      "required": [
+        "source_id",
+        "publisher",
+        "source_class",
+        "title",
+        "source_url",
+        "accessed_date"
+      ],
+      "x-primaryKey": "source_id"
+    },
+    "independent_finding": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "description": "Stable finding identifier."
+        },
+        "source_id": {
+          "type": "string",
+          "description": "Foreign key to the supporting independent source.",
+          "x-foreignKeys": [
+            {
+              "entity": "independent_source"
+            }
+          ],
+          "enum": [
+            "anpg-greater-paj-fid",
+            "bw-bay-du-nord",
+            "equinor-bay-du-nord",
+            "equinor-raia",
+            "equinor-wisting-eia",
+            "exxon-guyana-2023-report",
+            "indonesia-migas-2024",
+            "nipex-bswa-tender",
+            "petrobras-etapa4-rima",
+            "petrobras-p84-p85-contracts",
+            "totalenergies-granmorgu-fid",
+            "totalenergies-venus-esia"
+          ]
+        },
+        "target_type": {
+          "type": "string",
+          "description": "Which provenance layer contains the claim being assessed.",
+          "enum": [
+            "original_project",
+            "comment_mention",
+            "ranking"
+          ]
+        },
+        "target_id": {
+          "type": "string",
+          "description": "Identifier of the original project, comment mention, or ranking being assessed."
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Canonical or source-supported project name used in this finding."
+        },
+        "finding_type": {
+          "type": "string",
+          "description": "Kind of fact or reconciliation.",
+          "enum": [
+            "identity",
+            "operator",
+            "contractor",
+            "status",
+            "capex",
+            "capex_scope",
+            "name_mapping",
+            "development_concept"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "description": "Paraphrased finding supported by the cited source."
+        },
+        "derivation": {
+          "type": "string",
+          "description": "Whether the source states the fact directly or the case study infers a reconciliation.",
+          "enum": [
+            "direct",
+            "inferred"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "description": "Confidence in this individual finding.",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Caveats, especially conflicts with the trigger visual or comment wording."
+        }
+      },
+      "description": "A fact or reconciliation derived from an independent source. Target identifiers refer to either an original ranked project or a comment-sourced mention and do not mutate those source records.",
+      "required": [
+        "finding_id",
+        "source_id",
+        "target_type",
+        "target_id",
+        "project_name",
+        "finding_type",
+        "statement",
+        "derivation",
+        "confidence"
+      ],
+      "x-primaryKey": "finding_id"
     },
     "change": {
       "type": "object",
@@ -546,6 +700,18 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/discussion_project_mention"
+      }
+    },
+    "independent_source": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/independent_source"
+      }
+    },
+    "independent_finding": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/independent_finding"
       }
     },
     "change": {
