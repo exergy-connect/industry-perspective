@@ -298,7 +298,7 @@
                   {
                     "kind": "region",
                     "name": "aside",
-                    "weight": "0.618",
+                    "weight": "0.95",
                     "align": "stretch",
                     "content": [
                       {
@@ -1076,7 +1076,7 @@
                         "kind": "widget",
                         "widget": {
                           "type": "xframe-map",
-                          "body": "{\"type\":\"markers\",\"entity\":\"data.capex_ranking.prandelli-top10-fpso-to-2030.projects\",\"label\":\"project_name\",\"location\":\"offshore_area\",\"latitude\":\"latitude\",\"longitude\":\"longitude\",\"order\":\"startDate\",\"strategy\":\"chronological\",\"color\":\"operator_name\",\"size\":\"claimed_capex_m\",\"limit\":10,\"projection\":\"natural-earth\",\"callouts\":[\"Uaru\",\"GranMorgu\",\"Atapu Development\",\"Raia\",\"Bonga Southwest/Aparo\"],\"flag\":\"country_id\",\"zoom_to_data\":true}"
+                          "body": "{\"type\":\"markers\",\"entity\":\"data.capex_ranking.prandelli-top10-fpso-to-2030.projects\",\"label\":\"project_name\",\"location\":\"offshore_area\",\"latitude\":\"latitude\",\"longitude\":\"longitude\",\"order\":\"startDate\",\"strategy\":\"chronological\",\"color\":\"operator_name\",\"size\":\"claimed_capex_m\",\"limit\":10,\"projection\":\"natural-earth\",\"callouts\":[\"Uaru\",\"GranMorgu\",\"Atapu Development\",\"Raia\",\"Bonga Southwest/Aparo\"],\"flag\":\"country_id\",\"colormap\":\"operator.display_colors\",\"zoom_to_data\":true}"
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",

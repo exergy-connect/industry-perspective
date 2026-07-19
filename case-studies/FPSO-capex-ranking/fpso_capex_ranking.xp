@@ -18,7 +18,7 @@ data:
 ---
 @id title
 @layout slide-frame
-  aside: 0.618
+  aside: 0.95
 
 @region kicker
 Industry Perspective · Case Study
