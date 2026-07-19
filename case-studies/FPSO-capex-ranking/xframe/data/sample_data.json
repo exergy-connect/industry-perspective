@@ -1,0 +1,324 @@
+{
+  "country": [
+    {
+      "country_id": "GY",
+      "country_name": "Guyana",
+      "region": "South Atlantic"
+    },
+    {
+      "country_id": "SR",
+      "country_name": "Suriname",
+      "region": "South Atlantic"
+    },
+    {
+      "country_id": "BR",
+      "country_name": "Brazil",
+      "region": "South Atlantic"
+    },
+    {
+      "country_id": "NG",
+      "country_name": "Nigeria",
+      "region": "West Africa"
+    },
+    {
+      "country_id": "NO",
+      "country_name": "Norway",
+      "region": "Barents Sea"
+    },
+    {
+      "country_id": "ID",
+      "country_name": "Indonesia",
+      "region": "Southeast Asia"
+    },
+    {
+      "country_id": "CA",
+      "country_name": "Canada",
+      "region": "North Atlantic"
+    },
+    {
+      "country_id": "NA",
+      "country_name": "Namibia",
+      "region": "South Atlantic"
+    },
+    {
+      "country_id": "AO",
+      "country_name": "Angola",
+      "region": "South Atlantic"
+    }
+  ],
+  "operator": [
+    {
+      "operator_id": "exxonmobil",
+      "operator_name": "ExxonMobil"
+    },
+    {
+      "operator_id": "totalenergies",
+      "operator_name": "TotalEnergies"
+    },
+    {
+      "operator_id": "petrobras",
+      "operator_name": "Petrobras"
+    },
+    {
+      "operator_id": "equinor",
+      "operator_name": "Equinor"
+    },
+    {
+      "operator_id": "shell",
+      "operator_name": "Shell"
+    },
+    {
+      "operator_id": "yinson",
+      "operator_name": "Yinson"
+    },
+    {
+      "operator_id": "azule-energy",
+      "operator_name": "Azule Energy"
+    }
+  ],
+  "contractor": [
+    {
+      "contractor_id": "bw-offshore",
+      "contractor_name": "BW Offshore"
+    }
+  ],
+  "capex_ranking": [
+    {
+      "ranking_id": "prandelli-top10-fpso-to-2030",
+      "title": "Top 10 upcoming FPSO projects to 2030",
+      "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+      "source_attribution": "Giacomo Prandelli LinkedIn post and accompanying CAPEX visual (local copy: Top10_FPSO_CAPEX_projects.jpeg)",
+      "horizon_year": 2030,
+      "currency": "USD",
+      "claimed_total_m": 94000,
+      "capex_scope": "unknown",
+      "capex_scope_status": "unresolved",
+      "confidence": "trigger_claim",
+      "notes": "Trigger source for the case study, not a complete project-cost dataset. Names, ranks, values, and the ~$94B total are attributed claims until checked against operator disclosures, contracts, and filings. The visual does not establish whether each value represents the FPSO alone or wider field-development investment.",
+      "projects": [
+        {
+          "project_id": "uaru",
+          "project_name": "Uaru",
+          "rank": 1,
+          "claimed_capex_m": 12700,
+          "stage": "Planned",
+          "operator_id": "exxonmobil",
+          "country_id": "GY"
+        },
+        {
+          "project_id": "whiptail",
+          "project_name": "Whiptail",
+          "rank": 2,
+          "claimed_capex_m": 12700,
+          "stage": "Planned",
+          "operator_id": "exxonmobil",
+          "country_id": "GY"
+        },
+        {
+          "project_id": "granmorgu",
+          "project_name": "GranMorgu",
+          "rank": 3,
+          "claimed_capex_m": 10500,
+          "stage": "Planned",
+          "operator_id": "totalenergies",
+          "country_id": "SR"
+        },
+        {
+          "project_id": "atapu-development",
+          "project_name": "Atapu Development",
+          "rank": 4,
+          "claimed_capex_m": 9741,
+          "stage": "Producing",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "raia",
+          "project_name": "Raia",
+          "rank": 5,
+          "claimed_capex_m": 9000,
+          "stage": "Planned",
+          "operator_id": "equinor",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "sepia-development",
+          "project_name": "Sepia Development",
+          "rank": 6,
+          "claimed_capex_m": 8499,
+          "stage": "Producing",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "buzios-x-franco",
+          "project_name": "Buzios X (Franco)",
+          "rank": 7,
+          "claimed_capex_m": 8427,
+          "stage": "Planned",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "bonga-southwest-aparo",
+          "project_name": "Bonga Southwest/Aparo",
+          "rank": 8,
+          "claimed_capex_m": 8000,
+          "stage": "Announced",
+          "operator_id": "shell",
+          "country_id": "NG"
+        },
+        {
+          "project_id": "buzios-xi-franco",
+          "project_name": "Buzios XI (Franco)",
+          "rank": 9,
+          "claimed_capex_m": 7641,
+          "stage": "Planned",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        },
+        {
+          "project_id": "buzios-ix-franco",
+          "project_name": "Buzios IX (Franco)",
+          "rank": 10,
+          "claimed_capex_m": 7079,
+          "stage": "Planned",
+          "operator_id": "petrobras",
+          "country_id": "BR"
+        }
+      ],
+      "discussions": [
+        {
+          "comment_id": "luciano-carvalho-capex-scope",
+          "source_type": "linkedin_comment",
+          "author_name": "Luciano Jorge de Carvalho Junior",
+          "author_url": "https://www.linkedin.com/in/luciano-jorge-de-carvalho-junior-349bb530",
+          "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+          "comment_text": "Those values are including which investments, besides the FPSOs per se?",
+          "issue_type": "capex_scope",
+          "resolution_status": "open",
+          "interpretation": "The published values must not be described as FPSO-only CAPEX until their cost boundary is established. They may include subsea, drilling, installation, topsides, or broader field-development scope; the trigger source does not say."
+        },
+        {
+          "comment_id": "jean-carlos-pina-other-projects",
+          "source_type": "linkedin_comment",
+          "author_name": "Jean Carlos Piña",
+          "author_url": "https://www.linkedin.com/in/jean-carlos-pi%C3%B1a-bbaab52b",
+          "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+          "comment_text": "What about Wisting FPSO (Equinor, Barents Sea) and Tangkulo (Yinson, Indonesian Sea)?",
+          "issue_type": "project_identity",
+          "resolution_status": "open",
+          "interpretation": "The comment proposes two projects outside the published top ten. Their omission or eligibility cannot be assessed until the ranking methodology, CAPEX basis, horizon, and project status are known.",
+          "project_mentions": [
+            {
+              "mention_id": "jean-carlos-pina-wisting",
+              "project_name": "Wisting FPSO",
+              "operator_id": "equinor",
+              "country_id": "NO",
+              "offshore_area": "Barents Sea",
+              "inclusion_status": "suggested_in_comment",
+              "notes": "Comment-sourced mention only; no CAPEX value, rank, stage, or ranking eligibility is asserted."
+            },
+            {
+              "mention_id": "jean-carlos-pina-tangkulo",
+              "project_name": "Tangkulo",
+              "operator_id": "yinson",
+              "country_id": "ID",
+              "offshore_area": "Indonesian Sea",
+              "inclusion_status": "suggested_in_comment",
+              "notes": "Comment-sourced mention only; no CAPEX value, rank, stage, or ranking eligibility is asserted."
+            }
+          ]
+        },
+        {
+          "comment_id": "frode-kristoffersen-bay-du-nord",
+          "source_type": "linkedin_comment",
+          "author_name": "Frode Kristoffersen",
+          "author_url": "https://www.linkedin.com/in/frode-kristoffersen-0aaab52a1",
+          "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+          "comment_text": "Bay du Nord is also progressing by Equinor and BW Offshore as contractor 👍🏻",
+          "issue_type": "project_identity",
+          "resolution_status": "open",
+          "interpretation": "The comment proposes Bay du Nord as another project to consider and distinguishes Equinor's operator role from BW Offshore's contractor role. Ranking eligibility and comparable CAPEX remain unverified.",
+          "project_mentions": [
+            {
+              "mention_id": "frode-kristoffersen-bay-du-nord",
+              "project_name": "Bay du Nord",
+              "operator_id": "equinor",
+              "contractor_id": "bw-offshore",
+              "country_id": "CA",
+              "offshore_area": "Offshore Newfoundland and Labrador",
+              "inclusion_status": "suggested_in_comment",
+              "notes": "Comment-sourced mention. The source says the project is progressing and identifies BW Offshore as contractor; no CAPEX value, rank, formal stage, or ranking eligibility is asserted."
+            }
+          ]
+        },
+        {
+          "comment_id": "gouabi-mohammed-elhabri-venus",
+          "source_type": "linkedin_comment",
+          "author_name": "GOUABI Mohammed Elhabri",
+          "author_url": "https://www.linkedin.com/in/gouabi-mohammed-elhabri-73092028",
+          "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+          "comment_text": "You forget Namibia's Venus FPSO for Total Energies",
+          "issue_type": "project_identity",
+          "resolution_status": "open",
+          "interpretation": "The comment proposes Venus FPSO in Namibia as another project to consider. Its omission or eligibility cannot be assessed without the ranking methodology and comparable CAPEX basis.",
+          "project_mentions": [
+            {
+              "mention_id": "gouabi-mohammed-elhabri-venus",
+              "project_name": "Venus FPSO",
+              "operator_id": "totalenergies",
+              "country_id": "NA",
+              "offshore_area": "Offshore Namibia",
+              "inclusion_status": "suggested_in_comment",
+              "notes": "Comment-sourced mention only; no CAPEX value, rank, stage, or ranking eligibility is asserted."
+            }
+          ]
+        },
+        {
+          "comment_id": "fernando-rueda-angola-paj",
+          "source_type": "linkedin_comment",
+          "author_name": "Fernando Rueda",
+          "author_url": "https://www.linkedin.com/in/fernando-rueda-b9561853",
+          "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+          "comment_text": "Just Brasil? Where is Angola PAJ?",
+          "issue_type": "project_identity",
+          "resolution_status": "open",
+          "interpretation": "The comment challenges the ranking's geographic and project completeness by proposing Angola PAJ. The comment does not identify an operator, CAPEX value, stage, or basis for eligibility.",
+          "project_mentions": [
+            {
+              "mention_id": "fernando-rueda-angola-paj",
+              "project_name": "PAJ",
+              "country_id": "AO",
+              "offshore_area": "Offshore Angola",
+              "inclusion_status": "suggested_in_comment",
+              "notes": "Comment-sourced mention using the name supplied by the commenter. Operator, expanded project name, CAPEX, rank, stage, and ranking eligibility remain unverified."
+            }
+          ]
+        },
+        {
+          "comment_id": "manuel-domingos-ngunza-paj",
+          "source_type": "linkedin_comment",
+          "author_name": "Manuel Domingos Ngunza",
+          "author_url": "https://www.linkedin.com/in/manuel-domingos-ngunza-29a265366",
+          "source_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+          "comment_text": "Where’s the PAJ Azule Energy",
+          "issue_type": "project_identity",
+          "resolution_status": "open",
+          "interpretation": "This independently repeats PAJ as a proposed omission and identifies Azule Energy as operator. It corroborates the project mention but does not establish comparable CAPEX or ranking eligibility.",
+          "project_mentions": [
+            {
+              "mention_id": "manuel-domingos-ngunza-paj",
+              "project_name": "PAJ",
+              "operator_id": "azule-energy",
+              "country_id": "AO",
+              "offshore_area": "Offshore Angola",
+              "inclusion_status": "under_review",
+              "notes": "Second independent LinkedIn comment mentioning PAJ; this source identifies Azule Energy. CAPEX, rank, stage, expanded project name, and ranking eligibility remain unverified."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

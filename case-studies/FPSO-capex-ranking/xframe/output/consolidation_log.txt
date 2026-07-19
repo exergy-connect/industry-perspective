@@ -1,0 +1,30 @@
+2026-07-19 10:43:46 [INFO] Logging to: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidation_log.txt
+2026-07-19 10:43:46 [INFO] Clean run: ignoring existing consolidated JSON and not inferring --js from prior output files
+2026-07-19 10:43:46 [INFO] Step 1: Consolidating models from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/model
+2026-07-19 10:43:46 [INFO] Skipping initial schema write; will write consolidated.schema.json after data load (--close-fk-enums).
+2026-07-19 10:43:46 [INFO] Model consolidation completed successfully (exit code: 0)
+2026-07-19 10:43:46 [INFO] Step 1 completed in 0.00 seconds
+2026-07-19 10:43:46 [INFO] Step 2: Consolidating data from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/data
+2026-07-19 10:43:46 [INFO] Loading data files from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/data
+2026-07-19 10:43:46 [INFO] Data loading completed in 0.00 seconds
+2026-07-19 10:43:46 [INFO] ✓ Consolidated model written (FK fields closed to data enums) to: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated.schema.json
+2026-07-19 10:43:46 [INFO] ============================================================
+2026-07-19 10:43:46 [INFO] Data load summary
+2026-07-19 10:43:46 [INFO] ============================================================
+2026-07-19 10:43:46 [INFO] Total entity records loaded (by PK): 40
+2026-07-19 10:43:46 [INFO] Records by entity type:
+2026-07-19 10:43:46 [INFO]   - capex_ranking: 1
+2026-07-19 10:43:46 [INFO]   - contractor: 1
+2026-07-19 10:43:46 [INFO]   - country: 9
+2026-07-19 10:43:46 [INFO]   - discussion_project_mention: 6
+2026-07-19 10:43:46 [INFO]   - fpso_project: 10
+2026-07-19 10:43:46 [INFO]   - operator: 7
+2026-07-19 10:43:46 [INFO]   - source_comment: 6
+2026-07-19 10:43:46 [INFO] ✓ No validation errors. Data matches consolidated JSON Schema ($defs); loaded entity types are defined in the merged model.
+2026-07-19 10:43:46 [INFO] ============================================================
+2026-07-19 10:43:46 [INFO] Calculating computed fields
+2026-07-19 10:43:46 [INFO] Wrote consolidated data to /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated_data.json (40 entities across 8 entity types)
+2026-07-19 10:43:46 [INFO] ✓ Successfully consolidated data into /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated_data.json
+2026-07-19 10:43:46 [INFO] Data consolidation completed successfully (exit code: 0)
+2026-07-19 10:43:46 [INFO] Step 2 completed in 0.08 seconds
+2026-07-19 10:43:46 [INFO] Consolidation completed successfully (exit code: 0)

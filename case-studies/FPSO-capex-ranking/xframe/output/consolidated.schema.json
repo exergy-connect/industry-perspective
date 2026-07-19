@@ -1,0 +1,560 @@
+{
+  "$schema": "https://json-schema.org/draft-2020-12/schema",
+  "title": "Consolidated Data Model",
+  "description": "Consolidated entity schemas from data model files",
+  "$defs": {
+    "country": {
+      "type": "object",
+      "properties": {
+        "country_id": {
+          "type": "string",
+          "description": "Stable country identifier (ISO 3166-1 alpha-2 preferred)."
+        },
+        "country_name": {
+          "type": "string",
+          "description": "Human-readable country name as used in the ranking visual and case study narrative."
+        },
+        "region": {
+          "type": "string",
+          "description": "Optional coarse region label for portfolio framing (e.g. South Atlantic, West Africa)."
+        }
+      },
+      "description": "Country in which an FPSO project is located. Used to analyse geographic concentration of CAPEX (e.g. South Atlantic vs other basins).",
+      "required": [
+        "country_id",
+        "country_name"
+      ],
+      "x-primaryKey": "country_id"
+    },
+    "operator": {
+      "type": "object",
+      "properties": {
+        "operator_id": {
+          "type": "string",
+          "description": "Stable operator identifier (slug)."
+        },
+        "operator_name": {
+          "type": "string",
+          "description": "Operator display name as shown on the ranking visual."
+        }
+      },
+      "description": "Company named as operator on a ranked FPSO project. Supports operator-concentration views of the investment cycle.",
+      "required": [
+        "operator_id",
+        "operator_name"
+      ],
+      "x-primaryKey": "operator_id"
+    },
+    "capex_ranking": {
+      "type": "object",
+      "properties": {
+        "ranking_id": {
+          "type": "string",
+          "description": "Stable identifier for this ranking snapshot."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the ranking as published."
+        },
+        "source_url": {
+          "type": "string",
+          "description": "URL of the trigger source (LinkedIn post or other publication)."
+        },
+        "source_attribution": {
+          "type": "string",
+          "description": "How the ranking should be attributed in narrative (author and channel)."
+        },
+        "horizon_year": {
+          "type": "integer",
+          "description": "End year of the ranking window (e.g. 2030 for projects to 2030)."
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency code for stated CAPEX values (ISO 4217).",
+          "enum": [
+            "USD"
+          ]
+        },
+        "claimed_total_m": {
+          "type": "number",
+          "description": "Combined CAPEX total claimed for the ranked set, in millions of the ranking currency. Treat as an attributed claim until reconciled to project rows and primary sources."
+        },
+        "capex_scope": {
+          "type": "string",
+          "description": "What the published values include. Unknown means the source does not establish whether values cover only each FPSO or the wider field development.",
+          "enum": [
+            "unknown",
+            "fpso_only",
+            "full_field_development",
+            "mixed"
+          ]
+        },
+        "capex_scope_status": {
+          "type": "string",
+          "description": "Whether the cost basis has been established from supporting evidence or remains an open discussion question.",
+          "enum": [
+            "unresolved",
+            "source_stated",
+            "independently_verified"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "description": "Confidence in the ranking as a dataset: trigger sources are unverified claims until checked.",
+          "enum": [
+            "trigger_claim",
+            "cross_checked",
+            "primary_sourced"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Interpretation notes: CAPEX definition unknowns, currency basis caveats, and case-study framing."
+        },
+        "projects": {
+          "type": "array",
+          "description": "FPSO projects included in this ranking, nested under the ranking snapshot.",
+          "items": {
+            "$ref": "#/$defs/fpso_project"
+          }
+        },
+        "discussions": {
+          "type": "array",
+          "description": "Attributed comments that question, qualify, or contextualize this ranking without being treated as project facts.",
+          "items": {
+            "$ref": "#/$defs/source_comment"
+          }
+        }
+      },
+      "description": "A published ranking claim for upcoming FPSO projects by stated capital value. Records provenance (source URL, attribution, confidence) and the claimed portfolio total so values remain traceable until verified against primary disclosures.",
+      "required": [
+        "ranking_id",
+        "title",
+        "source_url",
+        "source_attribution",
+        "horizon_year",
+        "currency",
+        "capex_scope",
+        "capex_scope_status",
+        "confidence"
+      ],
+      "x-primaryKey": "ranking_id"
+    },
+    "contractor": {
+      "type": "object",
+      "properties": {
+        "contractor_id": {
+          "type": "string",
+          "description": "Stable contractor identifier (slug)."
+        },
+        "contractor_name": {
+          "type": "string",
+          "description": "Contractor display name as stated by the source."
+        }
+      },
+      "description": "A company identified as a contractor rather than the project operator. The separate entity prevents discussion-sourced contractor roles from being mislabeled as operators.",
+      "required": [
+        "contractor_id",
+        "contractor_name"
+      ],
+      "x-primaryKey": "contractor_id"
+    },
+    "fpso_project": {
+      "type": "object",
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "description": "Stable project identifier (slug)."
+        },
+        "ranking_id": {
+          "type": "string",
+          "description": "Foreign key to the parent CAPEX ranking snapshot; nests under capex_ranking.projects.",
+          "x-foreignKeys": [
+            {
+              "entity": "capex_ranking"
+            }
+          ],
+          "enum": [
+            "prandelli-top10-fpso-to-2030"
+          ]
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Project name as shown on the ranking visual."
+        },
+        "rank": {
+          "type": "integer",
+          "description": "Position in the ranking by stated CAPEX (1 = highest).",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "claimed_capex_m": {
+          "type": "number",
+          "description": "Stated project CAPEX in millions of the parent ranking currency. Definition (FPSO contract vs full field development) is unknown unless capex_definition is set.",
+          "x-outlier": 2
+        },
+        "stage": {
+          "type": "string",
+          "description": "Project stage label from the ranking visual.",
+          "enum": [
+            "Planned",
+            "Producing",
+            "Announced"
+          ]
+        },
+        "operator_id": {
+          "type": "string",
+          "description": "Foreign key to the named operator.",
+          "x-foreignKeys": [
+            {
+              "entity": "operator"
+            }
+          ],
+          "enum": [
+            "azule-energy",
+            "equinor",
+            "exxonmobil",
+            "petrobras",
+            "shell",
+            "totalenergies",
+            "yinson"
+          ]
+        },
+        "country_id": {
+          "type": "string",
+          "description": "Foreign key to the host country.",
+          "x-foreignKeys": [
+            {
+              "entity": "country"
+            }
+          ],
+          "enum": [
+            "AO",
+            "BR",
+            "CA",
+            "GY",
+            "ID",
+            "NA",
+            "NG",
+            "NO",
+            "SR"
+          ]
+        },
+        "capex_definition": {
+          "type": "string",
+          "description": "Optional clarification of what claimed_capex_million covers (e.g. FPSO contract value, full field development). Leave unset when unknown."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional project-level notes for verification status or naming variants."
+        }
+      },
+      "description": "One FPSO project entry in a CAPEX ranking: stated value, operator, stage, host country, and rank. CAPEX is an attributed claim from the ranking source until a cost definition and primary source are recorded.",
+      "required": [
+        "project_id",
+        "ranking_id",
+        "project_name",
+        "rank",
+        "claimed_capex_m",
+        "stage",
+        "operator_id",
+        "country_id"
+      ],
+      "x-primaryKey": "project_id",
+      "x-parents": [
+        {
+          "entity": "capex_ranking",
+          "parent_array": "projects"
+        }
+      ]
+    },
+    "source_comment": {
+      "type": "object",
+      "properties": {
+        "comment_id": {
+          "type": "string",
+          "description": "Stable identifier for the attributed comment."
+        },
+        "ranking_id": {
+          "type": "string",
+          "description": "Foreign key to the ranking discussed by this comment.",
+          "x-foreignKeys": [
+            {
+              "entity": "capex_ranking"
+            }
+          ],
+          "enum": [
+            "prandelli-top10-fpso-to-2030"
+          ]
+        },
+        "source_type": {
+          "type": "string",
+          "description": "Provenance class, kept distinct from the trigger post and visual.",
+          "enum": [
+            "linkedin_comment"
+          ]
+        },
+        "author_name": {
+          "type": "string",
+          "description": "Display name of the commenter."
+        },
+        "author_url": {
+          "type": "string",
+          "description": "Public profile URL supplied with the comment attribution."
+        },
+        "source_url": {
+          "type": "string",
+          "description": "URL of the post on which the comment appeared."
+        },
+        "comment_text": {
+          "type": "string",
+          "description": "Comment text as supplied or publicly displayed."
+        },
+        "issue_type": {
+          "type": "string",
+          "description": "The data-quality or interpretation issue raised by the comment.",
+          "enum": [
+            "capex_scope",
+            "project_identity",
+            "status",
+            "other"
+          ]
+        },
+        "resolution_status": {
+          "type": "string",
+          "description": "Whether the issue has been answered with suitable evidence.",
+          "enum": [
+            "open",
+            "partially_resolved",
+            "resolved"
+          ]
+        },
+        "interpretation": {
+          "type": "string",
+          "description": "How the comment affects use of the ranking data without turning the question into a factual assertion."
+        },
+        "project_mentions": {
+          "type": "array",
+          "description": "Projects suggested or discussed in this comment. These are not ranking entries unless separately supported by the trigger visual.",
+          "items": {
+            "$ref": "#/$defs/discussion_project_mention"
+          }
+        }
+      },
+      "description": "A comment on the ranking source. Comments are modeled separately from project observations because they may raise a question or interpretation rather than assert a verified project fact.",
+      "required": [
+        "comment_id",
+        "ranking_id",
+        "source_type",
+        "author_name",
+        "source_url",
+        "comment_text",
+        "issue_type",
+        "resolution_status"
+      ],
+      "x-primaryKey": "comment_id",
+      "x-parents": [
+        {
+          "entity": "capex_ranking",
+          "parent_array": "discussions"
+        }
+      ]
+    },
+    "discussion_project_mention": {
+      "type": "object",
+      "properties": {
+        "mention_id": {
+          "type": "string",
+          "description": "Stable identifier for this source-specific project mention."
+        },
+        "comment_id": {
+          "type": "string",
+          "description": "Foreign key to the comment in which the project was named.",
+          "x-foreignKeys": [
+            {
+              "entity": "source_comment"
+            }
+          ],
+          "enum": [
+            "fernando-rueda-angola-paj",
+            "frode-kristoffersen-bay-du-nord",
+            "gouabi-mohammed-elhabri-venus",
+            "jean-carlos-pina-other-projects",
+            "luciano-carvalho-capex-scope",
+            "manuel-domingos-ngunza-paj"
+          ]
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Project name as written in the comment."
+        },
+        "operator_id": {
+          "type": "string",
+          "description": "Foreign key to the operator identified by the commenter.",
+          "x-foreignKeys": [
+            {
+              "entity": "operator"
+            }
+          ],
+          "enum": [
+            "azule-energy",
+            "equinor",
+            "exxonmobil",
+            "petrobras",
+            "shell",
+            "totalenergies",
+            "yinson"
+          ]
+        },
+        "country_id": {
+          "type": "string",
+          "description": "Host country inferred from the geographic description in the comment.",
+          "x-foreignKeys": [
+            {
+              "entity": "country"
+            }
+          ],
+          "enum": [
+            "AO",
+            "BR",
+            "CA",
+            "GY",
+            "ID",
+            "NA",
+            "NG",
+            "NO",
+            "SR"
+          ]
+        },
+        "contractor_id": {
+          "type": "string",
+          "description": "Foreign key to a contractor explicitly identified by the commenter.",
+          "x-foreignKeys": [
+            {
+              "entity": "contractor"
+            }
+          ],
+          "enum": [
+            "bw-offshore"
+          ]
+        },
+        "offshore_area": {
+          "type": "string",
+          "description": "Sea, basin, or other offshore location stated in the comment."
+        },
+        "inclusion_status": {
+          "type": "string",
+          "description": "Whether the mention is merely proposed or has been reconciled against the ranking criteria.",
+          "enum": [
+            "suggested_in_comment",
+            "under_review",
+            "included_in_ranking"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Limits on the assertion; comment mentions do not establish CAPEX, schedule, or eligibility for the top-ten ranking."
+        }
+      },
+      "description": "A project named in discussion of the CAPEX ranking. It records what the commenter proposed without assigning a rank or CAPEX value and keeps comment provenance distinct from the original visual.",
+      "required": [
+        "mention_id",
+        "comment_id",
+        "project_name",
+        "inclusion_status"
+      ],
+      "x-primaryKey": "mention_id",
+      "x-parents": [
+        {
+          "entity": "source_comment",
+          "parent_array": "project_mentions"
+        }
+      ]
+    },
+    "change": {
+      "type": "object",
+      "description": "Change log entry describing a versioned modification to the consolidated data model or data.",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique change identifier (monotonically increasing)"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of the change"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author of the change"
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional note describing the change"
+        },
+        "git_commit_hash": {
+          "type": "string",
+          "description": "Git commit hash corresponding to this change"
+        }
+      },
+      "required": [
+        "id",
+        "timestamp"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "country": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/country"
+      }
+    },
+    "operator": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/operator"
+      }
+    },
+    "capex_ranking": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/capex_ranking"
+      }
+    },
+    "contractor": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contractor"
+      }
+    },
+    "fpso_project": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fpso_project"
+      }
+    },
+    "source_comment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source_comment"
+      }
+    },
+    "discussion_project_mention": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/discussion_project_mention"
+      }
+    },
+    "change": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-fkEnumFromData": true
+}
