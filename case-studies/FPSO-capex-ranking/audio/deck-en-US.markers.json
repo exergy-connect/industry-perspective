@@ -1,48 +1,50 @@
 {
   "language": "en-US",
   "audio": "audio/deck-en-US.wav",
-  "voice": "Kore",
+  "source": "audio/deck-en-US.source.wav",
+  "pause_seconds": 3,
+  "voice": "Erinome",
   "model": "gemini-3.1-flash-tts-preview",
   "markers": [
     {
       "id": "title",
       "startSeconds": 0,
-      "endSeconds": 24.75
+      "endSeconds": 23.9
     },
     {
       "id": "trigger",
-      "startSeconds": 25.9,
-      "endSeconds": 45.55
+      "startSeconds": 26.9,
+      "endSeconds": 45.6
     },
     {
       "id": "geography",
-      "startSeconds": 46.7,
-      "endSeconds": 67.05
+      "startSeconds": 48.6,
+      "endSeconds": 68.5
     },
     {
       "id": "question",
-      "startSeconds": 68.2,
-      "endSeconds": 83.9
+      "startSeconds": 71.5,
+      "endSeconds": 87.55
     },
     {
       "id": "method",
-      "startSeconds": 85.1,
-      "endSeconds": 105.05
+      "startSeconds": 90.55,
+      "endSeconds": 110.3
     },
     {
       "id": "findings",
-      "startSeconds": 106.2,
-      "endSeconds": 124.4
+      "startSeconds": 113.3,
+      "endSeconds": 131.75
     },
     {
       "id": "updated",
-      "startSeconds": 125.6,
-      "endSeconds": 142.15
+      "startSeconds": 134.75,
+      "endSeconds": 151.65
     },
     {
       "id": "close",
-      "startSeconds": 143.3,
-      "endSeconds": 163.8
+      "startSeconds": 154.65,
+      "endSeconds": 175.68
     }
   ]
 }
