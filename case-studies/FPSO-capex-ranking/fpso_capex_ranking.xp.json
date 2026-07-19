@@ -22,6 +22,24 @@
         "track": "combined",
         "pause_seconds": 3,
         "prompt": "prompts/tts.md",
+        "groups": [
+          [
+            "title",
+            "trigger"
+          ],
+          [
+            "geography",
+            "question"
+          ],
+          [
+            "method",
+            "findings"
+          ],
+          [
+            "updated",
+            "close"
+          ]
+        ],
         "tracks": {
           "en-US": {
             "audio": "audio/deck-en-US.wav",
@@ -106,7 +124,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 27
+                      "line": 32
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -158,7 +176,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 30
+                          "line": 35
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -182,7 +200,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 30
+                          "line": 35
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -211,7 +229,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 30
+                          "line": 35
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -287,7 +305,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 30
+                          "line": 35
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -319,7 +337,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 48
+                          "line": 53
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -357,7 +375,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 54
+                          "line": 59
                         },
                         "structural": {
                           "region": {
@@ -383,7 +401,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 45
+                      "line": 50
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -556,7 +574,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 64
+                      "line": 69
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -593,7 +611,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 67
+                      "line": 72
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -644,7 +662,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 70
+                          "line": 75
                         },
                         "structural": {
                           "region": {
@@ -680,7 +698,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 77
+                          "line": 82
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -719,7 +737,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 77
+                          "line": 82
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -749,7 +767,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 81
+                          "line": 86
                         },
                         "structural": {
                           "region": {
@@ -771,7 +789,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 84
+                          "line": 89
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -800,7 +818,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 84
+                          "line": 89
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -838,7 +856,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 88
+                          "line": 93
                         },
                         "structural": {
                           "region": {
@@ -1011,7 +1029,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 97
+                      "line": 102
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1048,7 +1066,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 100
+                      "line": 105
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1096,7 +1114,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 103
+                          "line": 108
                         },
                         "structural": {
                           "region": {
@@ -1133,7 +1151,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 124
+                      "line": 129
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1171,7 +1189,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 126
+                      "line": 131
                     },
                     "structural": {
                       "region": {
@@ -1337,7 +1355,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 135
+                      "line": 140
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1374,7 +1392,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 138
+                      "line": 143
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1415,7 +1433,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 141
+                          "line": 146
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1453,7 +1471,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 147
+                          "line": 152
                         },
                         "structural": {
                           "region": {
@@ -1632,7 +1650,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 157
+                      "line": 162
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1669,7 +1687,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 160
+                      "line": 165
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1717,7 +1735,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 163
+                          "line": 168
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1747,7 +1765,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 163
+                          "line": 168
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1776,7 +1794,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 163
+                          "line": 168
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1816,7 +1834,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 170
+                          "line": 175
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1846,7 +1864,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 170
+                          "line": 175
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1875,7 +1893,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 170
+                          "line": 175
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1915,7 +1933,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 177
+                          "line": 182
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1945,7 +1963,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 177
+                          "line": 182
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1974,7 +1992,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 177
+                          "line": 182
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2014,7 +2032,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 184
+                          "line": 189
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2044,7 +2062,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 184
+                          "line": 189
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2073,7 +2091,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 184
+                          "line": 189
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2113,7 +2131,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 191
+                          "line": 196
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2143,7 +2161,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 191
+                          "line": 196
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2172,7 +2190,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 191
+                          "line": 196
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2212,7 +2230,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 198
+                          "line": 203
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2242,7 +2260,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 198
+                          "line": 203
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2271,7 +2289,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 198
+                          "line": 203
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2309,7 +2327,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 204
+                          "line": 209
                         },
                         "structural": {
                           "region": {
@@ -2477,7 +2495,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 214
+                      "line": 219
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -2514,7 +2532,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 217
+                      "line": 222
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -2562,7 +2580,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 220
+                          "line": 225
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2592,7 +2610,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 220
+                          "line": 225
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2621,7 +2639,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 220
+                          "line": 225
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2661,7 +2679,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 227
+                          "line": 232
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2691,7 +2709,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 227
+                          "line": 232
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2720,7 +2738,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 227
+                          "line": 232
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2760,7 +2778,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 234
+                          "line": 239
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2790,7 +2808,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 234
+                          "line": 239
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2819,7 +2837,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 234
+                          "line": 239
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2859,7 +2877,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 241
+                          "line": 246
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2889,7 +2907,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 241
+                          "line": 246
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2918,7 +2936,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 241
+                          "line": 246
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2956,7 +2974,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
+                          "line": 252
                         },
                         "structural": {
                           "region": {
@@ -3132,7 +3150,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 256
+                      "line": 261
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3169,7 +3187,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 259
+                      "line": 264
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3220,7 +3238,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 262
+                          "line": 267
                         },
                         "structural": {
                           "region": {
@@ -3262,7 +3280,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 269
+                      "line": 274
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3300,7 +3318,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 271
+                      "line": 276
                     },
                     "structural": {
                       "region": {
@@ -3466,7 +3484,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 281
+                      "line": 286
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3503,7 +3521,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 284
+                      "line": 289
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3544,7 +3562,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 287
+                          "line": 292
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -3576,7 +3594,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 295
+                          "line": 300
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -3609,7 +3627,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 302
+                      "line": 307
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3647,7 +3665,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 307
+                      "line": 312
                     },
                     "structural": {
                       "region": {

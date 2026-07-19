@@ -4,46 +4,84 @@
   "pause_seconds": 3,
   "voice": "Erinome",
   "model": "gemini-3.1-flash-tts-preview",
+  "groups": [
+    {
+      "slides": [
+        "title",
+        "trigger"
+      ],
+      "audio": "audio/deck-en-US-group-1.wav",
+      "voice": "Erinome",
+      "model": "gemini-3.1-flash-tts-preview"
+    },
+    {
+      "slides": [
+        "geography",
+        "question"
+      ],
+      "audio": "audio/deck-en-US-group-2.wav",
+      "voice": "Erinome",
+      "model": "gemini-3.1-flash-tts-preview"
+    },
+    {
+      "slides": [
+        "method",
+        "findings"
+      ],
+      "audio": "audio/deck-en-US-group-3.wav",
+      "voice": "Erinome",
+      "model": "gemini-3.1-flash-tts-preview"
+    },
+    {
+      "slides": [
+        "updated",
+        "close"
+      ],
+      "audio": "audio/deck-en-US-group-4.wav",
+      "voice": "Erinome",
+      "model": "gemini-3.1-flash-tts-preview"
+    }
+  ],
   "markers": [
     {
       "id": "title",
       "startSeconds": 0,
-      "endSeconds": 24.55
+      "endSeconds": 25.2
     },
     {
       "id": "trigger",
-      "startSeconds": 27.55,
-      "endSeconds": 46.6
+      "startSeconds": 28.2,
+      "endSeconds": 48.42
     },
     {
       "id": "geography",
-      "startSeconds": 49.6,
-      "endSeconds": 70
+      "startSeconds": 51.42,
+      "endSeconds": 73.47
     },
     {
       "id": "question",
-      "startSeconds": 73,
-      "endSeconds": 89.25
+      "startSeconds": 76.47,
+      "endSeconds": 94.14
     },
     {
       "id": "method",
-      "startSeconds": 92.25,
-      "endSeconds": 111.95
+      "startSeconds": 97.14,
+      "endSeconds": 121.79
     },
     {
       "id": "findings",
-      "startSeconds": 114.95,
-      "endSeconds": 133.00004166666668
+      "startSeconds": 124.79,
+      "endSeconds": 149.81
     },
     {
       "id": "updated",
-      "startSeconds": 136.00004166666668,
-      "endSeconds": 152.15004166666668
+      "startSeconds": 152.81,
+      "endSeconds": 171.96
     },
     {
       "id": "close",
-      "startSeconds": 155.15004166666668,
-      "endSeconds": 175.37008333333333
+      "startSeconds": 174.96,
+      "endSeconds": 199.41004166666667
     }
   ]
 }

@@ -14,7 +14,6 @@ linkedin_url: https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-w
 narrative:
   voice: female
   track: combined
-  model: gemini-2.5-flash-preview-tts
   pause_seconds: 3
   prompt: prompts/tts.md
   groups:
