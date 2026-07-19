@@ -3,6 +3,7 @@
   "version": "26.07.19.5",
   "author": "Industry Perspective",
   "description": "Initial data model for the Top 10 upcoming FPSO projects by CAPEX case study. Captures attributed ranking claims (source, currency, horizon), reference operators and countries, and project rows with rank, stated CAPEX, and stage so the LinkedIn trigger visual can be checked and extended against primary sources.",
+  "max_name_underscores": 4,
   "source": "case-studies/FPSO-capex-ranking: Giacomo Prandelli LinkedIn post and Top10_FPSO_CAPEX_projects.jpeg",
   "allow_unlimited_fields": {},
   "entities": [
@@ -415,6 +416,45 @@
           "type": { "primitive": "string" },
           "required": false
         }
+      ]
+    },
+    {
+      "name": "ranking_methodology",
+      "brief": "Rules governing a reconciled ranking",
+      "description": "A dated methodology snapshot defining how original claims and independently sourced estimates may be compared without silently converting currencies or cost boundaries.",
+      "primary_key": "methodology_id",
+      "fields": [
+        { "name": "methodology_id", "description": "Stable identifier for the methodology snapshot.", "type": { "primitive": "string" }, "required": true },
+        { "name": "as_of_date", "description": "Research cut-off date.", "type": { "primitive": "string" }, "required": true },
+        { "name": "original_ranking_id", "description": "Original ranking to which this methodology applies.", "type": { "primitive": "string", "foreignKeys": [{ "entity": "capex_ranking" }] }, "required": true },
+        { "name": "original_values_total_m", "description": "Arithmetic total of original values in millions.", "type": { "primitive": "number" }, "required": true },
+        { "name": "original_values_currency", "description": "Currency of the original ranking values.", "type": { "primitive": "string" }, "required": true },
+        { "name": "ranking_policy", "description": "Rule used to retain, revise, or withhold ranks.", "type": { "primitive": "string" }, "required": true },
+        { "name": "not_ranked_code", "description": "Display code for entries that cannot be ranked comparably.", "type": { "primitive": "string" }, "required": true }
+      ]
+    },
+    {
+      "name": "updated_ranking_entry",
+      "brief": "Reconciled CAPEX ranking row",
+      "description": "A derived analysis row that preserves the original claim separately from independent CAPEX evidence and records whether the project can be ranked comparably.",
+      "primary_key": "project_id",
+      "fields": [
+        { "name": "project_id", "description": "Stable project identifier.", "type": { "primitive": "string" }, "required": true },
+        { "name": "project_name", "description": "Reconciled project display name.", "type": { "primitive": "string" }, "required": true },
+        { "name": "origin", "description": "Provenance layer from which the row originated.", "type": { "primitive": "string", "enum": ["original_visual", "comment_addition"] }, "required": true },
+        { "name": "original_rank", "description": "Rank shown in the original visual, when applicable.", "type": { "primitive": "integer" }, "required": false },
+        { "name": "original_capex_m", "description": "CAPEX claimed by the original visual, in millions.", "type": { "primitive": "number" }, "required": false },
+        { "name": "original_currency", "description": "Currency of the original claim.", "type": { "primitive": "string" }, "required": false },
+        { "name": "independent_total_investment_m", "description": "Independently reported total investment, in millions.", "type": { "primitive": "number" }, "required": false },
+        { "name": "independent_capex_m", "description": "Independently reported CAPEX or disclosed lower bound, in millions.", "type": { "primitive": "number" }, "required": false },
+        { "name": "independent_capex_qualifier", "description": "Qualifier such as approximate or greater-than.", "type": { "primitive": "string" }, "required": false },
+        { "name": "independent_currency", "description": "Native currency of the independent estimate.", "type": { "primitive": "string" }, "required": false },
+        { "name": "independent_scope", "description": "Cost boundary established for the independent estimate.", "type": { "primitive": "string" }, "required": false },
+        { "name": "estimate_date", "description": "Date of the independent estimate when material to comparability.", "type": { "primitive": "string" }, "required": false },
+        { "name": "verification_status", "description": "Evidence and reconciliation status.", "type": { "primitive": "string" }, "required": true },
+        { "name": "ranking_treatment", "description": "How the row is treated in the updated ranking.", "type": { "primitive": "string" }, "required": true },
+        { "name": "notes", "description": "Project-specific ranking caveats.", "type": { "primitive": "string" }, "required": false },
+        { "name": "source_ids", "description": "Independent sources supporting this row.", "type": { "array": { "primitive": "string" } }, "required": true }
       ]
     },
     {

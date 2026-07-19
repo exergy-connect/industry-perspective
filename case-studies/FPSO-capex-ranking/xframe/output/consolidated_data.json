@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "timestamp": "2026-07-19T15:51:54Z",
+  "version": 3,
+  "timestamp": "2026-07-19T16:12:18Z",
   "model": {
     "name": "FPSO CAPEX Ranking",
     "version": "26.07.19.5",
@@ -34,6 +34,10 @@
     "000000000004": {
       "id": 4,
       "path": "data/reference_data.json"
+    },
+    "000000000005": {
+      "id": 5,
+      "path": "data/updated_ranking.json"
     }
   },
   "data": {
@@ -43,6 +47,20 @@
         "timestamp": "2026-07-19T15:51:54Z",
         "author": "Industry Perspective",
         "note": "Split original, comment, and independently inferred provenance data (forced --clean)"
+      },
+      "000000000002": {
+        "id": 2,
+        "timestamp": "2026-07-19T16:05:41Z",
+        "author": "jbemmel",
+        "note": "Reconsolidate FPSO CAPEX ranking after updated_ranking and independent_findings data refresh",
+        "git_commit_hash": "27bc41fb293849881ca63d20407fc946957a3fbd"
+      },
+      "000000000003": {
+        "id": 3,
+        "timestamp": "2026-07-19T16:12:18Z",
+        "author": "Industry Perspective",
+        "note": "Add reconciled FPSO CAPEX ranking and visualization",
+        "git_commit_hash": "27bc41fb293849881ca63d20407fc946957a3fbd"
       }
     },
     "country": {
@@ -51,72 +69,63 @@
         "country_name": "Guyana",
         "region": "South Atlantic",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "SR": {
         "country_id": "SR",
         "country_name": "Suriname",
         "region": "South Atlantic",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "BR": {
         "country_id": "BR",
         "country_name": "Brazil",
         "region": "South Atlantic",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "NG": {
         "country_id": "NG",
         "country_name": "Nigeria",
         "region": "West Africa",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "NO": {
         "country_id": "NO",
         "country_name": "Norway",
         "region": "Barents Sea",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "ID": {
         "country_id": "ID",
         "country_name": "Indonesia",
         "region": "Southeast Asia",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "CA": {
         "country_id": "CA",
         "country_name": "Canada",
         "region": "North Atlantic",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "NA": {
         "country_id": "NA",
         "country_name": "Namibia",
         "region": "South Atlantic",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "AO": {
         "country_id": "AO",
         "country_name": "Angola",
         "region": "South Atlantic",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       }
     },
     "operator": {
@@ -124,57 +133,49 @@
         "operator_id": "exxonmobil",
         "operator_name": "ExxonMobil",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "totalenergies": {
         "operator_id": "totalenergies",
         "operator_name": "TotalEnergies",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "petrobras": {
         "operator_id": "petrobras",
         "operator_name": "Petrobras",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "equinor": {
         "operator_id": "equinor",
         "operator_name": "Equinor",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "shell": {
         "operator_id": "shell",
         "operator_name": "Shell",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "yinson": {
         "operator_id": "yinson",
         "operator_name": "Yinson",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "azule-energy": {
         "operator_id": "azule-energy",
         "operator_name": "Azule Energy",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       },
       "mubadala-energy": {
         "operator_id": "mubadala-energy",
         "operator_name": "Mubadala Energy",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
       }
     },
     "capex_ranking": {
@@ -292,8 +293,7 @@
             "comment_text": "Those values are including which investments, besides the FPSOs per se?",
             "issue_type": "capex_scope",
             "resolution_status": "open",
-            "interpretation": "The published values must not be described as FPSO-only CAPEX until their cost boundary is established.",
-            "f": 1
+            "interpretation": "The published values must not be described as FPSO-only CAPEX until their cost boundary is established."
           },
           {
             "comment_id": "jean-carlos-pina-other-projects",
@@ -324,8 +324,7 @@
                 "inclusion_status": "suggested_in_comment",
                 "notes": "No CAPEX, rank, stage, or eligibility asserted."
               }
-            ],
-            "f": 1
+            ]
           },
           {
             "comment_id": "frode-kristoffersen-bay-du-nord",
@@ -348,8 +347,7 @@
                 "inclusion_status": "suggested_in_comment",
                 "notes": "No CAPEX, rank, formal stage, or eligibility asserted."
               }
-            ],
-            "f": 1
+            ]
           },
           {
             "comment_id": "gouabi-mohammed-elhabri-venus",
@@ -371,8 +369,7 @@
                 "inclusion_status": "suggested_in_comment",
                 "notes": "No CAPEX, rank, stage, or eligibility asserted."
               }
-            ],
-            "f": 1
+            ]
           },
           {
             "comment_id": "fernando-rueda-angola-paj",
@@ -393,8 +390,7 @@
                 "inclusion_status": "suggested_in_comment",
                 "notes": "Operator and expanded identity unstated by this source."
               }
-            ],
-            "f": 1
+            ]
           },
           {
             "comment_id": "manuel-domingos-ngunza-paj",
@@ -416,13 +412,11 @@
                 "inclusion_status": "under_review",
                 "notes": "Second comment identifies Azule Energy; CAPEX and eligibility remain unverified."
               }
-            ],
-            "f": 1
+            ]
           }
         ],
         "c": 1,
-        "v": 1,
-        "f": 3
+        "v": 1
       }
     },
     "contractor": {
@@ -430,8 +424,279 @@
         "contractor_id": "bw-offshore",
         "contractor_name": "BW Offshore",
         "c": 1,
-        "v": 1,
-        "f": 4
+        "v": 1
+      }
+    },
+    "ranking_methodology": {
+      "updated-ranking-2026-07-19": {
+        "methodology_id": "updated-ranking-2026-07-19",
+        "as_of_date": "2026-07-19",
+        "original_ranking_id": "prandelli-top10-fpso-to-2030",
+        "original_values_total_m": 94287,
+        "original_values_currency": "USD",
+        "ranking_policy": "Preserve original visual ranks. Do not rank comment additions unless currency, estimate date, development horizon, and cost boundary are comparable.",
+        "not_ranked_code": "NR",
+        "c": 3,
+        "v": 3,
+        "f": 5
+      }
+    },
+    "updated_ranking_entry": {
+      "uaru": {
+        "project_id": "uaru",
+        "project_name": "Uaru / Errea Wittu",
+        "origin": "original_visual",
+        "original_rank": 1,
+        "original_capex_m": 12700,
+        "original_currency": "USD",
+        "independent_capex_m": 12700,
+        "independent_currency": "USD",
+        "independent_scope": "full_field_development",
+        "verification_status": "verified",
+        "ranking_treatment": "retain_original_rank",
+        "source_ids": [
+          "exxon-guyana-2023-report"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "whiptail": {
+        "project_id": "whiptail",
+        "project_name": "Whiptail / Jaguar",
+        "origin": "original_visual",
+        "original_rank": 2,
+        "original_capex_m": 12700,
+        "original_currency": "USD",
+        "independent_capex_m": 12700,
+        "independent_currency": "USD",
+        "independent_scope": "full_field_development",
+        "verification_status": "verified",
+        "ranking_treatment": "retain_original_rank",
+        "notes": "Includes up to 10 drill centres and 48 production and injection wells.",
+        "source_ids": [
+          "exxon-whiptail-fid"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "granmorgu": {
+        "project_id": "granmorgu",
+        "project_name": "GranMorgu",
+        "origin": "original_visual",
+        "original_rank": 3,
+        "original_capex_m": 10500,
+        "original_currency": "USD",
+        "independent_capex_m": 10500,
+        "independent_currency": "USD",
+        "independent_scope": "full_field_development",
+        "verification_status": "verified",
+        "ranking_treatment": "retain_original_rank",
+        "source_ids": [
+          "totalenergies-granmorgu-fid"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "atapu-development": {
+        "project_id": "atapu-development",
+        "project_name": "Atapu 2 / P-84",
+        "origin": "original_visual",
+        "original_rank": 4,
+        "original_capex_m": 9741,
+        "original_currency": "USD",
+        "verification_status": "identity_only",
+        "ranking_treatment": "retain_original_rank_provisionally",
+        "source_ids": [
+          "petrobras-p84-p85-contracts"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "raia": {
+        "project_id": "raia",
+        "project_name": "Raia",
+        "origin": "original_visual",
+        "original_rank": 5,
+        "original_capex_m": 9000,
+        "original_currency": "USD",
+        "independent_capex_m": 9000,
+        "independent_currency": "USD",
+        "independent_scope": "full_field_development",
+        "verification_status": "verified_approximate",
+        "ranking_treatment": "retain_original_rank",
+        "source_ids": [
+          "equinor-raia"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "sepia-development": {
+        "project_id": "sepia-development",
+        "project_name": "Sépia 2 / P-85",
+        "origin": "original_visual",
+        "original_rank": 6,
+        "original_capex_m": 8499,
+        "original_currency": "USD",
+        "verification_status": "identity_only",
+        "ranking_treatment": "retain_original_rank_provisionally",
+        "source_ids": [
+          "petrobras-p84-p85-contracts"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "buzios-x-franco": {
+        "project_id": "buzios-x-franco",
+        "project_name": "Búzios 10 / P-82",
+        "origin": "original_visual",
+        "original_rank": 7,
+        "original_capex_m": 8427,
+        "original_currency": "USD",
+        "verification_status": "identity_only",
+        "ranking_treatment": "retain_original_rank_provisionally",
+        "source_ids": [
+          "petrobras-etapa4-rima"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "bonga-southwest-aparo": {
+        "project_id": "bonga-southwest-aparo",
+        "project_name": "Bonga Southwest/Aparo",
+        "origin": "original_visual",
+        "original_rank": 8,
+        "original_capex_m": 8000,
+        "original_currency": "USD",
+        "independent_total_investment_m": 20000,
+        "independent_capex_m": 10000,
+        "independent_capex_qualifier": "approximately",
+        "independent_currency": "USD",
+        "independent_scope": "capital_expenditure_excluding_life_cycle_operating_costs",
+        "verification_status": "conflicting_scope",
+        "ranking_treatment": "flag_do_not_rerank",
+        "source_ids": [
+          "premium-times-bonga-2026"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "buzios-xi-franco": {
+        "project_id": "buzios-xi-franco",
+        "project_name": "Búzios 11 / P-83",
+        "origin": "original_visual",
+        "original_rank": 9,
+        "original_capex_m": 7641,
+        "original_currency": "USD",
+        "verification_status": "identity_only",
+        "ranking_treatment": "retain_original_rank_provisionally",
+        "source_ids": [
+          "petrobras-etapa4-rima"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "buzios-ix-franco": {
+        "project_id": "buzios-ix-franco",
+        "project_name": "Búzios 9 / P-80",
+        "origin": "original_visual",
+        "original_rank": 10,
+        "original_capex_m": 7079,
+        "original_currency": "USD",
+        "verification_status": "identity_only",
+        "ranking_treatment": "retain_original_rank_provisionally",
+        "source_ids": [
+          "petrobras-etapa4-rima"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "bay-du-nord": {
+        "project_id": "bay-du-nord",
+        "project_name": "Bay du Nord",
+        "origin": "comment_addition",
+        "independent_capex_m": 14000,
+        "independent_currency": "CAD",
+        "independent_scope": "initial_development_investment",
+        "verification_status": "verified_approximate_pre_fid",
+        "ranking_treatment": "NR_currency_and_horizon_not_comparable",
+        "notes": "Expected first oil in 2031, outside the original to-2030 horizon.",
+        "source_ids": [
+          "equinor-bay-du-nord-capex"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "wisting": {
+        "project_id": "wisting",
+        "project_name": "Wisting",
+        "origin": "comment_addition",
+        "independent_capex_m": 104000,
+        "independent_currency": "NOK",
+        "independent_scope": "then-current_development_concept",
+        "estimate_date": "2022-11-10",
+        "verification_status": "superseded_estimate",
+        "ranking_treatment": "NR_stale_concept_and_currency_not_comparable",
+        "source_ids": [
+          "equinor-wisting-2022-estimate",
+          "equinor-wisting-eia"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "greater-paj": {
+        "project_id": "greater-paj",
+        "project_name": "Greater PAJ",
+        "origin": "comment_addition",
+        "independent_capex_m": 5000,
+        "independent_capex_qualifier": "greater_than",
+        "independent_currency": "USD",
+        "independent_scope": "full_field_development",
+        "verification_status": "verified_minimum",
+        "ranking_treatment": "NR_below_visual_top_ten_threshold_on_disclosed_minimum",
+        "source_ids": [
+          "azule-greater-paj-fid"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "tangkulo": {
+        "project_id": "tangkulo",
+        "project_name": "Tangkulo",
+        "origin": "comment_addition",
+        "verification_status": "no_public_comparable_capex_found",
+        "ranking_treatment": "NR_no_comparable_capex",
+        "source_ids": [
+          "indonesia-migas-2024"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
+      },
+      "venus": {
+        "project_id": "venus",
+        "project_name": "Venus",
+        "origin": "comment_addition",
+        "verification_status": "no_public_comparable_capex_found",
+        "ranking_treatment": "NR_no_comparable_capex",
+        "source_ids": [
+          "totalenergies-venus-esia"
+        ],
+        "c": 3,
+        "v": 3,
+        "f": 5
       }
     },
     "independent_source": {
@@ -444,8 +709,7 @@
         "published_date": "2024-01-01",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "totalenergies-granmorgu-fid": {
         "source_id": "totalenergies-granmorgu-fid",
@@ -456,8 +720,7 @@
         "published_date": "2024-10-01",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "petrobras-p84-p85-contracts": {
         "source_id": "petrobras-p84-p85-contracts",
@@ -468,8 +731,7 @@
         "published_date": "2024-05-24",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "equinor-raia": {
         "source_id": "equinor-raia",
@@ -479,8 +741,7 @@
         "source_url": "https://www.equinor.com/energy/raia",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "petrobras-etapa4-rima": {
         "source_id": "petrobras-etapa4-rima",
@@ -490,8 +751,7 @@
         "source_url": "https://comunicabaciadesantos.petrobras.com.br/documents/d/comunica-bacia-de-santos/rima_-_etapa_4_rev02_1-1?download=true",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "nipex-bswa-tender": {
         "source_id": "nipex-bswa-tender",
@@ -502,8 +762,7 @@
         "published_date": "2026-02-01",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "equinor-wisting-eia": {
         "source_id": "equinor-wisting-eia",
@@ -514,8 +773,7 @@
         "published_date": "2026-06-25",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "indonesia-migas-2024": {
         "source_id": "indonesia-migas-2024",
@@ -526,8 +784,7 @@
         "published_date": "2025-01-01",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "equinor-bay-du-nord": {
         "source_id": "equinor-bay-du-nord",
@@ -538,8 +795,7 @@
         "published_date": "2026-07-06",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "bw-bay-du-nord": {
         "source_id": "bw-bay-du-nord",
@@ -550,8 +806,7 @@
         "published_date": "2025-01-22",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "totalenergies-venus-esia": {
         "source_id": "totalenergies-venus-esia",
@@ -561,8 +816,7 @@
         "source_url": "https://totalenergies.na/esia-proposed-development-offshore-venus-field-block-2913b",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "anpg-greater-paj-fid": {
         "source_id": "anpg-greater-paj-fid",
@@ -573,8 +827,61 @@
         "published_date": "2026-06-22",
         "accessed_date": "2026-07-19",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
+      },
+      "exxon-whiptail-fid": {
+        "source_id": "exxon-whiptail-fid",
+        "publisher": "ExxonMobil",
+        "source_class": "operator",
+        "title": "ExxonMobil Guyana moves forward with sixth offshore development",
+        "source_url": "https://corporate.exxonmobil.com/news/news-releases/2024/0412_guyana-offshore-development-whiptail",
+        "published_date": "2024-04-12",
+        "accessed_date": "2026-07-19",
+        "c": 2,
+        "v": 2
+      },
+      "equinor-bay-du-nord-capex": {
+        "source_id": "equinor-bay-du-nord-capex",
+        "publisher": "Equinor",
+        "source_class": "operator",
+        "title": "The Bay du Nord project",
+        "source_url": "https://www.equinor.com/where-we-are/canada-bay-du-nord",
+        "accessed_date": "2026-07-19",
+        "c": 2,
+        "v": 2
+      },
+      "equinor-wisting-2022-estimate": {
+        "source_id": "equinor-wisting-2022-estimate",
+        "publisher": "Equinor",
+        "source_class": "operator",
+        "title": "Investment decision for the Wisting project postponed",
+        "source_url": "https://www.equinor.com/news/20221110-investment-decision-wisting-project-postponed",
+        "published_date": "2022-11-10",
+        "accessed_date": "2026-07-19",
+        "c": 2,
+        "v": 2
+      },
+      "azule-greater-paj-fid": {
+        "source_id": "azule-greater-paj-fid",
+        "publisher": "Azule Energy",
+        "source_class": "operator",
+        "title": "Final Investment Decision for the Greater PAJ Project",
+        "source_url": "https://www.azule-energy.com/wp-content/uploads/2026/06/COMUNICADO-DE-IMPRENSA_PAJ-AEPT.pdf",
+        "published_date": "2026-06-22",
+        "accessed_date": "2026-07-19",
+        "c": 2,
+        "v": 2
+      },
+      "premium-times-bonga-2026": {
+        "source_id": "premium-times-bonga-2026",
+        "publisher": "Premium Times",
+        "source_class": "industry_source",
+        "title": "NNPC boss speaks on Shell's proposed $20bn Bonga SW project",
+        "source_url": "https://www.premiumtimesng.com/business/business-news/851474-nnpc-boss-speaks-on-shells-proposed-20bn-bonga-sw-project.html",
+        "published_date": "2026-01-23",
+        "accessed_date": "2026-07-19",
+        "c": 2,
+        "v": 2
       }
     },
     "independent_finding": {
@@ -590,8 +897,7 @@
         "confidence": "high",
         "notes": "The amount is development investment, not demonstrated to be FPSO-only cost.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "whiptail-exxon-verification": {
         "finding_id": "whiptail-exxon-verification",
@@ -605,8 +911,7 @@
         "confidence": "high",
         "notes": "The amount is development investment, not demonstrated to be FPSO-only cost.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "granmorgu-fid": {
         "finding_id": "granmorgu-fid",
@@ -619,8 +924,7 @@
         "derivation": "direct",
         "confidence": "high",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "atapu2-status": {
         "finding_id": "atapu2-status",
@@ -634,8 +938,7 @@
         "confidence": "medium",
         "notes": "The visual's generic Atapu Development label and Producing stage mix the operating field with its future expansion.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "sepia2-status": {
         "finding_id": "sepia2-status",
@@ -649,8 +952,7 @@
         "confidence": "medium",
         "notes": "The visual's generic Sépia Development label and Producing stage mix the operating field with its future expansion.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "raia-verification": {
         "finding_id": "raia-verification",
@@ -664,8 +966,7 @@
         "confidence": "high",
         "notes": "The US$9 billion figure is explicitly project development investment, not FPSO-only cost.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "buzios10-verification": {
         "finding_id": "buzios10-verification",
@@ -679,8 +980,7 @@
         "confidence": "medium",
         "notes": "This verifies identity, not the visual's CAPEX value or a specific P-number mapping.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "buzios11-verification": {
         "finding_id": "buzios11-verification",
@@ -693,8 +993,7 @@
         "derivation": "direct",
         "confidence": "medium",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "buzios9-verification": {
         "finding_id": "buzios9-verification",
@@ -707,8 +1006,7 @@
         "derivation": "direct",
         "confidence": "medium",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "bswa-verification": {
         "finding_id": "bswa-verification",
@@ -722,8 +1020,7 @@
         "confidence": "high",
         "notes": "Tender activity does not establish FID or validate the visual's US$8 billion value.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "wisting-verification": {
         "finding_id": "wisting-verification",
@@ -736,8 +1033,7 @@
         "derivation": "direct",
         "confidence": "high",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "tangkulo-operator-correction": {
         "finding_id": "tangkulo-operator-correction",
@@ -751,8 +1047,7 @@
         "confidence": "high",
         "notes": "Mubadala Energy operates South Andaman; Yinson was named by the comment in a potential FPSO-provider context.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "bay-du-nord-concept": {
         "finding_id": "bay-du-nord-concept",
@@ -765,8 +1060,7 @@
         "derivation": "direct",
         "confidence": "high",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "bay-du-nord-bw-role": {
         "finding_id": "bay-du-nord-bw-role",
@@ -780,8 +1074,7 @@
         "confidence": "high",
         "notes": "Pre-FEED selection is narrower than a final FPSO construction or operating contract.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "venus-verification": {
         "finding_id": "venus-verification",
@@ -795,8 +1088,7 @@
         "confidence": "high",
         "notes": "Proposed development; no FID or comparable CAPEX established by this source.",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "paj-verification-fernando": {
         "finding_id": "paj-verification-fernando",
@@ -809,8 +1101,7 @@
         "derivation": "direct",
         "confidence": "high",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       },
       "paj-verification-manuel": {
         "finding_id": "paj-verification-manuel",
@@ -823,8 +1114,7 @@
         "derivation": "direct",
         "confidence": "high",
         "c": 1,
-        "v": 1,
-        "f": 2
+        "v": 1
       }
     }
   }

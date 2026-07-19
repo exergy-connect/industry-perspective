@@ -473,6 +473,144 @@
         }
       ]
     },
+    "ranking_methodology": {
+      "type": "object",
+      "properties": {
+        "methodology_id": {
+          "type": "string",
+          "description": "Stable identifier for the methodology snapshot."
+        },
+        "as_of_date": {
+          "type": "string",
+          "description": "Research cut-off date."
+        },
+        "original_ranking_id": {
+          "type": "string",
+          "description": "Original ranking to which this methodology applies.",
+          "x-foreignKeys": [
+            {
+              "entity": "capex_ranking"
+            }
+          ],
+          "enum": [
+            "prandelli-top10-fpso-to-2030"
+          ]
+        },
+        "original_values_total_m": {
+          "type": "number",
+          "description": "Arithmetic total of original values in millions."
+        },
+        "original_values_currency": {
+          "type": "string",
+          "description": "Currency of the original ranking values."
+        },
+        "ranking_policy": {
+          "type": "string",
+          "description": "Rule used to retain, revise, or withhold ranks."
+        },
+        "not_ranked_code": {
+          "type": "string",
+          "description": "Display code for entries that cannot be ranked comparably."
+        }
+      },
+      "description": "A dated methodology snapshot defining how original claims and independently sourced estimates may be compared without silently converting currencies or cost boundaries.",
+      "required": [
+        "methodology_id",
+        "as_of_date",
+        "original_ranking_id",
+        "original_values_total_m",
+        "original_values_currency",
+        "ranking_policy",
+        "not_ranked_code"
+      ],
+      "x-primaryKey": "methodology_id"
+    },
+    "updated_ranking_entry": {
+      "type": "object",
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "description": "Stable project identifier."
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Reconciled project display name."
+        },
+        "origin": {
+          "type": "string",
+          "description": "Provenance layer from which the row originated.",
+          "enum": [
+            "original_visual",
+            "comment_addition"
+          ]
+        },
+        "original_rank": {
+          "type": "integer",
+          "description": "Rank shown in the original visual, when applicable."
+        },
+        "original_capex_m": {
+          "type": "number",
+          "description": "CAPEX claimed by the original visual, in millions."
+        },
+        "original_currency": {
+          "type": "string",
+          "description": "Currency of the original claim."
+        },
+        "independent_total_investment_m": {
+          "type": "number",
+          "description": "Independently reported total investment, in millions."
+        },
+        "independent_capex_m": {
+          "type": "number",
+          "description": "Independently reported CAPEX or disclosed lower bound, in millions."
+        },
+        "independent_capex_qualifier": {
+          "type": "string",
+          "description": "Qualifier such as approximate or greater-than."
+        },
+        "independent_currency": {
+          "type": "string",
+          "description": "Native currency of the independent estimate."
+        },
+        "independent_scope": {
+          "type": "string",
+          "description": "Cost boundary established for the independent estimate."
+        },
+        "estimate_date": {
+          "type": "string",
+          "description": "Date of the independent estimate when material to comparability."
+        },
+        "verification_status": {
+          "type": "string",
+          "description": "Evidence and reconciliation status."
+        },
+        "ranking_treatment": {
+          "type": "string",
+          "description": "How the row is treated in the updated ranking."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Project-specific ranking caveats."
+        },
+        "source_ids": {
+          "type": "array",
+          "description": "Independent sources supporting this row.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "A derived analysis row that preserves the original claim separately from independent CAPEX evidence and records whether the project can be ranked comparably.",
+      "required": [
+        "project_id",
+        "project_name",
+        "origin",
+        "verification_status",
+        "ranking_treatment",
+        "source_ids"
+      ],
+      "x-primaryKey": "project_id"
+    },
     "independent_source": {
       "type": "object",
       "properties": {
@@ -541,15 +679,20 @@
           ],
           "enum": [
             "anpg-greater-paj-fid",
+            "azule-greater-paj-fid",
             "bw-bay-du-nord",
             "equinor-bay-du-nord",
+            "equinor-bay-du-nord-capex",
             "equinor-raia",
+            "equinor-wisting-2022-estimate",
             "equinor-wisting-eia",
             "exxon-guyana-2023-report",
+            "exxon-whiptail-fid",
             "indonesia-migas-2024",
             "nipex-bswa-tender",
             "petrobras-etapa4-rima",
             "petrobras-p84-p85-contracts",
+            "premium-times-bonga-2026",
             "totalenergies-granmorgu-fid",
             "totalenergies-venus-esia"
           ]
@@ -700,6 +843,18 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/discussion_project_mention"
+      }
+    },
+    "ranking_methodology": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ranking_methodology"
+      }
+    },
+    "updated_ranking_entry": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/updated_ranking_entry"
       }
     },
     "independent_source": {

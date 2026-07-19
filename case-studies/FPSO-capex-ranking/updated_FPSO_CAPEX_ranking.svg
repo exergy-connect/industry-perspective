@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1400" viewBox="0 0 1600 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Updated FPSO project CAPEX ranking</title>
+  <desc id="desc">The original top ten ranked by published US dollar values, reconciled against independent findings, plus five unranked projects proposed in LinkedIn comments.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071c2b"/><stop offset="1" stop-color="#102f3d"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".22"/></filter>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;fill:#edf7f7}.title{font-size:54px;font-weight:800}.subtitle{font-size:22px;fill:#b8ccd1}.section{font-size:28px;font-weight:750}.label{font-size:20px;font-weight:650}.small{font-size:16px;fill:#b8ccd1}.value{font-size:19px;font-weight:750}.cardTitle{font-size:21px;font-weight:750}.cardValue{font-size:26px;font-weight:800}.note{font-size:16px;fill:#d3e2e4}.rank{font-size:18px;font-weight:800;fill:#77919a}.axis{stroke:#47626b;stroke-width:1}.grid{stroke:#35525c;stroke-width:1;stroke-dasharray:4 8}.verified{fill:#26c6a3}.claimed{fill:#587985}.conflict{fill:#f4a340}.outline{fill:none;stroke:#f4a340;stroke-width:4}.card{fill:#163b48;stroke:#315965;stroke-width:1}.pillText{font-size:14px;font-weight:800;letter-spacing:.7px}.foot{font-size:15px;fill:#91aab1}
+    </style>
+  </defs>
+  <rect width="1600" height="1400" fill="url(#bg)"/>
+  <circle cx="1470" cy="-30" r="280" fill="#26c6a3" opacity=".07"/><circle cx="70" cy="1360" r="230" fill="#f4a340" opacity=".06"/>
+
+  <text id="chart-title" x="90" y="92" class="title">Updated FPSO CAPEX ranking</text>
+  <text x="92" y="132" class="subtitle">Original US$94.287bn visual reconciled with independent findings · 19 July 2026</text>
+
+  <g transform="translate(92 174)">
+    <rect width="18" height="18" rx="4" class="verified"/><text x="28" y="15" class="small">independently matched development CAPEX</text>
+    <rect x="365" width="18" height="18" rx="4" class="claimed"/><text x="393" y="15" class="small">original visual value; scope not established</text>
+    <rect x="775" width="18" height="18" rx="4" class="conflict"/><text x="803" y="15" class="small">newer finding conflicts in scope/value</text>
+  </g>
+
+  <text x="92" y="250" class="section">Original top 10 · US$ billion</text>
+  <text x="92" y="279" class="small">Bar length uses the original visual value. Labels identify what independent research establishes.</text>
+
+  <!-- grid: x=440 to 1400; 0 to 14bn -->
+  <g>
+    <line x1="440" y1="310" x2="440" y2="1015" class="axis"/>
+    <line x1="714" y1="310" x2="714" y2="1015" class="grid"/>
+    <line x1="989" y1="310" x2="989" y2="1015" class="grid"/>
+    <line x1="1263" y1="310" x2="1263" y2="1015" class="grid"/>
+    <text x="440" y="1044" class="small" text-anchor="middle">0</text><text x="714" y="1044" class="small" text-anchor="middle">4</text><text x="989" y="1044" class="small" text-anchor="middle">8</text><text x="1263" y="1044" class="small" text-anchor="middle">12</text><text x="1400" y="1044" class="small" text-anchor="middle">14</text>
+  </g>
+
+  <!-- rows -->
+  <g transform="translate(0 322)"><text x="92" y="29" class="rank">01</text><text x="140" y="28" class="label">Uaru / Errea Wittu</text><rect x="440" y="4" width="871" height="34" rx="8" class="verified"/><text x="1325" y="29" class="value">$12.7</text><text x="140" y="51" class="small">verified · full development</text></g>
+  <g transform="translate(0 390)"><text x="92" y="29" class="rank">02</text><text x="140" y="28" class="label">Whiptail / Jaguar</text><rect x="440" y="4" width="871" height="34" rx="8" class="verified"/><text x="1325" y="29" class="value">$12.7</text><text x="140" y="51" class="small">verified · includes 10 drill centres / 48 wells</text></g>
+  <g transform="translate(0 458)"><text x="92" y="29" class="rank">03</text><text x="140" y="28" class="label">GranMorgu</text><rect x="440" y="4" width="720" height="34" rx="8" class="verified"/><text x="1174" y="29" class="value">$10.5</text><text x="140" y="51" class="small">verified · full development</text></g>
+  <g transform="translate(0 526)"><text x="92" y="29" class="rank">04</text><text x="140" y="28" class="label">Atapu 2 / P-84</text><rect x="440" y="4" width="668" height="34" rx="8" class="claimed"/><text x="1122" y="29" class="value">$9.741</text><text x="140" y="51" class="small">identity verified · CAPEX not established</text></g>
+  <g transform="translate(0 594)"><text x="92" y="29" class="rank">05</text><text x="140" y="28" class="label">Raia</text><rect x="440" y="4" width="617" height="34" rx="8" class="verified"/><text x="1071" y="29" class="value">~$9.0</text><text x="140" y="51" class="small">verified · full field development</text></g>
+  <g transform="translate(0 662)"><text x="92" y="29" class="rank">06</text><text x="140" y="28" class="label">Sépia 2 / P-85</text><rect x="440" y="4" width="583" height="34" rx="8" class="claimed"/><text x="1037" y="29" class="value">$8.499</text><text x="140" y="51" class="small">identity verified · CAPEX not established</text></g>
+  <g transform="translate(0 730)"><text x="92" y="29" class="rank">07</text><text x="140" y="28" class="label">Búzios 10 / P-82</text><rect x="440" y="4" width="578" height="34" rx="8" class="claimed"/><text x="1032" y="29" class="value">$8.427</text><text x="140" y="51" class="small">identity verified · CAPEX not established</text></g>
+  <g transform="translate(0 798)"><text x="92" y="29" class="rank">08</text><text x="140" y="28" class="label">Bonga Southwest/Aparo</text><rect x="440" y="4" width="549" height="34" rx="8" class="claimed"/><rect x="440" y="4" width="686" height="34" rx="8" class="outline"/><text x="1140" y="29" class="value" fill="#f4a340">~$10 CAPEX*</text><text x="140" y="51" class="small">visual: $8.0 · newer headline: up to $20 total investment</text></g>
+  <g transform="translate(0 866)"><text x="92" y="29" class="rank">09</text><text x="140" y="28" class="label">Búzios 11 / P-83</text><rect x="440" y="4" width="524" height="34" rx="8" class="claimed"/><text x="978" y="29" class="value">$7.641</text><text x="140" y="51" class="small">identity verified · CAPEX not established</text></g>
+  <g transform="translate(0 934)"><text x="92" y="29" class="rank">10</text><text x="140" y="28" class="label">Búzios 9 / P-80</text><rect x="440" y="4" width="485" height="34" rx="8" class="claimed"/><text x="939" y="29" class="value">$7.079</text><text x="140" y="51" class="small">identity verified · CAPEX not established</text></g>
+
+  <text x="92" y="1100" class="section">Additional projects raised in the discussion · not ranked</text>
+  <text x="92" y="1129" class="small">Native currencies and disclosed bounds are retained; no silent FX conversion.</text>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(92 1160)"><rect width="272" height="150" rx="16" class="card"/><text x="20" y="34" class="cardTitle">Bay du Nord</text><text x="20" y="72" class="cardValue">~CAD$14bn</text><text x="20" y="101" class="note">Initial development · pre-FID</text><text x="20" y="127" class="small">First oil expected 2031</text></g>
+    <g transform="translate(382 1160)"><rect width="272" height="150" rx="16" class="card"/><text x="20" y="34" class="cardTitle">Wisting</text><text x="20" y="72" class="cardValue">NOK104bn</text><text x="20" y="101" class="note">2022 estimate · superseded</text><text x="20" y="127" class="small">Current concept remains pre-FID</text></g>
+    <g transform="translate(672 1160)"><rect width="272" height="150" rx="16" class="card"/><text x="20" y="34" class="cardTitle">Greater PAJ</text><text x="20" y="72" class="cardValue">&gt;US$5bn</text><text x="20" y="101" class="note">Full development · FID</text><text x="20" y="127" class="small">Lower bound cannot fix rank</text></g>
+    <g transform="translate(962 1160)"><rect width="252" height="150" rx="16" class="card"/><text x="20" y="34" class="cardTitle">Tangkulo</text><text x="20" y="72" class="cardValue">Not disclosed</text><text x="20" y="101" class="note">Pre-development discovery</text><text x="20" y="127" class="small">Mubadala is operator</text></g>
+    <g transform="translate(1232 1160)"><rect width="276" height="150" rx="16" class="card"/><text x="20" y="34" class="cardTitle">Venus</text><text x="20" y="72" class="cardValue">Not disclosed</text><text x="20" y="101" class="note">Proposed / ESIA stage</text><text x="20" y="127" class="small">No comparable public CAPEX</text></g>
+  </g>
+
+  <text x="92" y="1360" class="foot">* Bonga's newer ~US$10bn CAPEX report excludes significant life-cycle operating costs. NR projects are not zero-CAPEX projects.</text>
+  <text x="800" y="1385" class="foot" text-anchor="middle">Copyright (C) Exergy ∞ LLC</text>
+  <text x="1508" y="1360" class="foot" text-anchor="end">Source layers: original visual · LinkedIn comments · independent findings</text>
+</svg>

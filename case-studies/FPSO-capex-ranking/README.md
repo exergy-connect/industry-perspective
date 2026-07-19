@@ -58,6 +58,36 @@ That question is central to interpreting the ranking. The visual labels the numb
 
 The model therefore records the ranking's `capex_scope` as `unknown` and its `capex_scope_status` as `unresolved`. The comment is retained as a `source_comment`, distinctly sourced from the original post and visual, with an open `capex_scope` issue. Until project-level primary sources establish a consistent basis, this case study describes the numbers as **stated project values**, not FPSO-only CAPEX.
 
+## Updated ranking and CAPEX reconciliation
+
+The expanded table keeps the visual's order but adds the projects proposed in the comments. It does **not** assign new ordinal ranks to estimates in CAD or NOK, or to projects without a disclosed estimate: doing so would require an exchange-rate date and a common cost boundary. “Verified” means the amount and its development scope are supported by the linked independent source; it does not mean that the amount is FPSO-only.
+
+![Updated FPSO CAPEX ranking with independent findings and comment additions](./updated_FPSO_CAPEX_ranking.svg)
+
+*The original USD ranking is shown on a common axis. Comment additions remain unranked and retain their disclosed native currencies and evidence status.*
+
+| Original rank | Project | Origin | Published CAPEX | Independent CAPEX finding | Cost boundary and ranking treatment |
+| ---: | --- | --- | ---: | ---: | --- |
+| 1 | Uaru / Errea Wittu | Original visual | US$12.7bn | **US$12.7bn verified** | Whole Uaru development, including its FPSO; retain at 1 on the visual's basis. |
+| 2 | Whiptail / Jaguar | Original visual | US$12.7bn | **US$12.7bn verified** | Whole development: up to 10 drill centres and 48 production/injection wells, not FPSO-only; retain at 2 (tie) on the visual's basis. |
+| 3 | GranMorgu | Original visual | US$10.5bn | **US$10.5bn verified** | Total development investment, including a 220,000 bpd FPSO; retain at 3. |
+| 4 | Atapu 2 / P-84 | Original visual | US$9.741bn | Not independently established | The project identity is verified, but the visual's amount and boundary remain unverified; retain the visual rank provisionally. |
+| 5 | Raia | Original visual | US$9.0bn | **About US$9.0bn verified** | Whole field development, including FPSO, subsea and wells; retain at 5. |
+| 6 | Sépia 2 / P-85 | Original visual | US$8.499bn | Not independently established | The project identity is verified, but the visual's amount and boundary remain unverified; retain the visual rank provisionally. |
+| 7 | Búzios 10 / P-82 | Original visual | US$8.427bn | Not independently established | Petrobras sources verify the development identity, not this amount; retain the visual rank provisionally. |
+| 8 | Bonga Southwest/Aparo | Original visual | US$8.0bn | **Up to US$20bn total investment; CAPEX reported close to US$10bn** | The newer headline includes CAPEX plus significant life-cycle operating expenditure. It is not comparable with the visual's unexplained US$8bn and is therefore flagged, not re-ranked. |
+| 9 | Búzios 11 / P-83 | Original visual | US$7.641bn | Not independently established | Petrobras sources verify the development identity, not this amount; retain the visual rank provisionally. |
+| 10 | Búzios 9 / P-80 | Original visual | US$7.079bn | Not independently established | Petrobras sources verify the development identity, not this amount; retain the visual rank provisionally. |
+| NR | Bay du Nord | Comment addition | — | **About CAD$14bn** | Initial development investment; pre-FID. Kept unranked because it is in CAD and its schedule extends beyond the visual's 2030 horizon (first oil expected in 2031). |
+| NR | Wisting | Comment addition | — | **NOK104bn (2022 estimate)** | A superseded/pre-redesign estimate. The current concept remains pre-FID, so the old value is retained as context but not ranked. |
+| NR | Greater PAJ | Comment addition | — | **More than US$5bn** | Whole integrated development, including a 95,000 bpd FPSO. The disclosed lower bound is insufficient to place it against the visual's US$7.079bn tenth-place value. |
+| NR | Tangkulo | Comment addition | — | No public comparable estimate found | Pre-development discovery; Mubadala Energy is operator. Yinson's possible FPSO-provider role should not be read as operatorship. |
+| NR | Venus | Comment addition | — | No public comparable estimate found | Proposed development/ESIA stage; no FID or independently disclosed comparable CAPEX found. |
+
+`NR` means **not ranked**, not zero CAPEX. The machine-readable version is stored in [`updated_ranking.json`](./xframe/data/updated_ranking.json). It keeps the original, comment, and independent values in separate fields so downstream analysis cannot silently substitute one source layer for another.
+
+The reconciliation answers Luciano's question directly for the four independently matched original amounts: Uaru, Whiptail, GranMorgu, and Raia are **development-level investments**, not prices for the FPSO vessel alone. The remaining visual amounts should not yet be assumed to use the same boundary. The ten visual rows total **US$94.287bn**, explaining the post's rounded US$94bn headline, but arithmetic agreement does not establish a common scope.
+
 ### Projects proposed in the discussion
 
 [Jean Carlos Piña](https://www.linkedin.com/in/jean-carlos-pi%C3%B1a-bbaab52b) asked:
