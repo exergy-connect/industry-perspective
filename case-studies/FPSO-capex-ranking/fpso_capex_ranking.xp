@@ -16,6 +16,11 @@ narrative:
   track: combined
   pause_seconds: 3
   prompt: prompts/tts.md
+  groups:
+    - [title, trigger]
+    - [geography, question]
+    - [method, findings]
+    - [updated, close]
 data:
   static: xframe/output/consolidated_data.json
 ---
