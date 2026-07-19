@@ -13,6 +13,8 @@ image:
 linkedin_url: https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV
 narrative:
   voice: female
+  track: combined
+  pause_seconds: 3
 data:
   static: xframe/output/consolidated_data.json
 ---

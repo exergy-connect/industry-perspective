@@ -1,0 +1,48 @@
+{
+  "language": "en-US",
+  "audio": "audio/deck-en-US.wav",
+  "voice": "Kore",
+  "model": "gemini-3.1-flash-tts-preview",
+  "markers": [
+    {
+      "id": "title",
+      "startSeconds": 0,
+      "endSeconds": 24.75
+    },
+    {
+      "id": "trigger",
+      "startSeconds": 25.9,
+      "endSeconds": 45.55
+    },
+    {
+      "id": "geography",
+      "startSeconds": 46.7,
+      "endSeconds": 67.05
+    },
+    {
+      "id": "question",
+      "startSeconds": 68.2,
+      "endSeconds": 83.9
+    },
+    {
+      "id": "method",
+      "startSeconds": 85.1,
+      "endSeconds": 105.05
+    },
+    {
+      "id": "findings",
+      "startSeconds": 106.2,
+      "endSeconds": 124.4
+    },
+    {
+      "id": "updated",
+      "startSeconds": 125.6,
+      "endSeconds": 142.15
+    },
+    {
+      "id": "close",
+      "startSeconds": 143.3,
+      "endSeconds": 163.8
+    }
+  ]
+}
