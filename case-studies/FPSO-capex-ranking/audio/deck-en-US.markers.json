@@ -56,49 +56,49 @@
       "id": "title",
       "content_hash": "740993cc6c22c10468d15ed019eef17a73342e399e07e8d221eb88542fe03951",
       "startSeconds": 0,
-      "endSeconds": 25.1
+      "endSeconds": 25.15
     },
     {
       "id": "trigger",
       "content_hash": "6e9880fba20e9c32629ac4252d19a3d420c587acc0d8e0cd634e88243b529640",
-      "startSeconds": 28.1,
-      "endSeconds": 47.1
+      "startSeconds": 28.15,
+      "endSeconds": 48.47
     },
     {
       "id": "geography",
       "content_hash": "04d8e945069ce534adab92bdca9eab2a4831f3a39898f99fc0d29086140d2398",
-      "startSeconds": 50.1,
-      "endSeconds": 70.75
+      "startSeconds": 51.47,
+      "endSeconds": 73.97
     },
     {
       "id": "question",
       "content_hash": "22345e3968b50e14a16b3c9c79a16fc223f3be30273d6638a0877470ec9a4064",
-      "startSeconds": 73.75,
-      "endSeconds": 90.53
+      "startSeconds": 76.97,
+      "endSeconds": 94.82
     },
     {
       "id": "method",
       "content_hash": "67787ba49a6fa056be72d9bd1d8ec3094aa31f44d951da2120d0b3befe73e54b",
-      "startSeconds": 93.53,
-      "endSeconds": 117.58
+      "startSeconds": 97.82,
+      "endSeconds": 121.87
     },
     {
       "id": "findings",
       "content_hash": "e1056618a4fb0e2ee7647d5aa44deceb7a4f6ba8aa20e5167e5ee78511c689fa",
-      "startSeconds": 120.58,
-      "endSeconds": 141.33
+      "startSeconds": 124.87,
+      "endSeconds": 145.62
     },
     {
       "id": "updated",
       "content_hash": "b7d7c8a148d6272ed332b858a88c0cd644fec2fe7643afc29271b22630478d9c",
-      "startSeconds": 144.33,
-      "endSeconds": 165.23
+      "startSeconds": 148.62,
+      "endSeconds": 169.52
     },
     {
       "id": "close",
       "content_hash": "1c94d0d7d0e264ac32ce51e226c5e1fc84ad5103803999829648acfbbd9b5043",
-      "startSeconds": 168.23,
-      "endSeconds": 193.2
+      "startSeconds": 172.52,
+      "endSeconds": 197.49
     }
   ]
 }
