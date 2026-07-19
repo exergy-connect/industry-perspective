@@ -504,6 +504,13 @@ img[data-click-to-zoom="true"] { cursor: zoom-in; }
   box-shadow: var(--box-shadow);
 }
 /* Map fill/shrink is owned by ir2html map-layout.css (flex: 1 1 0). */
+#geography .xm-ocean {
+  fill: #163d5c;
+}
+#geography .xm-land {
+  fill: color-mix(in srgb, #0f2a3d 72%, #2a6a7a);
+  stroke: color-mix(in srgb, #9eb6bc 35%, #315965);
+}
 
 /* ── 6. Caption ─────────────────────────────────────── */
 /* Region caption = supporting note under media/maps */
@@ -529,9 +536,83 @@ img[data-click-to-zoom="true"] { cursor: zoom-in; }
   text-align: center;
 }
 
+/* Research question: balance the quotation with its interpretation. */
+#question [data-region="main"] {
+  position: relative;
+  min-height: 0;
+  padding-top: 4.4rem;
+}
+#question [data-region="main"] blockquote {
+  width: 51%;
+  max-width: 44rem;
+}
+#question [data-region="main"] > .label {
+  width: 51%;
+  max-width: 34ch;
+  margin-top: .8rem;
+}
+#question [data-region="main"] > p:last-child {
+  position: absolute;
+  top: 50%;
+  left: 59%;
+  width: 36%;
+  max-width: none;
+  padding-left: 1.6rem;
+  border-left: 1px solid var(--line);
+  color: #d5e7ea;
+  font-size: 1.16rem;
+  line-height: 1.55;
+  transform: translateY(-50%);
+}
+
 /* Closing slide: lower the body without changing the shell's intrinsic height. */
 #close [data-region="main"],
-#close [data-region="aside"] { transform: translateY(2.75rem); }
+#close [data-region="aside"] { transform: translateY(1.6rem); }
+
+/* Closing brand lockup — centered under both columns, lifted + accented */
+#close [data-region="caption"] {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .55rem;
+  margin-top: -.35rem;
+  padding: 1.1rem 1.5rem .2rem;
+  text-align: center;
+  transform: translateY(-.85rem);
+}
+#close [data-region="caption"]::before {
+  content: "";
+  display: block;
+  width: 3.2rem;
+  height: .18rem;
+  margin-bottom: .15rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 .9rem color-mix(in srgb, var(--accent) 45%, transparent);
+}
+#close [data-region="caption"] .label {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(1rem, 1.45vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-shadow: 0 0 1.4rem color-mix(in srgb, var(--accent) 35%, transparent);
+}
+#close [data-region="caption"] .pull {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 1.25;
+  text-align: center;
+}
 </style>
 
 </head>
@@ -908,12 +989,13 @@ img[data-click-to-zoom="true"] { cursor: zoom-in; }
     <div class="metric"><strong>Rapid synthesis</strong><span>Move from an emerging industry signal to a structured analytical view in hours, not weeks.</span></div>
 <div class="metric"><strong>Evidence-led judgment</strong><span>Combine public disclosures, company materials, government sources, contractor information, and industry context.</span></div>
 <div class="metric"><strong>Strategic interpretation</strong><span>Go beyond what is stated to understand what the data reveals about capital deployment, development models, ownership, risk, and opportunity.</span></div>
-<p class="label">Exergy xFrame Insights</p>
+  </div>
+  </div>
+<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
+    <p class="label">Exergy xFrame Insights</p>
 <p class="pull">Turn fragmented information into a decision-quality view of the industry.</p>
     
   </div>
-  </div>
-<div class="region slide-frame-caption" data-region="caption" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto"></div>
 <div class="region slide-frame-footer" data-region="footer" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: 36px">
     <div class="layout-container layout-stack" data-layout-direction="horizontal" style="--layout-weight: 0; --layout-shrink: 0; --layout-basis: auto">
     <div class="region slide-frame-footer-left" data-region="footer-left" style="--layout-weight: 1; --layout-shrink: 1; --layout-basis: 0%">

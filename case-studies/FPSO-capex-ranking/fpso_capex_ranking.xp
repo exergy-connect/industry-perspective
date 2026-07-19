@@ -293,6 +293,10 @@ Independently matched development CAPEX · Original visual value, scope not esta
 <div class="metric"><strong>Rapid synthesis</strong><span>Move from an emerging industry signal to a structured analytical view in hours, not weeks.</span></div>
 <div class="metric"><strong>Evidence-led judgment</strong><span>Combine public disclosures, company materials, government sources, contractor information, and industry context.</span></div>
 <div class="metric"><strong>Strategic interpretation</strong><span>Go beyond what is stated to understand what the data reveals about capital deployment, development models, ownership, risk, and opportunity.</span></div>
+```
+
+@region caption
+```html
 <p class="label">Exergy xFrame Insights</p>
 <p class="pull">Turn fragmented information into a decision-quality view of the industry.</p>
 ```
