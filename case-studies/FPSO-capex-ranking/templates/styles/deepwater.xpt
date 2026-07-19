@@ -22,11 +22,16 @@ textAlign: left
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap");
 
+/* ── Tokens ─────────────────────────────────────────── */
 #xframe {
   --ink: var(--fg);
   --line: rgba(182, 214, 220, .16);
   --panel: rgba(14, 42, 54, .78);
   --warm: #f4a340;
+  --measure: 46ch;
+  --measure-lead: 36ch;
+  --accent-bar: .32rem;
+  --status-muted: #587985;
   background:
     radial-gradient(circle at 92% -8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 34%),
     radial-gradient(circle at 4% 108%, rgba(244, 163, 64, .12), transparent 36%),
@@ -35,18 +40,17 @@ textAlign: left
   font-family: "Sora", ui-sans-serif, sans-serif;
 }
 
+/* ── 1. Shell ───────────────────────────────────────── */
 #xframe .segment.active {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   gap: 0;
-  /* Keep side/top inset; pin content to the bottom edge of the slide. */
   padding: 1.1rem 2.5rem 0.4rem !important;
   overflow: hidden;
   box-sizing: border-box;
 }
-/* Do not override segment position — runtime uses absolute + inset:0 to fill the canvas. */
 #xframe .segment { background: transparent; }
 #xframe .segment > .layout-container {
   display: flex;
@@ -66,21 +70,16 @@ textAlign: left
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-#xframe [data-region="header"] {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-#xframe [data-region="header"] .layout-container {
-  width: 100%;
-  height: 100%;
-  justify-content: flex-end;
-  align-items: center;
-}
+#xframe [data-region="header"],
+#xframe [data-region="header"] .layout-container,
 #xframe [data-region="header-right"] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+#xframe [data-region="header"] .layout-container {
+  width: 100%;
+  height: 100%;
 }
 #xframe [data-region="header-right"] img {
   display: block;
@@ -127,34 +126,25 @@ textAlign: left
   text-transform: uppercase;
 }
 
-#xframe h1 {
-  margin: 0;
-  max-width: none;
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 700;
-  letter-spacing: -.04em;
-  line-height: .96;
+#xframe [data-region="main"],
+#xframe [data-region="aside"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  overflow: visible;
+  gap: .85rem;
 }
-#xframe h2 {
-  margin: .55rem 0 0;
-  max-width: 36ch;
-  color: var(--muted);
-  font-weight: 450;
-  line-height: 1.3;
+#xframe [data-region="title"] { overflow: visible; }
+#xframe [data-region="title"] h1 {
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
 }
-#xframe h3 {
-  margin: 0;
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 700;
-}
-#xframe a { color: var(--accent); text-underline-offset: .18em; }
+
 #xframe .xframe-qr-code {
   display: block;
   width: 8rem;
   aspect-ratio: 1;
-  margin: .9rem 0;
+  margin: .25rem 0;
   padding: .35rem;
   overflow: hidden;
   background: #edf7f7;
@@ -169,75 +159,188 @@ textAlign: left
   height: 100% !important;
 }
 
-#xframe [data-region="title"] h1 {
-  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+/* ── 2. Type roles ──────────────────────────────────── */
+#xframe h1 {
+  margin: 0;
+  max-width: none;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: .96;
 }
-#xframe [data-region="main"],
-#xframe [data-region="aside"] {
-  min-height: 0;
-  overflow: visible;
+#xframe h2 {
+  margin: 0;
+  max-width: var(--measure);
+  color: #d5e7ea;
+  font-weight: 450;
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
-#xframe [data-region="title"] {
-  overflow: visible;
+#xframe h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
 }
+#xframe a { color: var(--accent); text-underline-offset: .18em; }
+
 #xframe [data-region="main"] p,
 #xframe [data-region="aside"] p {
-  margin: .75rem 0 0;
+  margin: 0;
+  max-width: var(--measure);
   color: #d5e7ea;
   font-size: 1.2rem;
   line-height: 1.45;
 }
-#xframe [data-region="caption"] p {
-  margin: .4rem 0 0;
-  color: var(--muted);
-  font-size: .95rem;
-}
-
-/* Title — headline + lede share main; metrics are whole cards */
-#title [data-region="main"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: .65rem;
-  padding: .2rem .5rem 0 0;
-  overflow: hidden;
-}
-#title [data-region="main"] h1 {
-  max-width: 18ch;
+#xframe [data-region="main"] ul {
   margin: 0;
-  font-size: clamp(2.2rem, 3.6vw, 3.15rem);
-  line-height: .98;
-}
-#title [data-region="main"] p {
-  max-width: 36ch;
-  margin: 0;
+  padding-left: 1.1rem;
+  max-width: var(--measure);
   color: #d5e7ea;
-  font-size: clamp(.98rem, 1.4vw, 1.15rem);
-  font-weight: 450;
-  line-height: 1.35;
+  font-size: 1.05rem;
+  line-height: 1.38;
 }
-#title [data-region="main"] p:first-of-type {
-  max-width: 30ch;
+#xframe .lead {
+  max-width: var(--measure-lead);
   color: var(--ink);
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.3;
 }
-#title [data-region="main"] ul {
+#xframe .label {
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+#xframe .muted { color: var(--muted); }
+#xframe [data-region="aside"] .pull {
+  font-size: 1.05rem;
+  max-width: none;
+}
+#xframe [data-region="aside"] .label {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ── 3. Panel ───────────────────────────────────────── */
+#xframe .metric,
+#xframe [data-region^="card"] {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  min-height: 0;
+  padding: 1rem 1.2rem 1.05rem 1.35rem;
+  border: 1px solid var(--line);
+  border-left: var(--accent-bar) solid var(--accent);
+  border-radius: 0 .3rem .3rem 0;
+  background: var(--panel);
+}
+#xframe [data-region^="card"]:empty { display: none; }
+#xframe .metric strong,
+#xframe [data-region^="card"] h3 {
   margin: 0;
-  padding-left: 1.1rem;
-  max-width: 36ch;
-  color: #d5e7ea;
-  font-size: clamp(.95rem, 1.3vw, 1.08rem);
-  line-height: 1.38;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
 }
-#title [data-region="main"] li + li { margin-top: .08rem; }
-#title [data-region="caption"] {
-  flex: 0 0 auto;
-  padding: 0 0 .15rem;
-  margin-top: -1.4rem;
+#xframe .metric span,
+#xframe [data-region^="card"] p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.35;
 }
-#title [data-region="caption"] p {
+#xframe [data-region^="card"] p:first-child,
+#xframe [data-region^="card"] strong {
+  color: var(--accent);
+  font-family: "Sora", ui-sans-serif, sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+#xframe .metric--stat strong {
+  color: var(--accent);
+  font-family: "Sora", ui-sans-serif, sans-serif;
+  font-size: clamp(1.9rem, 2.8vw, 2.45rem);
+  line-height: 1;
+}
+#xframe .metric--stat span {
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* Status accents on findings cards */
+#findings [data-region="card1"] { border-left-color: var(--accent); }
+#findings [data-region="card2"],
+#findings [data-region="card4"] { border-left-color: var(--status-muted); }
+#findings [data-region="card3"] { border-left-color: var(--warm); }
+#findings [data-region^="card"] p:first-child,
+#findings [data-region^="card"] strong { color: var(--muted); }
+
+/* ── 4. Pull ────────────────────────────────────────── */
+#xframe .pull,
+#xframe blockquote {
+  margin: 0;
+  max-width: var(--measure);
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.3;
+}
+#xframe blockquote {
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line);
+  border-left: var(--accent-bar) solid var(--warm);
+  border-radius: 0 .3rem .3rem 0;
+  background: var(--panel);
+}
+#xframe blockquote p {
+  margin: 0;
+  max-width: none;
+  color: inherit;
+  font: inherit;
+}
+
+/* ── 5. Media ───────────────────────────────────────── */
+#xframe figure { margin: 0; }
+#xframe figcaption {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+#xframe [data-region="main"] img {
+  width: 100%;
+  max-height: 28rem;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: .4rem;
+  background: rgba(0, 0, 0, .22);
+  box-shadow: var(--box-shadow);
+}
+
+/* ── 6. Caption ─────────────────────────────────────── */
+/* Region caption = supporting note under media/maps */
+#xframe [data-region="caption"] p {
+  margin: 0;
+  max-width: none;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+/* Punch-line caption (opt in via class; beats region-caption note) */
+#xframe p.caption,
+#xframe [data-region="caption"] p.caption {
   margin: 0;
   max-width: none;
   color: var(--accent);
@@ -247,181 +350,5 @@ textAlign: left
   letter-spacing: .01em;
   line-height: 1.3;
   text-align: center;
-  text-transform: none;
-}
-#title [data-region="aside"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: .85rem;
-  height: 100%;
-  overflow: auto;
-}
-/* One card = one left accent; no split h3/p border seams. */
-#title [data-region="aside"] .metric {
-  display: flex;
-  flex-direction: column;
-  gap: .35rem;
-  padding: 1rem 1.2rem 1.05rem 1.35rem;
-  border: 1px solid var(--line);
-  border-left: .32rem solid var(--accent);
-  border-radius: 0 .3rem .3rem 0;
-  background: var(--panel);
-}
-#title [data-region="aside"] .metric strong {
-  color: var(--accent);
-  font-size: clamp(1.9rem, 2.8vw, 2.45rem);
-  font-weight: 700;
-  line-height: 1;
-}
-#title [data-region="aside"] .metric span {
-  color: var(--muted);
-  font-size: .92rem;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  line-height: 1.3;
-}
-
-/* Trigger */
-#trigger [data-region="main"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#trigger [data-region="aside"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#trigger [data-region="main"] figure { margin: 0; }
-#trigger [data-region="main"] figcaption,
-#updated [data-region="main"] figcaption {
-  margin-top: .55rem;
-  color: var(--muted);
-  font-size: .9rem;
-}
-#trigger [data-region="main"] img,
-#updated [data-region="main"] img {
-  width: 100%;
-  max-height: 28rem;
-  object-fit: contain;
-  border: 1px solid var(--line);
-  border-radius: .4rem;
-  background: rgba(0, 0, 0, .22);
-  box-shadow: var(--box-shadow);
-}
-#trigger [data-region="aside"] h2 {
-  margin: 0;
-  max-width: none;
-  color: #d5e7ea;
-  font-size: 1.25rem;
-  font-weight: 450;
-  line-height: 1.4;
-}
-
-/* Question */
-#question [data-region="main"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#question [data-region="main"] blockquote {
-  max-width: 28ch;
-  margin: 0;
-  padding: 1.6rem 1.75rem;
-  border-left: .32rem solid var(--warm);
-  background: var(--panel);
-}
-#question [data-region="main"] blockquote p {
-  margin: 0;
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.7rem, 2.6vw, 2.25rem);
-  font-style: italic;
-  line-height: 1.25;
-}
-#question [data-region="main"] > p:nth-of-type(1) {
-  margin: 1.1rem 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-#question [data-region="main"] > p:nth-of-type(2) {
-  max-width: 42ch;
-  margin: 1.4rem 0 0;
-  font-size: 1.25rem;
-}
-
-/* Cards (method + findings) */
-#xframe [data-region^="card"] {
-  min-height: 0;
-  padding: 1.35rem 1.4rem;
-  border: 1px solid var(--line);
-  border-top: .32rem solid var(--accent);
-  background: var(--panel);
-}
-#findings [data-region="card1"] { border-top-color: var(--accent); }
-#findings [data-region="card2"] { border-top-color: #587985; }
-#findings [data-region="card3"] { border-top-color: var(--warm); }
-#findings [data-region="card4"] { border-top-color: #587985; }
-#xframe [data-region^="card"]:empty { display: none; }
-#xframe [data-region^="card"] p:first-child,
-#xframe [data-region^="card"] strong {
-  color: var(--accent);
-  font-size: .85rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-#findings [data-region^="card"] p:first-child,
-#findings [data-region^="card"] strong { color: var(--muted); }
-#xframe [data-region^="card"] h3 {
-  margin: .55rem 0;
-  font-size: 1.35rem;
-}
-#xframe [data-region^="card"] p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.4;
-}
-
-/* Updated */
-#updated [data-region="main"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Close */
-#close [data-region="main"],
-#close [data-region="aside"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#close [data-region="main"] p {
-  max-width: 28ch;
-  font-size: 1.3rem;
-}
-#close [data-region="aside"] h3 {
-  margin: 0;
-  padding: 1.2rem 1.25rem .4rem;
-  border: 1px solid var(--line);
-  border-bottom: 0;
-  border-left: .32rem solid var(--accent);
-  background: var(--panel);
-  font-size: 1.3rem;
-}
-#close [data-region="aside"] h3:not(:first-child) { margin-top: .9rem; }
-#close [data-region="aside"] h3 + p {
-  margin: 0;
-  padding: 0 1.25rem 1.2rem;
-  border: 1px solid var(--line);
-  border-top: 0;
-  border-left: .32rem solid var(--accent);
-  background: var(--panel);
-  color: var(--muted);
-  font-size: 1.05rem;
 }
 ```

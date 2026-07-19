@@ -1,33 +1,32 @@
-2026-07-19 11:12:17 [INFO] Logging to: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidation_log.txt
-2026-07-19 11:12:17 [INFO] Step 1: Consolidating models from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/model
-2026-07-19 11:12:17 [INFO] Skipping initial schema write; will write consolidated.schema.json after data load (--close-fk-enums).
-2026-07-19 11:12:17 [INFO] Model consolidation completed successfully (exit code: 0)
-2026-07-19 11:12:17 [INFO] Step 1 completed in 0.00 seconds
-2026-07-19 11:12:17 [INFO] Step 2: Consolidating data from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/data
-2026-07-19 11:12:17 [INFO] Loading data files from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/data
-2026-07-19 11:12:17 [INFO] Data loading completed in 0.00 seconds
-2026-07-19 11:12:17 [INFO] ✓ Consolidated model written (FK fields closed to data enums) to: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated.schema.json
-2026-07-19 11:12:18 [INFO] ============================================================
-2026-07-19 11:12:18 [INFO] Data load summary
-2026-07-19 11:12:18 [INFO] ============================================================
-2026-07-19 11:12:18 [INFO] Total entity records loaded (by PK): 91
-2026-07-19 11:12:18 [INFO] Records by entity type:
-2026-07-19 11:12:18 [INFO]   - capex_ranking: 1
-2026-07-19 11:12:18 [INFO]   - contractor: 1
-2026-07-19 11:12:18 [INFO]   - country: 9
-2026-07-19 11:12:18 [INFO]   - discussion_project_mention: 6
-2026-07-19 11:12:18 [INFO]   - fpso_project: 10
-2026-07-19 11:12:18 [INFO]   - independent_finding: 17
-2026-07-19 11:12:18 [INFO]   - independent_source: 17
-2026-07-19 11:12:18 [INFO]   - operator: 8
-2026-07-19 11:12:18 [INFO]   - ranking_methodology: 1
-2026-07-19 11:12:18 [INFO]   - source_comment: 6
-2026-07-19 11:12:18 [INFO]   - updated_ranking_entry: 15
-2026-07-19 11:12:18 [INFO] ✓ No validation errors. Data matches consolidated JSON Schema ($defs); loaded entity types are defined in the merged model.
-2026-07-19 11:12:18 [INFO] ============================================================
-2026-07-19 11:12:18 [INFO] Calculating computed fields
-2026-07-19 11:12:18 [INFO] Wrote consolidated data to /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated_data.json (91 entities across 12 entity types)
-2026-07-19 11:12:18 [INFO] ✓ Successfully consolidated data into /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated_data.json
-2026-07-19 11:12:18 [INFO] Data consolidation completed successfully (exit code: 0)
-2026-07-19 11:12:18 [INFO] Step 2 completed in 0.08 seconds
-2026-07-19 11:12:18 [INFO] Consolidation completed successfully (exit code: 0)
+2026-07-19 12:07:13 [INFO] Logging to: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidation_log.txt
+2026-07-19 12:07:13 [INFO] Step 1: Consolidating models from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/model
+2026-07-19 12:07:13 [INFO] ✓ Consolidated model written to: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated.schema.json
+2026-07-19 12:07:13 [INFO] Model consolidation completed successfully (exit code: 0)
+2026-07-19 12:07:13 [INFO] Step 1 completed in 0.01 seconds
+2026-07-19 12:07:13 [INFO] Step 2: Consolidating data from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/data
+2026-07-19 12:07:13 [INFO] Loading data files from: /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/data
+2026-07-19 12:07:13 [INFO] Data loading completed in 0.00 seconds
+2026-07-19 12:07:13 [INFO] ============================================================
+2026-07-19 12:07:13 [INFO] Data load summary
+2026-07-19 12:07:13 [INFO] ============================================================
+2026-07-19 12:07:13 [INFO] Total entity records loaded (by PK): 91
+2026-07-19 12:07:13 [INFO] Records by entity type:
+2026-07-19 12:07:13 [INFO]   - capex_ranking: 1
+2026-07-19 12:07:13 [INFO]   - contractor: 1
+2026-07-19 12:07:13 [INFO]   - country: 9
+2026-07-19 12:07:13 [INFO]   - discussion_project_mention: 6
+2026-07-19 12:07:13 [INFO]   - fpso_project: 10
+2026-07-19 12:07:13 [INFO]   - independent_finding: 17
+2026-07-19 12:07:13 [INFO]   - independent_source: 17
+2026-07-19 12:07:13 [INFO]   - operator: 8
+2026-07-19 12:07:13 [INFO]   - ranking_methodology: 1
+2026-07-19 12:07:13 [INFO]   - source_comment: 6
+2026-07-19 12:07:13 [INFO]   - updated_ranking_entry: 15
+2026-07-19 12:07:13 [INFO] ✓ No validation errors. Data matches consolidated JSON Schema ($defs); loaded entity types are defined in the merged model.
+2026-07-19 12:07:13 [INFO] ============================================================
+2026-07-19 12:07:13 [INFO] Calculating computed fields
+2026-07-19 12:07:13 [INFO] Wrote consolidated data to /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated_data.json (91 entities across 12 entity types)
+2026-07-19 12:07:13 [INFO] ✓ Successfully consolidated data into /home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/xframe/output/consolidated_data.json
+2026-07-19 12:07:13 [INFO] Data consolidation completed successfully (exit code: 0)
+2026-07-19 12:07:13 [INFO] Step 2 completed in 0.07 seconds
+2026-07-19 12:07:13 [INFO] Consolidation completed successfully (exit code: 0)

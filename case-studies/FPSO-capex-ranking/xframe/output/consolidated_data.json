@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "timestamp": "2026-07-19T16:12:18Z",
+  "version": 4,
+  "timestamp": "2026-07-19T17:07:13Z",
   "model": {
     "name": "FPSO CAPEX Ranking",
     "version": "26.07.19.5",
@@ -61,6 +61,12 @@
         "author": "Industry Perspective",
         "note": "Add reconciled FPSO CAPEX ranking and visualization",
         "git_commit_hash": "27bc41fb293849881ca63d20407fc946957a3fbd"
+      },
+      "000000000004": {
+        "id": 4,
+        "timestamp": "2026-07-19T17:07:13Z",
+        "author": "Industry Perspective",
+        "note": "Add representative project coordinates for CAPEX map"
       }
     },
     "country": {
@@ -199,7 +205,15 @@
             "claimed_capex_m": 12700,
             "stage": "Planned",
             "operator_id": "exxonmobil",
-            "country_id": "GY"
+            "country_id": "GY",
+            "operator_name": "ExxonMobil",
+            "offshore_area": "Uaru development · Stabroek Block, offshore Guyana",
+            "latitude": 8.15,
+            "longitude": -57.05,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "whiptail",
@@ -208,7 +222,15 @@
             "claimed_capex_m": 12700,
             "stage": "Planned",
             "operator_id": "exxonmobil",
-            "country_id": "GY"
+            "country_id": "GY",
+            "operator_name": "ExxonMobil",
+            "offshore_area": "Whiptail development · Stabroek Block, offshore Guyana",
+            "latitude": 7.55,
+            "longitude": -56.65,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "granmorgu",
@@ -217,7 +239,15 @@
             "claimed_capex_m": 10500,
             "stage": "Planned",
             "operator_id": "totalenergies",
-            "country_id": "SR"
+            "country_id": "SR",
+            "operator_name": "TotalEnergies",
+            "offshore_area": "GranMorgu · Block 58, offshore Suriname",
+            "latitude": 6.05,
+            "longitude": -54.55,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "atapu-development",
@@ -226,7 +256,15 @@
             "claimed_capex_m": 9741,
             "stage": "Producing",
             "operator_id": "petrobras",
-            "country_id": "BR"
+            "country_id": "BR",
+            "operator_name": "Petrobras",
+            "offshore_area": "Atapu field · Santos Basin, offshore Brazil",
+            "latitude": -25.13,
+            "longitude": -42.65,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "raia",
@@ -235,7 +273,15 @@
             "claimed_capex_m": 9000,
             "stage": "Planned",
             "operator_id": "equinor",
-            "country_id": "BR"
+            "country_id": "BR",
+            "operator_name": "Equinor",
+            "offshore_area": "Raia · Campos Basin, offshore Brazil",
+            "latitude": -22.95,
+            "longitude": -39.95,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "sepia-development",
@@ -244,7 +290,15 @@
             "claimed_capex_m": 8499,
             "stage": "Producing",
             "operator_id": "petrobras",
-            "country_id": "BR"
+            "country_id": "BR",
+            "operator_name": "Petrobras",
+            "offshore_area": "Sépia field · Santos Basin, offshore Brazil",
+            "latitude": -25.22,
+            "longitude": -42.4,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "buzios-x-franco",
@@ -253,7 +307,15 @@
             "claimed_capex_m": 8427,
             "stage": "Planned",
             "operator_id": "petrobras",
-            "country_id": "BR"
+            "country_id": "BR",
+            "operator_name": "Petrobras",
+            "offshore_area": "Búzios field · Santos Basin, offshore Brazil",
+            "latitude": -24.05,
+            "longitude": -42.55,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "bonga-southwest-aparo",
@@ -262,7 +324,15 @@
             "claimed_capex_m": 8000,
             "stage": "Announced",
             "operator_id": "shell",
-            "country_id": "NG"
+            "country_id": "NG",
+            "operator_name": "Shell",
+            "offshore_area": "Bonga Southwest/Aparo · deepwater Nigeria",
+            "latitude": 4.45,
+            "longitude": 4.55,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "buzios-xi-franco",
@@ -271,7 +341,15 @@
             "claimed_capex_m": 7641,
             "stage": "Planned",
             "operator_id": "petrobras",
-            "country_id": "BR"
+            "country_id": "BR",
+            "operator_name": "Petrobras",
+            "offshore_area": "Búzios field · Santos Basin, offshore Brazil",
+            "latitude": -23.82,
+            "longitude": -42.35,
+            "m": [
+              4
+            ],
+            "v": 4
           },
           {
             "project_id": "buzios-ix-franco",
@@ -280,7 +358,15 @@
             "claimed_capex_m": 7079,
             "stage": "Planned",
             "operator_id": "petrobras",
-            "country_id": "BR"
+            "country_id": "BR",
+            "operator_name": "Petrobras",
+            "offshore_area": "Búzios field · Santos Basin, offshore Brazil",
+            "latitude": -24.22,
+            "longitude": -42.28,
+            "m": [
+              4
+            ],
+            "v": 4
           }
         ],
         "discussions": [
@@ -437,8 +523,7 @@
         "ranking_policy": "Preserve original visual ranks. Do not rank comment additions unless currency, estimate date, development horizon, and cost boundary are comparable.",
         "not_ranked_code": "NR",
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       }
     },
     "updated_ranking_entry": {
@@ -458,8 +543,7 @@
           "exxon-guyana-2023-report"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "whiptail": {
         "project_id": "whiptail",
@@ -478,8 +562,7 @@
           "exxon-whiptail-fid"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "granmorgu": {
         "project_id": "granmorgu",
@@ -497,8 +580,7 @@
           "totalenergies-granmorgu-fid"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "atapu-development": {
         "project_id": "atapu-development",
@@ -513,8 +595,7 @@
           "petrobras-p84-p85-contracts"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "raia": {
         "project_id": "raia",
@@ -532,8 +613,7 @@
           "equinor-raia"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "sepia-development": {
         "project_id": "sepia-development",
@@ -548,8 +628,7 @@
           "petrobras-p84-p85-contracts"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "buzios-x-franco": {
         "project_id": "buzios-x-franco",
@@ -564,8 +643,7 @@
           "petrobras-etapa4-rima"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "bonga-southwest-aparo": {
         "project_id": "bonga-southwest-aparo",
@@ -585,8 +663,7 @@
           "premium-times-bonga-2026"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "buzios-xi-franco": {
         "project_id": "buzios-xi-franco",
@@ -601,8 +678,7 @@
           "petrobras-etapa4-rima"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "buzios-ix-franco": {
         "project_id": "buzios-ix-franco",
@@ -617,8 +693,7 @@
           "petrobras-etapa4-rima"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "bay-du-nord": {
         "project_id": "bay-du-nord",
@@ -634,8 +709,7 @@
           "equinor-bay-du-nord-capex"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "wisting": {
         "project_id": "wisting",
@@ -652,8 +726,7 @@
           "equinor-wisting-eia"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "greater-paj": {
         "project_id": "greater-paj",
@@ -669,8 +742,7 @@
           "azule-greater-paj-fid"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "tangkulo": {
         "project_id": "tangkulo",
@@ -682,8 +754,7 @@
           "indonesia-migas-2024"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       },
       "venus": {
         "project_id": "venus",
@@ -695,8 +766,7 @@
           "totalenergies-venus-esia"
         ],
         "c": 3,
-        "v": 3,
-        "f": 5
+        "v": 3
       }
     },
     "independent_source": {

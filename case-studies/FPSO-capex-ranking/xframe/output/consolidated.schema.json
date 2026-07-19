@@ -173,9 +173,6 @@
             {
               "entity": "capex_ranking"
             }
-          ],
-          "enum": [
-            "prandelli-top10-fpso-to-2030"
           ]
         },
         "project_name": {
@@ -209,16 +206,6 @@
             {
               "entity": "operator"
             }
-          ],
-          "enum": [
-            "azule-energy",
-            "equinor",
-            "exxonmobil",
-            "mubadala-energy",
-            "petrobras",
-            "shell",
-            "totalenergies",
-            "yinson"
           ]
         },
         "country_id": {
@@ -228,18 +215,27 @@
             {
               "entity": "country"
             }
-          ],
-          "enum": [
-            "AO",
-            "BR",
-            "CA",
-            "GY",
-            "ID",
-            "NA",
-            "NG",
-            "NO",
-            "SR"
           ]
+        },
+        "operator_name": {
+          "type": "string",
+          "description": "Operator display name denormalized for presentation labels and color legends."
+        },
+        "offshore_area": {
+          "type": "string",
+          "description": "Named offshore basin, block, or development area used as the human-readable map location."
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Representative offshore latitude in decimal degrees for portfolio visualization; not a navigation coordinate.",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Representative offshore longitude in decimal degrees for portfolio visualization; not a navigation coordinate.",
+          "minimum": -180,
+          "maximum": 180
         },
         "capex_definition": {
           "type": "string",
@@ -259,7 +255,11 @@
         "claimed_capex_m",
         "stage",
         "operator_id",
-        "country_id"
+        "country_id",
+        "operator_name",
+        "offshore_area",
+        "latitude",
+        "longitude"
       ],
       "x-primaryKey": "project_id",
       "x-parents": [
@@ -283,9 +283,6 @@
             {
               "entity": "capex_ranking"
             }
-          ],
-          "enum": [
-            "prandelli-top10-fpso-to-2030"
           ]
         },
         "source_type": {
@@ -375,14 +372,6 @@
             {
               "entity": "source_comment"
             }
-          ],
-          "enum": [
-            "fernando-rueda-angola-paj",
-            "frode-kristoffersen-bay-du-nord",
-            "gouabi-mohammed-elhabri-venus",
-            "jean-carlos-pina-other-projects",
-            "luciano-carvalho-capex-scope",
-            "manuel-domingos-ngunza-paj"
           ]
         },
         "project_name": {
@@ -396,16 +385,6 @@
             {
               "entity": "operator"
             }
-          ],
-          "enum": [
-            "azule-energy",
-            "equinor",
-            "exxonmobil",
-            "mubadala-energy",
-            "petrobras",
-            "shell",
-            "totalenergies",
-            "yinson"
           ]
         },
         "country_id": {
@@ -415,17 +394,6 @@
             {
               "entity": "country"
             }
-          ],
-          "enum": [
-            "AO",
-            "BR",
-            "CA",
-            "GY",
-            "ID",
-            "NA",
-            "NG",
-            "NO",
-            "SR"
           ]
         },
         "contractor_id": {
@@ -435,9 +403,6 @@
             {
               "entity": "contractor"
             }
-          ],
-          "enum": [
-            "bw-offshore"
           ]
         },
         "offshore_area": {
@@ -491,9 +456,6 @@
             {
               "entity": "capex_ranking"
             }
-          ],
-          "enum": [
-            "prandelli-top10-fpso-to-2030"
           ]
         },
         "original_values_total_m": {
@@ -676,25 +638,6 @@
             {
               "entity": "independent_source"
             }
-          ],
-          "enum": [
-            "anpg-greater-paj-fid",
-            "azule-greater-paj-fid",
-            "bw-bay-du-nord",
-            "equinor-bay-du-nord",
-            "equinor-bay-du-nord-capex",
-            "equinor-raia",
-            "equinor-wisting-2022-estimate",
-            "equinor-wisting-eia",
-            "exxon-guyana-2023-report",
-            "exxon-whiptail-fid",
-            "indonesia-migas-2024",
-            "nipex-bswa-tender",
-            "petrobras-etapa4-rima",
-            "petrobras-p84-p85-contracts",
-            "premium-times-bonga-2026",
-            "totalenergies-granmorgu-fid",
-            "totalenergies-venus-esia"
           ]
         },
         "target_type": {
@@ -876,6 +819,5 @@
       }
     }
   },
-  "additionalProperties": false,
-  "x-fkEnumFromData": true
+  "additionalProperties": false
 }

@@ -242,6 +242,30 @@
           "required": true
         },
         {
+          "name": "operator_name",
+          "description": "Operator display name denormalized for presentation labels and color legends.",
+          "type": { "primitive": "string" },
+          "required": true
+        },
+        {
+          "name": "offshore_area",
+          "description": "Named offshore basin, block, or development area used as the human-readable map location.",
+          "type": { "primitive": "string" },
+          "required": true
+        },
+        {
+          "name": "latitude",
+          "description": "Representative offshore latitude in decimal degrees for portfolio visualization; not a navigation coordinate.",
+          "type": { "primitive": "number", "min": -90, "max": 90 },
+          "required": true
+        },
+        {
+          "name": "longitude",
+          "description": "Representative offshore longitude in decimal degrees for portfolio visualization; not a navigation coordinate.",
+          "type": { "primitive": "number", "min": -180, "max": 180 },
+          "required": true
+        },
+        {
           "name": "capex_definition",
           "description": "Optional clarification of what claimed_capex_million covers (e.g. FPSO contract value, full field development). Leave unset when unknown.",
           "type": { "primitive": "string" },

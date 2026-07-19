@@ -19,6 +19,9 @@
       ],
       "narrative": {
         "voice": "male"
+      },
+      "data": {
+        "static": "xframe/output/consolidated_data.json"
       }
     },
     "scope": {
@@ -94,7 +97,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 22
+                      "line": 24
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -146,7 +149,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 25
+                          "line": 27
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -163,19 +166,14 @@
                       },
                       {
                         "index": 1,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "A LinkedIn post became a professional industry analysis in under an hour.",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "A LinkedIn post became a professional industry analysis in under an hour."
-                            }
-                          ]
+                        "kind": "widget",
+                        "widget": {
+                          "type": "html",
+                          "body": "<p class=\"lead\">A LinkedIn post became a professional industry analysis in under an hour.</p>\n\n"
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 25
+                          "line": 27
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -204,7 +202,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 25
+                          "line": 27
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -280,7 +278,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 25
+                          "line": 27
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -308,11 +306,11 @@
                         "kind": "widget",
                         "widget": {
                           "type": "html",
-                          "body": "<div class=\"metric\"><strong>$94.3bn</strong><span>CAPEX represented in the original visual</span></div>\n<div class=\"metric\"><strong>17</strong><span>Independent sources consulted</span></div>\n<div class=\"metric\"><strong>4</strong><span>Amounts independently verified as development CAPEX</span></div>"
+                          "body": "<div class=\"metric metric--stat\"><strong>$94.3bn</strong><span>CAPEX represented in the original visual</span></div>\n<div class=\"metric metric--stat\"><strong>17</strong><span>Independent sources consulted</span></div>\n<div class=\"metric metric--stat\"><strong>4</strong><span>Amounts independently verified as development CAPEX</span></div>"
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 43
+                          "line": 45
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -350,7 +348,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 49
+                          "line": 51
                         },
                         "structural": {
                           "region": {
@@ -369,19 +367,14 @@
                 "content": [
                   {
                     "index": 0,
-                    "kind": "paragraph",
-                    "paragraph": {
-                      "text": "The input was a LinkedIn post. The output was an industry perspective.",
-                      "inlines": [
-                        {
-                          "kind": "text",
-                          "text": "The input was a LinkedIn post. The output was an industry perspective."
-                        }
-                      ]
+                    "kind": "widget",
+                    "widget": {
+                      "type": "html",
+                      "body": "<p class=\"caption\">The input was a LinkedIn post. The output was an industry perspective.</p>\n"
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 40
+                      "line": 42
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -554,7 +547,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 59
+                      "line": 61
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -591,7 +584,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 62
+                      "line": 64
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -642,7 +635,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 65
+                          "line": 67
                         },
                         "structural": {
                           "region": {
@@ -678,7 +671,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 72
+                          "line": 74
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -717,7 +710,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 72
+                          "line": 74
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -747,7 +740,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 76
+                          "line": 78
                         },
                         "structural": {
                           "region": {
@@ -769,7 +762,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 79
+                          "line": 81
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -798,7 +791,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 79
+                          "line": 81
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -836,7 +829,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 83
+                          "line": 85
                         },
                         "structural": {
                           "region": {
@@ -942,6 +935,332 @@
       },
       {
         "index": 2,
+        "id": "geography",
+        "layout": "slide-frame",
+        "title": "Capital clusters across the Atlantic margin",
+        "template": "slide-frame.xpt",
+        "structure": [
+          {
+            "kind": "container",
+            "mode": "stack",
+            "direction": "vertical",
+            "children": [
+              {
+                "kind": "region",
+                "name": "header",
+                "height": 72,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "header-left",
+                        "weight": 1
+                      },
+                      {
+                        "kind": "region",
+                        "name": "header-right",
+                        "height": 72,
+                        "align": "end",
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "media",
+                            "media": {
+                              "src": "exergy_connect_logo.png",
+                              "alt": "Exergy logo"
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "kicker",
+                "height": 40,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "02 · Project geography",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "02 · Project geography"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 94
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "kicker"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "kicker"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "title",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "heading",
+                    "heading": {
+                      "level": 1,
+                      "text": "Capital clusters across the Atlantic margin",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Capital clusters across the Atlantic margin"
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 97
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "title"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "title"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "container",
+                "mode": "stack",
+                "direction": "horizontal",
+                "weight": 1,
+                "gap": "2.4rem",
+                "align": "stretch",
+                "children": [
+                  {
+                    "kind": "region",
+                    "name": "main",
+                    "default": true,
+                    "weight": 1,
+                    "align": "start",
+                    "content": [
+                      {
+                        "index": 0,
+                        "kind": "widget",
+                        "widget": {
+                          "type": "xframe-map",
+                          "body": "{\"type\":\"markers\",\"entity\":\"data.capex_ranking.prandelli-top10-fpso-to-2030.projects\",\"title\":\"Top 10 project locations · US$94.287bn stated CAPEX\",\"label\":\"project_name\",\"location\":\"offshore_area\",\"latitude\":\"latitude\",\"longitude\":\"longitude\",\"order\":\"startDate\",\"strategy\":\"chronological\",\"color\":\"operator_name\",\"size\":\"claimed_capex_m\",\"limit\":10,\"projection\":\"natural-earth\",\"zoom_to_data\":true}"
+                        },
+                        "options": {
+                          "copyright": "© Exergy ∞ LLC",
+                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                          "click_to_zoom": "true",
+                          "region": "main"
+                        },
+                        "provenance": {
+                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                          "line": 100
+                        },
+                        "structural": {
+                          "region": {
+                            "region": "main"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "region",
+                    "name": "aside",
+                    "weight": "0",
+                    "align": "stretch"
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "caption",
+                "weight": 0,
+                "content": [
+                  {
+                    "index": 0,
+                    "kind": "paragraph",
+                    "paragraph": {
+                      "text": "Marker area is proportional to stated CAPEX; color identifies operator. Coordinates are representative offshore project positions for portfolio visualization, not navigation.",
+                      "inlines": [
+                        {
+                          "kind": "text",
+                          "text": "Marker area is proportional to stated CAPEX; color identifies operator. Coordinates are representative offshore project positions for portfolio visualization, not navigation."
+                        }
+                      ]
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 114
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "caption"
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "caption"
+                      }
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "kind": "narrative",
+                    "narrative": {
+                      "entries": [
+                        {
+                          "index": 0,
+                          "language": "en-US",
+                          "text": "Geography sharpens the ranking's central signal. Nine projects cluster along the South Atlantic margin, from Guyana and Suriname to Brazil, while Bonga is the sole West African entry. Marker area follows stated CAPEX and color identifies the operator, revealing both geographic and operator concentration at a glance.",
+                          "selected": true,
+                          "audio": "audio/geography-en-US.mp3"
+                        }
+                      ]
+                    },
+                    "options": {
+                      "copyright": "© Exergy ∞ LLC",
+                      "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
+                      "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
+                      "click_to_zoom": "true",
+                      "region": "caption"
+                    },
+                    "provenance": {
+                      "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
+                      "line": 116
+                    },
+                    "structural": {
+                      "region": {
+                        "region": "caption"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "name": "footer",
+                "height": 36,
+                "children": [
+                  {
+                    "kind": "container",
+                    "mode": "stack",
+                    "direction": "horizontal",
+                    "children": [
+                      {
+                        "kind": "region",
+                        "name": "footer-left",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Industry Perspective",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Industry Perspective"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-center",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "Case study · 19 July 2026",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "Case study · 19 July 2026"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "region",
+                        "name": "footer-right",
+                        "weight": 1,
+                        "content": [
+                          {
+                            "index": 0,
+                            "kind": "paragraph",
+                            "paragraph": {
+                              "text": "© Exergy ∞ LLC",
+                              "inlines": [
+                                {
+                                  "kind": "text",
+                                  "text": "© Exergy ∞ LLC"
+                                }
+                              ]
+                            },
+                            "provenance": {
+                              "line": 1
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 3,
         "id": "question",
         "layout": "slide-frame",
         "title": "What do the numbers actually include?",
@@ -999,17 +1318,17 @@
                     "index": 0,
                     "kind": "paragraph",
                     "paragraph": {
-                      "text": "02 · The research question",
+                      "text": "03 · The research question",
                       "inlines": [
                         {
                           "kind": "text",
-                          "text": "02 · The research question"
+                          "text": "03 · The research question"
                         }
                       ]
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 92
+                      "line": 125
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1046,7 +1365,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 95
+                      "line": 128
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1080,19 +1399,14 @@
                     "content": [
                       {
                         "index": 0,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "Those values are including which investments, besides the FPSOs per se?",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Those values are including which investments, besides the FPSOs per se?"
-                            }
-                          ]
+                        "kind": "widget",
+                        "widget": {
+                          "type": "html",
+                          "body": "<blockquote><p>Those values are including which investments, besides the FPSOs per se?</p></blockquote>\n<p class=\"label\">Luciano Jorge de Carvalho Junior · LinkedIn comment</p>\n<p>A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX.</p>"
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 98
+                          "line": 131
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1109,64 +1423,6 @@
                       },
                       {
                         "index": 1,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "Luciano Jorge de Carvalho Junior · LinkedIn comment",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Luciano Jorge de Carvalho Junior · LinkedIn comment"
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 98
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "main"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "main"
-                          }
-                        }
-                      },
-                      {
-                        "index": 2,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX.",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "A precise-looking ranking can still mislead if FPSO vessel prices are mixed with full-field development costs. Until primary sources define a common cost boundary, the visual’s figures are treated as stated project values — not FPSO-only CAPEX."
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 98
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "main"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "main"
-                          }
-                        }
-                      },
-                      {
-                        "index": 3,
                         "kind": "narrative",
                         "narrative": {
                           "entries": [
@@ -1188,7 +1444,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 104
+                          "line": 137
                         },
                         "structural": {
                           "region": {
@@ -1299,7 +1555,7 @@
         ]
       },
       {
-        "index": 3,
+        "index": 4,
         "id": "method",
         "layout": "grid",
         "title": "Separate claims before reconciling them",
@@ -1357,17 +1613,17 @@
                     "index": 0,
                     "kind": "paragraph",
                     "paragraph": {
-                      "text": "03 · Research steps",
+                      "text": "04 · Research steps",
                       "inlines": [
                         {
                           "kind": "text",
-                          "text": "03 · Research steps"
+                          "text": "04 · Research steps"
                         }
                       ]
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 114
+                      "line": 147
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1404,7 +1660,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 117
+                      "line": 150
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -1452,7 +1708,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 120
+                          "line": 153
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1482,7 +1738,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 120
+                          "line": 153
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1511,7 +1767,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 120
+                          "line": 153
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1551,7 +1807,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 127
+                          "line": 160
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1581,7 +1837,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 127
+                          "line": 160
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1610,7 +1866,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 127
+                          "line": 160
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1650,7 +1906,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 134
+                          "line": 167
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1680,7 +1936,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 134
+                          "line": 167
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1709,7 +1965,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 134
+                          "line": 167
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1749,7 +2005,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 141
+                          "line": 174
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1779,7 +2035,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 141
+                          "line": 174
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1808,7 +2064,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 141
+                          "line": 174
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1848,7 +2104,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 148
+                          "line": 181
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1878,7 +2134,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 148
+                          "line": 181
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1907,7 +2163,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 148
+                          "line": 181
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1947,7 +2203,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 155
+                          "line": 188
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -1977,7 +2233,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 155
+                          "line": 188
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2006,7 +2262,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 155
+                          "line": 188
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2044,7 +2300,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 161
+                          "line": 194
                         },
                         "structural": {
                           "region": {
@@ -2144,7 +2400,7 @@
         ]
       },
       {
-        "index": 4,
+        "index": 5,
         "id": "findings",
         "layout": "grid",
         "title": "What the sources establish",
@@ -2202,17 +2458,17 @@
                     "index": 0,
                     "kind": "paragraph",
                     "paragraph": {
-                      "text": "04 · Independent verification",
+                      "text": "05 · Independent verification",
                       "inlines": [
                         {
                           "kind": "text",
-                          "text": "04 · Independent verification"
+                          "text": "05 · Independent verification"
                         }
                       ]
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 171
+                      "line": 204
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -2249,7 +2505,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 174
+                      "line": 207
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -2297,7 +2553,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 177
+                          "line": 210
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2327,7 +2583,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 177
+                          "line": 210
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2356,7 +2612,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 177
+                          "line": 210
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2396,7 +2652,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 184
+                          "line": 217
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2426,7 +2682,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 184
+                          "line": 217
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2455,7 +2711,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 184
+                          "line": 217
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2495,7 +2751,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 191
+                          "line": 224
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2525,7 +2781,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 191
+                          "line": 224
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2554,7 +2810,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 191
+                          "line": 224
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2594,7 +2850,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 198
+                          "line": 231
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2624,7 +2880,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 198
+                          "line": 231
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2653,7 +2909,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 198
+                          "line": 231
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -2691,7 +2947,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 204
+                          "line": 237
                         },
                         "structural": {
                           "region": {
@@ -2799,7 +3055,7 @@
         ]
       },
       {
-        "index": 5,
+        "index": 6,
         "id": "updated",
         "layout": "slide-frame",
         "title": "Same order. Clearer evidence.",
@@ -2857,17 +3113,17 @@
                     "index": 0,
                     "kind": "paragraph",
                     "paragraph": {
-                      "text": "05 · Updated ranking",
+                      "text": "06 · Updated ranking",
                       "inlines": [
                         {
                           "kind": "text",
-                          "text": "05 · Updated ranking"
+                          "text": "06 · Updated ranking"
                         }
                       ]
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 213
+                      "line": 246
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -2904,7 +3160,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 216
+                      "line": 249
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -2955,7 +3211,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 219
+                          "line": 252
                         },
                         "structural": {
                           "region": {
@@ -2997,7 +3253,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 226
+                      "line": 259
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3035,7 +3291,7 @@
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 228
+                      "line": 261
                     },
                     "structural": {
                       "region": {
@@ -3133,10 +3389,10 @@
         ]
       },
       {
-        "index": 6,
+        "index": 7,
         "id": "close",
         "layout": "slide-frame",
-        "title": "A ranking is only as honest as its cost boundary",
+        "title": "From industry signal to trusted perspective",
         "template": "slide-frame.xpt",
         "structure": [
           {
@@ -3191,17 +3447,17 @@
                     "index": 0,
                     "kind": "paragraph",
                     "paragraph": {
-                      "text": "06 · Takeaway",
+                      "text": "07 · Takeaway",
                       "inlines": [
                         {
                           "kind": "text",
-                          "text": "06 · Takeaway"
+                          "text": "07 · Takeaway"
                         }
                       ]
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 238
+                      "line": 271
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3228,17 +3484,17 @@
                     "kind": "heading",
                     "heading": {
                       "level": 1,
-                      "text": "A ranking is only as honest as its cost boundary",
+                      "text": "From industry signal to trusted perspective",
                       "inlines": [
                         {
                           "kind": "text",
-                          "text": "A ranking is only as honest as its cost boundary"
+                          "text": "From industry signal to trusted perspective"
                         }
                       ]
                     },
                     "provenance": {
                       "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                      "line": 241
+                      "line": 274
                     },
                     "options": {
                       "copyright": "© Exergy ∞ LLC",
@@ -3272,19 +3528,14 @@
                     "content": [
                       {
                         "index": 0,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "The arithmetic of the ten visual rows explains the US$94bn headline. Arithmetic agreement does not prove a common scope. Traceable industry perspective starts by keeping claims, comments, and primary findings in separate layers — then reconciling in public.",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "The arithmetic of the ten visual rows explains the US$94bn headline. Arithmetic agreement does not prove a common scope. Traceable industry perspective starts by keeping claims, comments, and primary findings in separate layers — then reconciling in public."
-                            }
-                          ]
+                        "kind": "widget",
+                        "widget": {
+                          "type": "html",
+                          "body": "<p>A single industry post became the starting point for a structured analysis of the FPSO market — combining source research, project reconciliation, cost-scope analysis, and strategic interpretation.</p>\n<p class=\"pull\">The result is not simply a fact check.</p>\n<p>It is a <strong>professional industry perspective</strong> built from the evidence available.</p>\n<p class=\"caption\">The input can be a single industry signal.<br>The output is a trusted perspective on the industry.</p>"
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 244
+                          "line": 277
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -3304,25 +3555,19 @@
                   {
                     "kind": "region",
                     "name": "aside",
-                    "weight": "0.8",
+                    "weight": "0.78",
                     "align": "stretch",
                     "content": [
                       {
                         "index": 0,
-                        "kind": "heading",
-                        "heading": {
-                          "level": 3,
-                          "text": "Trigger ≠ dataset",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Trigger ≠ dataset"
-                            }
-                          ]
+                        "kind": "widget",
+                        "widget": {
+                          "type": "html",
+                          "body": "<div class=\"metric\"><strong>Rapid synthesis</strong><span>Move from an emerging industry signal to a structured analytical view in hours, not weeks.</span></div>\n<div class=\"metric\"><strong>Evidence-led judgment</strong><span>Combine public disclosures, company materials, government sources, contractor information, and industry context.</span></div>\n<div class=\"metric\"><strong>Strategic interpretation</strong><span>Go beyond what is stated to understand what the data reveals about capital deployment, development models, ownership, risk, and opportunity.</span></div>\n<p class=\"label\">Exergy xFrame Insights</p>\n<p class=\"pull\">Turn fragmented information into a decision-quality view of the industry.</p>"
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
+                          "line": 285
                         },
                         "options": {
                           "copyright": "© Exergy ∞ LLC",
@@ -3339,160 +3584,13 @@
                       },
                       {
                         "index": 1,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "LinkedIn visuals are starting claims, not finished cost tables.",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "LinkedIn visuals are starting claims, not finished cost tables."
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "aside"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "aside"
-                          }
-                        }
-                      },
-                      {
-                        "index": 2,
-                        "kind": "heading",
-                        "heading": {
-                          "level": 3,
-                          "text": "Scope before rank",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Scope before rank"
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "aside"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "aside"
-                          }
-                        }
-                      },
-                      {
-                        "index": 3,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "Development CAPEX and FPSO-only prices must not be mixed silently.",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Development CAPEX and FPSO-only prices must not be mixed silently."
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "aside"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "aside"
-                          }
-                        }
-                      },
-                      {
-                        "index": 4,
-                        "kind": "heading",
-                        "heading": {
-                          "level": 3,
-                          "text": "Evidence stays layered",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Evidence stays layered"
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "aside"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "aside"
-                          }
-                        }
-                      },
-                      {
-                        "index": 5,
-                        "kind": "paragraph",
-                        "paragraph": {
-                          "text": "Original, discussion, and independent findings remain separable for audit.",
-                          "inlines": [
-                            {
-                              "kind": "text",
-                              "text": "Original, discussion, and independent findings remain separable for audit."
-                            }
-                          ]
-                        },
-                        "provenance": {
-                          "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 247
-                        },
-                        "options": {
-                          "copyright": "© Exergy ∞ LLC",
-                          "logo_mark": "![Exergy logo](exergy_connect_logo.png)",
-                          "linkedin_url": "https://www.linkedin.com/posts/prandelligiacomo_94-billion-thats-what-the-top-10-fpso-activity-7482020247210815488-DdkV",
-                          "click_to_zoom": "true",
-                          "region": "aside"
-                        },
-                        "structural": {
-                          "region": {
-                            "region": "aside"
-                          }
-                        }
-                      },
-                      {
-                        "index": 6,
                         "kind": "narrative",
                         "narrative": {
                           "entries": [
                             {
                               "index": 0,
                               "language": "en-US",
-                              "text": "The takeaway is methodological. Treat social rankings as triggers. Establish cost scope before trusting ordinal position. Keep every evidence layer separable so the industry perspective remains auditable as new disclosures arrive.",
+                              "text": "A single industry post became the starting point for a structured FPSO market analysis. The result is not simply a fact check, but a professional industry perspective built from the available evidence. Exergy xFrame Insights combines rapid synthesis, evidence-led judgment, and strategic interpretation to turn fragmented information into a decision-quality view of the industry.",
                               "selected": true,
                               "audio": "audio/close-en-US.mp3"
                             }
@@ -3507,7 +3605,7 @@
                         },
                         "provenance": {
                           "source": "/home/jbemmel/Projects/industry-perspective/case-studies/FPSO-capex-ranking/fpso_capex_ranking.xp",
-                          "line": 256
+                          "line": 293
                         },
                         "structural": {
                           "region": {
@@ -3646,7 +3744,10 @@
           }
         ]
       }
-    ]
+    ],
+    "data": {
+      "static": "xframe/output/consolidated_data.json"
+    }
   },
   "style": {
     "typography": {
@@ -3720,7 +3821,7 @@
         "boxShadow": "0 1rem 2.4rem rgba(0, 0, 0, .28)",
         "textAlign": "left"
       },
-      "body": "```css\n@import url(\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap\");\n\n#xframe {\n  --ink: var(--fg);\n  --line: rgba(182, 214, 220, .16);\n  --panel: rgba(14, 42, 54, .78);\n  --warm: #f4a340;\n  background:\n    radial-gradient(circle at 92% -8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 34%),\n    radial-gradient(circle at 4% 108%, rgba(244, 163, 64, .12), transparent 36%),\n    linear-gradient(155deg, var(--bg) 0%, var(--surface-bg) 58%, #163b48 100%);\n  color: var(--fg);\n  font-family: \"Sora\", ui-sans-serif, sans-serif;\n}\n\n#xframe .segment.active {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  gap: 0;\n  /* Keep side/top inset; pin content to the bottom edge of the slide. */\n  padding: 1.1rem 2.5rem 0.4rem !important;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n/* Do not override segment position — runtime uses absolute + inset:0 to fill the canvas. */\n#xframe .segment { background: transparent; }\n#xframe .segment > .layout-container {\n  display: flex;\n  flex: 1 1 auto;\n  flex-direction: column;\n  align-self: stretch;\n  width: 100%;\n  min-height: 0;\n  height: 100%;\n}\n#xframe .layout-container.layout-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  align-content: stretch;\n}\n#findings .layout-container.layout-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n\n#xframe [data-region=\"header\"] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n#xframe [data-region=\"header\"] .layout-container {\n  width: 100%;\n  height: 100%;\n  justify-content: flex-end;\n  align-items: center;\n}\n#xframe [data-region=\"header-right\"] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n}\n#xframe [data-region=\"header-right\"] img {\n  display: block;\n  width: auto;\n  height: 100%;\n  max-height: 100%;\n  object-fit: contain;\n  filter: drop-shadow(0 .25rem .7rem rgba(0, 0, 0, .3));\n}\n\n#xframe [data-region=\"footer\"] {\n  display: flex;\n  align-items: center;\n  color: var(--accent);\n  font-size: .85rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n}\n#xframe [data-region=\"footer\"] > .layout-container {\n  width: 100%;\n  align-items: center;\n}\n#xframe [data-region=\"footer-center\"] { text-align: center; }\n#xframe [data-region=\"footer-right\"] {\n  text-align: right;\n  text-transform: none;\n  letter-spacing: .04em;\n}\n#xframe [data-region=\"footer\"] p {\n  margin: 0;\n  color: inherit;\n  font: inherit;\n  letter-spacing: inherit;\n  text-transform: inherit;\n}\n\n#xframe [data-region=\"kicker\"] p {\n  margin: 0;\n  color: var(--accent);\n  font-size: .9rem;\n  font-weight: 700;\n  letter-spacing: .18em;\n  text-transform: uppercase;\n}\n\n#xframe h1 {\n  margin: 0;\n  max-width: none;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-weight: 700;\n  letter-spacing: -.04em;\n  line-height: .96;\n}\n#xframe h2 {\n  margin: .55rem 0 0;\n  max-width: 36ch;\n  color: var(--muted);\n  font-weight: 450;\n  line-height: 1.3;\n}\n#xframe h3 {\n  margin: 0;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-weight: 700;\n}\n#xframe a { color: var(--accent); text-underline-offset: .18em; }\n#xframe .xframe-qr-code {\n  display: block;\n  width: 8rem;\n  aspect-ratio: 1;\n  margin: .9rem 0;\n  padding: .35rem;\n  overflow: hidden;\n  background: #edf7f7;\n  border-radius: .35rem;\n  box-shadow: 0 .8rem 2rem rgba(0, 0, 0, .28);\n}\n#xframe .xframe-qr-code > span,\n#xframe .xframe-qr-code canvas,\n#xframe .xframe-qr-code svg {\n  display: block;\n  width: 100% !important;\n  height: 100% !important;\n}\n\n#xframe [data-region=\"title\"] h1 {\n  font-size: clamp(2.6rem, 4.4vw, 3.8rem);\n}\n#xframe [data-region=\"main\"],\n#xframe [data-region=\"aside\"] {\n  min-height: 0;\n  overflow: visible;\n}\n#xframe [data-region=\"title\"] {\n  overflow: visible;\n}\n#xframe [data-region=\"main\"] p,\n#xframe [data-region=\"aside\"] p {\n  margin: .75rem 0 0;\n  color: #d5e7ea;\n  font-size: 1.2rem;\n  line-height: 1.45;\n}\n#xframe [data-region=\"caption\"] p {\n  margin: .4rem 0 0;\n  color: var(--muted);\n  font-size: .95rem;\n}\n\n/* Title — headline + lede share main; metrics are whole cards */\n#title [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  gap: .65rem;\n  padding: .2rem .5rem 0 0;\n  overflow: hidden;\n}\n#title [data-region=\"main\"] h1 {\n  max-width: 18ch;\n  margin: 0;\n  font-size: clamp(2.2rem, 3.6vw, 3.15rem);\n  line-height: .98;\n}\n#title [data-region=\"main\"] p {\n  max-width: 36ch;\n  margin: 0;\n  color: #d5e7ea;\n  font-size: clamp(.98rem, 1.4vw, 1.15rem);\n  font-weight: 450;\n  line-height: 1.35;\n}\n#title [data-region=\"main\"] p:first-of-type {\n  max-width: 30ch;\n  color: var(--ink);\n  font-size: clamp(1.1rem, 1.6vw, 1.3rem);\n  font-weight: 500;\n  line-height: 1.3;\n}\n#title [data-region=\"main\"] ul {\n  margin: 0;\n  padding-left: 1.1rem;\n  max-width: 36ch;\n  color: #d5e7ea;\n  font-size: clamp(.95rem, 1.3vw, 1.08rem);\n  line-height: 1.38;\n}\n#title [data-region=\"main\"] li + li { margin-top: .08rem; }\n#title [data-region=\"caption\"] {\n  flex: 0 0 auto;\n  padding: 0 0 .15rem;\n  margin-top: -1.4rem;\n}\n#title [data-region=\"caption\"] p {\n  margin: 0;\n  max-width: none;\n  color: var(--accent);\n  font-size: clamp(1.05rem, 1.55vw, 1.25rem);\n  font-weight: 600;\n  font-style: italic;\n  letter-spacing: .01em;\n  line-height: 1.3;\n  text-align: center;\n  text-transform: none;\n}\n#title [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: .85rem;\n  height: 100%;\n  overflow: auto;\n}\n/* One card = one left accent; no split h3/p border seams. */\n#title [data-region=\"aside\"] .metric {\n  display: flex;\n  flex-direction: column;\n  gap: .35rem;\n  padding: 1rem 1.2rem 1.05rem 1.35rem;\n  border: 1px solid var(--line);\n  border-left: .32rem solid var(--accent);\n  border-radius: 0 .3rem .3rem 0;\n  background: var(--panel);\n}\n#title [data-region=\"aside\"] .metric strong {\n  color: var(--accent);\n  font-size: clamp(1.9rem, 2.8vw, 2.45rem);\n  font-weight: 700;\n  line-height: 1;\n}\n#title [data-region=\"aside\"] .metric span {\n  color: var(--muted);\n  font-size: .92rem;\n  font-weight: 600;\n  letter-spacing: .06em;\n  text-transform: uppercase;\n  line-height: 1.3;\n}\n\n/* Trigger */\n#trigger [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#trigger [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#trigger [data-region=\"main\"] figure { margin: 0; }\n#trigger [data-region=\"main\"] figcaption,\n#updated [data-region=\"main\"] figcaption {\n  margin-top: .55rem;\n  color: var(--muted);\n  font-size: .9rem;\n}\n#trigger [data-region=\"main\"] img,\n#updated [data-region=\"main\"] img {\n  width: 100%;\n  max-height: 28rem;\n  object-fit: contain;\n  border: 1px solid var(--line);\n  border-radius: .4rem;\n  background: rgba(0, 0, 0, .22);\n  box-shadow: var(--box-shadow);\n}\n#trigger [data-region=\"aside\"] h2 {\n  margin: 0;\n  max-width: none;\n  color: #d5e7ea;\n  font-size: 1.25rem;\n  font-weight: 450;\n  line-height: 1.4;\n}\n\n/* Question */\n#question [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#question [data-region=\"main\"] blockquote {\n  max-width: 28ch;\n  margin: 0;\n  padding: 1.6rem 1.75rem;\n  border-left: .32rem solid var(--warm);\n  background: var(--panel);\n}\n#question [data-region=\"main\"] blockquote p {\n  margin: 0;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-size: clamp(1.7rem, 2.6vw, 2.25rem);\n  font-style: italic;\n  line-height: 1.25;\n}\n#question [data-region=\"main\"] > p:nth-of-type(1) {\n  margin: 1.1rem 0 0;\n  color: var(--muted);\n  font-size: 1.05rem;\n}\n#question [data-region=\"main\"] > p:nth-of-type(2) {\n  max-width: 42ch;\n  margin: 1.4rem 0 0;\n  font-size: 1.25rem;\n}\n\n/* Cards (method + findings) */\n#xframe [data-region^=\"card\"] {\n  min-height: 0;\n  padding: 1.35rem 1.4rem;\n  border: 1px solid var(--line);\n  border-top: .32rem solid var(--accent);\n  background: var(--panel);\n}\n#findings [data-region=\"card1\"] { border-top-color: var(--accent); }\n#findings [data-region=\"card2\"] { border-top-color: #587985; }\n#findings [data-region=\"card3\"] { border-top-color: var(--warm); }\n#findings [data-region=\"card4\"] { border-top-color: #587985; }\n#xframe [data-region^=\"card\"]:empty { display: none; }\n#xframe [data-region^=\"card\"] p:first-child,\n#xframe [data-region^=\"card\"] strong {\n  color: var(--accent);\n  font-size: .85rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n}\n#findings [data-region^=\"card\"] p:first-child,\n#findings [data-region^=\"card\"] strong { color: var(--muted); }\n#xframe [data-region^=\"card\"] h3 {\n  margin: .55rem 0;\n  font-size: 1.35rem;\n}\n#xframe [data-region^=\"card\"] p {\n  margin: 0;\n  color: var(--muted);\n  font-size: 1.05rem;\n  line-height: 1.4;\n}\n\n/* Updated */\n#updated [data-region=\"main\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n/* Close */\n#close [data-region=\"main\"],\n#close [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#close [data-region=\"main\"] p {\n  max-width: 28ch;\n  font-size: 1.3rem;\n}\n#close [data-region=\"aside\"] h3 {\n  margin: 0;\n  padding: 1.2rem 1.25rem .4rem;\n  border: 1px solid var(--line);\n  border-bottom: 0;\n  border-left: .32rem solid var(--accent);\n  background: var(--panel);\n  font-size: 1.3rem;\n}\n#close [data-region=\"aside\"] h3:not(:first-child) { margin-top: .9rem; }\n#close [data-region=\"aside\"] h3 + p {\n  margin: 0;\n  padding: 0 1.25rem 1.2rem;\n  border: 1px solid var(--line);\n  border-top: 0;\n  border-left: .32rem solid var(--accent);\n  background: var(--panel);\n  color: var(--muted);\n  font-size: 1.05rem;\n}\n```"
+      "body": "```css\n@import url(\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap\");\n\n/* ── Tokens ─────────────────────────────────────────── */\n#xframe {\n  --ink: var(--fg);\n  --line: rgba(182, 214, 220, .16);\n  --panel: rgba(14, 42, 54, .78);\n  --warm: #f4a340;\n  --measure: 46ch;\n  --measure-lead: 36ch;\n  --accent-bar: .32rem;\n  --status-muted: #587985;\n  background:\n    radial-gradient(circle at 92% -8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 34%),\n    radial-gradient(circle at 4% 108%, rgba(244, 163, 64, .12), transparent 36%),\n    linear-gradient(155deg, var(--bg) 0%, var(--surface-bg) 58%, #163b48 100%);\n  color: var(--fg);\n  font-family: \"Sora\", ui-sans-serif, sans-serif;\n}\n\n/* ── 1. Shell ───────────────────────────────────────── */\n#xframe .segment.active {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  gap: 0;\n  padding: 1.1rem 2.5rem 0.4rem !important;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n#xframe .segment { background: transparent; }\n#xframe .segment > .layout-container {\n  display: flex;\n  flex: 1 1 auto;\n  flex-direction: column;\n  align-self: stretch;\n  width: 100%;\n  min-height: 0;\n  height: 100%;\n}\n#xframe .layout-container.layout-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  align-content: stretch;\n}\n#findings .layout-container.layout-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n\n#xframe [data-region=\"header\"],\n#xframe [data-region=\"header\"] .layout-container,\n#xframe [data-region=\"header-right\"] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n}\n#xframe [data-region=\"header\"] .layout-container {\n  width: 100%;\n  height: 100%;\n}\n#xframe [data-region=\"header-right\"] img {\n  display: block;\n  width: auto;\n  height: 100%;\n  max-height: 100%;\n  object-fit: contain;\n  filter: drop-shadow(0 .25rem .7rem rgba(0, 0, 0, .3));\n}\n\n#xframe [data-region=\"footer\"] {\n  display: flex;\n  align-items: center;\n  color: var(--accent);\n  font-size: .85rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n}\n#xframe [data-region=\"footer\"] > .layout-container {\n  width: 100%;\n  align-items: center;\n}\n#xframe [data-region=\"footer-center\"] { text-align: center; }\n#xframe [data-region=\"footer-right\"] {\n  text-align: right;\n  text-transform: none;\n  letter-spacing: .04em;\n}\n#xframe [data-region=\"footer\"] p {\n  margin: 0;\n  color: inherit;\n  font: inherit;\n  letter-spacing: inherit;\n  text-transform: inherit;\n}\n\n#xframe [data-region=\"kicker\"] p {\n  margin: 0;\n  color: var(--accent);\n  font-size: .9rem;\n  font-weight: 700;\n  letter-spacing: .18em;\n  text-transform: uppercase;\n}\n\n#xframe [data-region=\"main\"],\n#xframe [data-region=\"aside\"] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  min-height: 0;\n  overflow: visible;\n  gap: .85rem;\n}\n#xframe [data-region=\"title\"] { overflow: visible; }\n#xframe [data-region=\"title\"] h1 {\n  font-size: clamp(2.6rem, 4.4vw, 3.8rem);\n}\n\n#xframe .xframe-qr-code {\n  display: block;\n  width: 8rem;\n  aspect-ratio: 1;\n  margin: .25rem 0;\n  padding: .35rem;\n  overflow: hidden;\n  background: #edf7f7;\n  border-radius: .35rem;\n  box-shadow: 0 .8rem 2rem rgba(0, 0, 0, .28);\n}\n#xframe .xframe-qr-code > span,\n#xframe .xframe-qr-code canvas,\n#xframe .xframe-qr-code svg {\n  display: block;\n  width: 100% !important;\n  height: 100% !important;\n}\n\n/* ── 2. Type roles ──────────────────────────────────── */\n#xframe h1 {\n  margin: 0;\n  max-width: none;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-weight: 700;\n  letter-spacing: -.04em;\n  line-height: .96;\n}\n#xframe h2 {\n  margin: 0;\n  max-width: var(--measure);\n  color: #d5e7ea;\n  font-weight: 450;\n  font-size: 1.25rem;\n  line-height: 1.4;\n}\n#xframe h3 {\n  margin: 0;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-weight: 700;\n}\n#xframe a { color: var(--accent); text-underline-offset: .18em; }\n\n#xframe [data-region=\"main\"] p,\n#xframe [data-region=\"aside\"] p {\n  margin: 0;\n  max-width: var(--measure);\n  color: #d5e7ea;\n  font-size: 1.2rem;\n  line-height: 1.45;\n}\n#xframe [data-region=\"main\"] ul {\n  margin: 0;\n  padding-left: 1.1rem;\n  max-width: var(--measure);\n  color: #d5e7ea;\n  font-size: 1.05rem;\n  line-height: 1.38;\n}\n#xframe .lead {\n  max-width: var(--measure-lead);\n  color: var(--ink);\n  font-size: 1.25rem;\n  font-weight: 500;\n  line-height: 1.3;\n}\n#xframe .label {\n  color: var(--muted);\n  font-size: .95rem;\n  font-weight: 600;\n  letter-spacing: .02em;\n}\n#xframe .muted { color: var(--muted); }\n#xframe [data-region=\"aside\"] .pull {\n  font-size: 1.05rem;\n  max-width: none;\n}\n#xframe [data-region=\"aside\"] .label {\n  color: var(--accent);\n  font-size: 1rem;\n  font-weight: 700;\n}\n\n/* ── 3. Panel ───────────────────────────────────────── */\n#xframe .metric,\n#xframe [data-region^=\"card\"] {\n  display: flex;\n  flex-direction: column;\n  gap: .35rem;\n  min-height: 0;\n  padding: 1rem 1.2rem 1.05rem 1.35rem;\n  border: 1px solid var(--line);\n  border-left: var(--accent-bar) solid var(--accent);\n  border-radius: 0 .3rem .3rem 0;\n  background: var(--panel);\n}\n#xframe [data-region^=\"card\"]:empty { display: none; }\n#xframe .metric strong,\n#xframe [data-region^=\"card\"] h3 {\n  margin: 0;\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-size: 1.25rem;\n  font-weight: 700;\n  line-height: 1.15;\n}\n#xframe .metric span,\n#xframe [data-region^=\"card\"] p {\n  margin: 0;\n  color: var(--muted);\n  font-size: .95rem;\n  font-weight: 500;\n  line-height: 1.35;\n}\n#xframe [data-region^=\"card\"] p:first-child,\n#xframe [data-region^=\"card\"] strong {\n  color: var(--accent);\n  font-family: \"Sora\", ui-sans-serif, sans-serif;\n  font-size: .85rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n}\n#xframe .metric--stat strong {\n  color: var(--accent);\n  font-family: \"Sora\", ui-sans-serif, sans-serif;\n  font-size: clamp(1.9rem, 2.8vw, 2.45rem);\n  line-height: 1;\n}\n#xframe .metric--stat span {\n  font-weight: 600;\n  letter-spacing: .06em;\n  text-transform: uppercase;\n}\n\n/* Status accents on findings cards */\n#findings [data-region=\"card1\"] { border-left-color: var(--accent); }\n#findings [data-region=\"card2\"],\n#findings [data-region=\"card4\"] { border-left-color: var(--status-muted); }\n#findings [data-region=\"card3\"] { border-left-color: var(--warm); }\n#findings [data-region^=\"card\"] p:first-child,\n#findings [data-region^=\"card\"] strong { color: var(--muted); }\n\n/* ── 4. Pull ────────────────────────────────────────── */\n#xframe .pull,\n#xframe blockquote {\n  margin: 0;\n  max-width: var(--measure);\n  color: var(--ink);\n  font-family: \"Fraunces\", Georgia, serif;\n  font-size: clamp(1.35rem, 2.2vw, 1.85rem);\n  font-style: italic;\n  font-weight: 500;\n  line-height: 1.3;\n}\n#xframe blockquote {\n  padding: 1.4rem 1.5rem;\n  border: 1px solid var(--line);\n  border-left: var(--accent-bar) solid var(--warm);\n  border-radius: 0 .3rem .3rem 0;\n  background: var(--panel);\n}\n#xframe blockquote p {\n  margin: 0;\n  max-width: none;\n  color: inherit;\n  font: inherit;\n}\n\n/* ── 5. Media ───────────────────────────────────────── */\n#xframe figure { margin: 0; }\n#xframe figcaption {\n  margin-top: .55rem;\n  color: var(--muted);\n  font-size: .9rem;\n}\n#xframe [data-region=\"main\"] img {\n  width: 100%;\n  max-height: 28rem;\n  object-fit: contain;\n  border: 1px solid var(--line);\n  border-radius: .4rem;\n  background: rgba(0, 0, 0, .22);\n  box-shadow: var(--box-shadow);\n}\n\n/* ── 6. Caption ─────────────────────────────────────── */\n/* Region caption = supporting note under media/maps */\n#xframe [data-region=\"caption\"] p {\n  margin: 0;\n  max-width: none;\n  color: var(--muted);\n  font-size: .95rem;\n  font-weight: 500;\n  line-height: 1.35;\n}\n/* Punch-line caption (opt in via class; beats region-caption note) */\n#xframe p.caption,\n#xframe [data-region=\"caption\"] p.caption {\n  margin: 0;\n  max-width: none;\n  color: var(--accent);\n  font-size: clamp(1.05rem, 1.55vw, 1.25rem);\n  font-weight: 600;\n  font-style: italic;\n  letter-spacing: .01em;\n  line-height: 1.3;\n  text-align: center;\n}\n```"
     }
   ],
   "themes": [

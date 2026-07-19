@@ -20,7 +20,11 @@
           "claimed_capex_m": 12700,
           "stage": "Planned",
           "operator_id": "exxonmobil",
-          "country_id": "GY"
+          "country_id": "GY",
+          "operator_name": "ExxonMobil",
+          "offshore_area": "Uaru development · Stabroek Block, offshore Guyana",
+          "latitude": 8.15,
+          "longitude": -57.05
         },
         {
           "project_id": "whiptail",
@@ -29,7 +33,11 @@
           "claimed_capex_m": 12700,
           "stage": "Planned",
           "operator_id": "exxonmobil",
-          "country_id": "GY"
+          "country_id": "GY",
+          "operator_name": "ExxonMobil",
+          "offshore_area": "Whiptail development · Stabroek Block, offshore Guyana",
+          "latitude": 7.55,
+          "longitude": -56.65
         },
         {
           "project_id": "granmorgu",
@@ -38,7 +46,11 @@
           "claimed_capex_m": 10500,
           "stage": "Planned",
           "operator_id": "totalenergies",
-          "country_id": "SR"
+          "country_id": "SR",
+          "operator_name": "TotalEnergies",
+          "offshore_area": "GranMorgu · Block 58, offshore Suriname",
+          "latitude": 6.05,
+          "longitude": -54.55
         },
         {
           "project_id": "atapu-development",
@@ -47,7 +59,11 @@
           "claimed_capex_m": 9741,
           "stage": "Producing",
           "operator_id": "petrobras",
-          "country_id": "BR"
+          "country_id": "BR",
+          "operator_name": "Petrobras",
+          "offshore_area": "Atapu field · Santos Basin, offshore Brazil",
+          "latitude": -25.13,
+          "longitude": -42.65
         },
         {
           "project_id": "raia",
@@ -56,7 +72,11 @@
           "claimed_capex_m": 9000,
           "stage": "Planned",
           "operator_id": "equinor",
-          "country_id": "BR"
+          "country_id": "BR",
+          "operator_name": "Equinor",
+          "offshore_area": "Raia · Campos Basin, offshore Brazil",
+          "latitude": -22.95,
+          "longitude": -39.95
         },
         {
           "project_id": "sepia-development",
@@ -65,7 +85,11 @@
           "claimed_capex_m": 8499,
           "stage": "Producing",
           "operator_id": "petrobras",
-          "country_id": "BR"
+          "country_id": "BR",
+          "operator_name": "Petrobras",
+          "offshore_area": "Sépia field · Santos Basin, offshore Brazil",
+          "latitude": -25.22,
+          "longitude": -42.40
         },
         {
           "project_id": "buzios-x-franco",
@@ -74,7 +98,11 @@
           "claimed_capex_m": 8427,
           "stage": "Planned",
           "operator_id": "petrobras",
-          "country_id": "BR"
+          "country_id": "BR",
+          "operator_name": "Petrobras",
+          "offshore_area": "Búzios field · Santos Basin, offshore Brazil",
+          "latitude": -24.05,
+          "longitude": -42.55
         },
         {
           "project_id": "bonga-southwest-aparo",
@@ -83,7 +111,11 @@
           "claimed_capex_m": 8000,
           "stage": "Announced",
           "operator_id": "shell",
-          "country_id": "NG"
+          "country_id": "NG",
+          "operator_name": "Shell",
+          "offshore_area": "Bonga Southwest/Aparo · deepwater Nigeria",
+          "latitude": 4.45,
+          "longitude": 4.55
         },
         {
           "project_id": "buzios-xi-franco",
@@ -92,7 +124,11 @@
           "claimed_capex_m": 7641,
           "stage": "Planned",
           "operator_id": "petrobras",
-          "country_id": "BR"
+          "country_id": "BR",
+          "operator_name": "Petrobras",
+          "offshore_area": "Búzios field · Santos Basin, offshore Brazil",
+          "latitude": -23.82,
+          "longitude": -42.35
         },
         {
           "project_id": "buzios-ix-franco",
@@ -101,7 +137,11 @@
           "claimed_capex_m": 7079,
           "stage": "Planned",
           "operator_id": "petrobras",
-          "country_id": "BR"
+          "country_id": "BR",
+          "operator_name": "Petrobras",
+          "offshore_area": "Búzios field · Santos Basin, offshore Brazil",
+          "latitude": -24.22,
+          "longitude": -42.28
         }
       ]
     }
